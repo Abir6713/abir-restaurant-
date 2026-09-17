@@ -7,225 +7,849 @@
 <title>Food Details | Comfort Grills & Bites</title>
 
 <style>
-
 * {
+box-sizing: border-box;
 margin: 0;
 padding: 0;
-box-sizing: border-box;
 }
 
 body {
-font-family: Arial, Helvetica, sans-serif;
-background: #fffaf3;
+font-family: Arial, sans-serif;
+background: #fffaf5;
 color: #222;
 line-height: 1.6;
 }
 
 header {
-background: #17120e;
+background: #111;
 color: white;
-padding: 20px 6%;
-display: flex;
-justify-content: space-between;
-align-items: center;
+padding: 20px;
+text-align: center;
 }
 
 .logo {
-font-size: 20px;
+font-size: 22px;
 font-weight: bold;
 }
 
-header a {
-color: white;
-text-decoration: none;
-font-size: 14px;
-}
-
-.details-container {
+.container {
 max-width: 1000px;
-margin: auto;
-padding: 60px 20px;
+margin: 40px auto;
+padding: 20px;
 }
 
 .back {
 display: inline-block;
 margin-bottom: 25px;
-color: #f28c28;
+color: #e85d04;
 text-decoration: none;
 font-weight: bold;
 }
 
-.product {
+.details {
 background: white;
-border-radius: 14px;
+border-radius: 12px;
 overflow: hidden;
 box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+display: grid;
+grid-template-columns: 1fr 1fr;
 }
 
-.product-image {
+.details img {
 width: 100%;
-height: 420px;
+height: 100%;
+min-height: 450px;
 object-fit: cover;
-display: block;
 }
 
-.product-content {
-padding: 35px;
+.content {
+padding: 40px;
 }
 
-.product-content h1 {
-font-size: 36px;
+.content h1 {
+font-size: 35px;
 margin-bottom: 10px;
 }
 
 .price {
-font-size: 28px;
+color: #e85d04;
+font-size: 25px;
 font-weight: bold;
-margin: 15px 0 25px;
+margin-bottom: 20px;
 }
 
 .description {
-color: #666;
+color: #555;
 margin-bottom: 25px;
 }
 
-.options {
-margin-bottom: 30px;
-}
-
-.options h3 {
+.content h3 {
 margin-bottom: 10px;
 }
 
-.options ul {
+.content ul {
 padding-left: 20px;
-color: #555;
+margin-bottom: 30px;
 }
 
-.whatsapp {
-display: inline-block;
-background: #25D366;
+.content li {
+margin-bottom: 8px;
+}
+
+.cart-btn {
+width: 100%;
+border: none;
+background: #e85d04;
 color: white;
-padding: 15px 25px;
-border-radius: 7px;
-text-decoration: none;
+padding: 15px;
+border-radius: 6px;
+font-size: 16px;
 font-weight: bold;
+cursor: pointer;
+}
+
+.cart-link {
+display: block;
+text-align: center;
+margin-top: 15px;
+padding: 12px;
+background: #111;
+color: white;
+text-decoration: none;
+border-radius: 6px;
+}
+
+.menu-link {
+display: block;
+text-align: center;
+margin-top: 20px;
+color: #e85d04;
+text-decoration: none;
 }
 
 footer {
-background: #111;
-color: #aaa;
-text-align: center;
-padding: 30px 20px;
 margin-top: 50px;
+background: #111;
+color: white;
+text-align: center;
+padding: 25px;
 }
 
 @media (max-width: 700px) {
 
-header {
-padding: 18px 20px;
+.details {
+grid-template-columns: 1fr;
 }
 
-.product-image {
+.details img {
+min-height: 280px;
 height: 280px;
 }
 
-.product-content {
+.content {
 padding: 25px;
 }
 
-.product-content h1 {
-font-size: 29px;
+.content h1 {
+font-size: 28px;
 }
-
 }
-
 </style>
 </head>
 
 <body>
 
 <header>
-
 <div class="logo">
 COMFORT GRILLS & BITES
 </div>
-
-<a href="index.html">
-Back to Menu
-</a>
-
 </header>
 
 
-<main class="details-container">
+<div class="container">
 
 <a href="index.html" class="back">
 ← Back to Menu
 </a>
 
 
-<div class="product">
+<div class="details">
 
-<img
-class="product-image"
-src="https://images.unsplash.com/photo-1534790566855-4cb788d389ec?auto=format&fit=crop&w=1200&q=85"
-alt="Grilled Chicken"
->
+<img id="foodImage" src="" alt="">
 
 
-<div class="product-content">
+<div class="content">
 
-<h1>Grilled Chicken</h1>
+<h1 id="foodName"></h1>
 
-<div class="price">
-₦8,000
-</div>
+<div class="price" id="foodPrice"></div>
 
-<p class="description">
-Enjoy our juicy grilled chicken prepared with
-carefully selected seasoning and grilled to
-perfection. A delicious option for lunch,
-dinner or a satisfying meal at any time.
-</p>
+<p class="description" id="foodDescription"></p>
 
 
-<div class="options">
+<h3>What you get</h3>
 
-<h3>Available Options</h3>
-
-<ul>
-<li>Full portion</li>
-<li>Half portion</li>
-<li>Extra pepper</li>
-<li>Extra side</li>
-</ul>
-
-</div>
+<ul id="foodFeatures"></ul>
 
 
-<a
-class="whatsapp"
-href="https://wa.me/2348012345678?text=Hello%20Comfort%20Grills%20%26%20Bites%2C%20I%20would%20like%20to%20order%20Grilled%20Chicken."
-target="_blank"
->
-Order on WhatsApp
+<button class="cart-btn" onclick="addCurrentItem()">
+Add to Cart
+</button>
+
+
+<a href="cart.html" class="cart-link">
+View Cart
+</a>
+
+
+<a href="index.html" class="menu-link">
+← Continue Shopping
 </a>
 
 </div>
 
 </div>
 
-</main>
+</div>
 
 
 <footer>
-
-<p>
-© 2026 Comfort Grills & Bites. All rights reserved.
-</p>
-
+<p>© 2026 Comfort Grills & Bites. All Rights Reserved.</p>
 </footer>
+
+
+<script>
+
+const foods = {
+
+"grilled-chicken": {
+
+name: "Grilled Chicken",
+
+price: 8000,
+
+image: "https://images.unsplash.com/photo-1532550907401-a500c9a57435?auto=format&fit=crop&w=1000&q=80",
+
+description:
+"Juicy grilled chicken prepared with our special seasoning and grilled to perfection.",
+
+features: [
+"Freshly grilled chicken",
+"Special house seasoning",
+"Served hot and ready to enjoy"
+]
+
+},
+
+
+"beef-burger": {
+
+name: "Beef Burger",
+
+price: 6500,
+
+image: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=1000&q=80",
+
+description:
+"A tasty beef burger made with a juicy beef patty, fresh toppings and our special sauce.",
+
+features: [
+"Juicy beef patty",
+"Fresh vegetables",
+"Special burger sauce"
+]
+
+},
+
+
+"chicken-chips": {
+
+name: "Chicken & Chips",
+
+price: 7500,
+
+image: "https://images.unsplash.com/photo-1562967916-eb82221dfb92?auto=format&fit=crop&w=1000&q=80",
+
+description:
+"Crispy chicken served with golden chips and a delicious dipping sauce.",
+
+features: [
+"Crispy fried chicken",
+"Golden chips",
+"Served with sauce"
+]
+
+},
+
+
+"jollof-rice": {
+
+name: "Jollof Rice & Chicken",
+
+price: 6000,
+
+image: "https://images.unsplash.com/photo-1604329760661-e71dc83f8f26?auto=format&fit=crop&w=1000&q=80",
+
+description:
+"Richly seasoned Nigerian jollof rice served with a delicious portion of chicken.",
+
+features: [
+"Well-seasoned jollof rice",
+"Chicken portion",
+"Prepared fresh"
+]
+
+},
+
+
+"grilled-sausage": {
+
+name: "Grilled Sausage",
+
+price: 4000,
+
+image: "https://images.unsplash.com/photo-1524438418049-ab2acb7aa48f?auto=format&fit=crop&w=1000&q=80",
+
+description:
+"Well-seasoned sausages grilled fresh and served hot.",
+
+features: [
+"Fresh grilled sausage",
+"Well-seasoned",
+"Served hot"
+]
+
+},
+
+
+"chapman": {
+
+name: "Chapman",
+
+price: 2500,
+
+image: "https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&w=1000&q=80",
+
+description:
+"A refreshing Nigerian-style cocktail drink, perfect for enjoying with your meal.",
+
+features: [
+"Refreshing drink",
+"Served chilled",
+"Perfect with meals"
+]
+
+}
+
+};
+
+
+const urlParams = new URLSearchParams(window.location.search);
+
+const item = urlParams.get("item");
+
+
+const food = foods[item] || foods["grilled-chicken"];
+
+
+document.getElementById("foodName").textContent = food.name;
+
+document.getElementById("foodPrice").textContent =
+"₦" + food.price.toLocaleString();
+
+document.getElementById("foodDescription").textContent =
+food.description;
+
+
+document.getElementById("foodImage").src =
+food.image;
+
+document.getElementById("foodImage").alt =
+food.name;
+
+
+const featuresList =
+document.getElementById("foodFeatures");
+
+
+food.features.forEach(function(feature) {
+
+const li = document.createElement("li");
+
+li.textContent = feature;
+
+featuresList.appendChild(li);
+
+});
+
+
+function addCurrentItem() {
+
+let cart =
+JSON.parse(localStorage.getItem("comfortCart")) || [];
+
+
+let existingItem =
+cart.find(cartItem => cartItem.name === food.name);
+
+
+if (existingItem) {
+
+existingItem.quantity += 1;
+
+} else {
+
+cart.push({
+
+name: food.name,
+
+price: food.price,
+
+quantity: 1
+
+});
+
+}
+
+
+localStorage.setItem(
+"comfortCart",
+JSON.stringify(cart)
+);
+
+
+alert(food.name + " added to cart!");
+
+}
+
+</script>
+
+</body>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Food Details | Comfort Grills & Bites</title>
+
+<style>
+* {
+box-sizing: border-box;
+margin: 0;
+padding: 0;
+}
+
+body {
+font-family: Arial, sans-serif;
+background: #fffaf5;
+color: #222;
+line-height: 1.6;
+}
+
+header {
+background: #111;
+color: white;
+padding: 20px;
+text-align: center;
+}
+
+.logo {
+font-size: 22px;
+font-weight: bold;
+}
+
+.container {
+max-width: 1000px;
+margin: 40px auto;
+padding: 20px;
+}
+
+.back {
+display: inline-block;
+margin-bottom: 25px;
+color: #e85d04;
+text-decoration: none;
+font-weight: bold;
+}
+
+.details {
+background: white;
+border-radius: 12px;
+overflow: hidden;
+box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+display: grid;
+grid-template-columns: 1fr 1fr;
+}
+
+.details img {
+width: 100%;
+height: 100%;
+min-height: 450px;
+object-fit: cover;
+}
+
+.content {
+padding: 40px;
+}
+
+.content h1 {
+font-size: 35px;
+margin-bottom: 10px;
+}
+
+.price {
+color: #e85d04;
+font-size: 25px;
+font-weight: bold;
+margin-bottom: 20px;
+}
+
+.description {
+color: #555;
+margin-bottom: 25px;
+}
+
+.content h3 {
+margin-bottom: 10px;
+}
+
+.content ul {
+padding-left: 20px;
+margin-bottom: 30px;
+}
+
+.content li {
+margin-bottom: 8px;
+}
+
+.cart-btn {
+width: 100%;
+border: none;
+background: #e85d04;
+color: white;
+padding: 15px;
+border-radius: 6px;
+font-size: 16px;
+font-weight: bold;
+cursor: pointer;
+}
+
+.cart-link {
+display: block;
+text-align: center;
+margin-top: 15px;
+padding: 12px;
+background: #111;
+color: white;
+text-decoration: none;
+border-radius: 6px;
+}
+
+.menu-link {
+display: block;
+text-align: center;
+margin-top: 20px;
+color: #e85d04;
+text-decoration: none;
+}
+
+footer {
+margin-top: 50px;
+background: #111;
+color: white;
+text-align: center;
+padding: 25px;
+}
+
+@media (max-width: 700px) {
+
+.details {
+grid-template-columns: 1fr;
+}
+
+.details img {
+min-height: 280px;
+height: 280px;
+}
+
+.content {
+padding: 25px;
+}
+
+.content h1 {
+font-size: 28px;
+}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="logo">
+COMFORT GRILLS & BITES
+</div>
+</header>
+
+
+<div class="container">
+
+<a href="index.html" class="back">
+← Back to Menu
+</a>
+
+
+<div class="details">
+
+<img id="foodImage" src="" alt="">
+
+
+<div class="content">
+
+<h1 id="foodName"></h1>
+
+<div class="price" id="foodPrice"></div>
+
+<p class="description" id="foodDescription"></p>
+
+
+<h3>What you get</h3>
+
+<ul id="foodFeatures"></ul>
+
+
+<button class="cart-btn" onclick="addCurrentItem()">
+Add to Cart
+</button>
+
+
+<a href="cart.html" class="cart-link">
+View Cart
+</a>
+
+
+<a href="index.html" class="menu-link">
+← Continue Shopping
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+
+<footer>
+<p>© 2026 Comfort Grills & Bites. All Rights Reserved.</p>
+</footer>
+
+
+<script>
+
+const foods = {
+
+"grilled-chicken": {
+
+name: "Grilled Chicken",
+
+price: 8000,
+
+image: "https://images.unsplash.com/photo-1532550907401-a500c9a57435?auto=format&fit=crop&w=1000&q=80",
+
+description:
+"Juicy grilled chicken prepared with our special seasoning and grilled to perfection.",
+
+features: [
+"Freshly grilled chicken",
+"Special house seasoning",
+"Served hot and ready to enjoy"
+]
+
+},
+
+
+"beef-burger": {
+
+name: "Beef Burger",
+
+price: 6500,
+
+image: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=1000&q=80",
+
+description:
+"A tasty beef burger made with a juicy beef patty, fresh toppings and our special sauce.",
+
+features: [
+"Juicy beef patty",
+"Fresh vegetables",
+"Special burger sauce"
+]
+
+},
+
+
+"chicken-chips": {
+
+name: "Chicken & Chips",
+
+price: 7500,
+
+image: "https://images.unsplash.com/photo-1562967916-eb82221dfb92?auto=format&fit=crop&w=1000&q=80",
+
+description:
+"Crispy chicken served with golden chips and a delicious dipping sauce.",
+
+features: [
+"Crispy fried chicken",
+"Golden chips",
+"Served with sauce"
+]
+
+},
+
+
+"jollof-rice": {
+
+name: "Jollof Rice & Chicken",
+
+price: 6000,
+
+image: "https://images.unsplash.com/photo-1604329760661-e71dc83f8f26?auto=format&fit=crop&w=1000&q=80",
+
+description:
+"Richly seasoned Nigerian jollof rice served with a delicious portion of chicken.",
+
+features: [
+"Well-seasoned jollof rice",
+"Chicken portion",
+"Prepared fresh"
+]
+
+},
+
+
+"grilled-sausage": {
+
+name: "Grilled Sausage",
+
+price: 4000,
+
+image: "https://images.unsplash.com/photo-1524438418049-ab2acb7aa48f?auto=format&fit=crop&w=1000&q=80",
+
+description:
+"Well-seasoned sausages grilled fresh and served hot.",
+
+features: [
+"Fresh grilled sausage",
+"Well-seasoned",
+"Served hot"
+]
+
+},
+
+
+"chapman": {
+
+name: "Chapman",
+
+price: 2500,
+
+image: "https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&w=1000&q=80",
+
+description:
+"A refreshing Nigerian-style cocktail drink, perfect for enjoying with your meal.",
+
+features: [
+"Refreshing drink",
+"Served chilled",
+"Perfect with meals"
+]
+
+}
+
+};
+
+
+const urlParams = new URLSearchParams(window.location.search);
+
+const item = urlParams.get("item");
+
+
+const food = foods[item] || foods["grilled-chicken"];
+
+
+document.getElementById("foodName").textContent = food.name;
+
+document.getElementById("foodPrice").textContent =
+"₦" + food.price.toLocaleString();
+
+document.getElementById("foodDescription").textContent =
+food.description;
+
+
+document.getElementById("foodImage").src =
+food.image;
+
+document.getElementById("foodImage").alt =
+food.name;
+
+
+const featuresList =
+document.getElementById("foodFeatures");
+
+
+food.features.forEach(function(feature) {
+
+const li = document.createElement("li");
+
+li.textContent = feature;
+
+featuresList.appendChild(li);
+
+});
+
+
+function addCurrentItem() {
+
+let cart =
+JSON.parse(localStorage.getItem("comfortCart")) || [];
+
+
+let existingItem =
+cart.find(cartItem => cartItem.name === food.name);
+
+
+if (existingItem) {
+
+existingItem.quantity += 1;
+
+} else {
+
+cart.push({
+
+name: food.name,
+
+price: food.price,
+
+quantity: 1
+
+});
+
+}
+
+
+localStorage.setItem(
+"comfortCart",
+JSON.stringify(cart)
+);
+
+
+alert(food.name + " added to cart!");
+
+}
+
+</script>
 
 </body>
 </html>
