@@ -1,325 +1,351 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
- <title>Your Order | Comfort Grills & Bites</title>
+<meta charset="UTF-8">
 
- <style>
- * {
- box-sizing: border-box;
- margin: 0;
- padding: 0;
- }
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
- body {
+<title>Your Cart - Comfort Grills & Bites</title>
+
+<style>
+
+body {
  font-family: Arial, sans-serif;
- background: #fffaf5;
+ margin: 0;
+ background: #f8f8f8;
  color: #222;
- line-height: 1.6;
- }
+}
 
- header {
+header {
  background: #111;
  color: white;
  padding: 20px;
  text-align: center;
- }
+}
 
- header h1 {
+header h1 {
+ margin: 0;
  font-size: 24px;
- }
+}
 
- .container {
- max-width: 850px;
- margin: 40px auto;
+.container {
+ max-width: 900px;
+ margin: 30px auto;
  padding: 20px;
- }
+}
 
- .back {
- display: inline-block;
- margin-bottom: 25px;
- color: #e85d04;
- text-decoration: none;
- font-weight: bold;
- }
-
- .cart-box {
+.cart-box,
+.form-box {
  background: white;
  padding: 25px;
- border-radius: 10px;
+ margin-bottom: 25px;
+ border-radius: 12px;
  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
- }
+}
 
- .cart-box h2 {
- margin-bottom: 20px;
- }
+h2 {
+ margin-top: 0;
+}
 
- .cart-item {
+.cart-item {
  display: flex;
  justify-content: space-between;
  align-items: center;
+ border-bottom: 1px solid #ddd;
+ padding: 15px 0;
  gap: 15px;
- padding: 18px 0;
- border-bottom: 1px solid #eee;
- }
+}
 
- .item-info h3 {
- margin-bottom: 5px;
- }
+.item-info {
+ flex: 1;
+}
 
- .item-price {
- color: #e85d04;
+.item-name {
  font-weight: bold;
- }
+ font-size: 17px;
+}
 
- .quantity {
+.item-price {
+ color: #777;
+ margin-top: 5px;
+}
+
+.quantity-controls {
  display: flex;
  align-items: center;
  gap: 10px;
- }
+}
 
- .quantity button {
+.quantity-controls button {
+ width: 32px;
+ height: 32px;
  border: none;
  background: #111;
  color: white;
- width: 30px;
- height: 30px;
  border-radius: 5px;
  cursor: pointer;
- font-size: 18px;
- }
+}
 
- .remove {
- border: none;
- background: transparent !important;
- color: #d00000 !important;
- cursor: pointer;
- width: auto !important;
- font-size: 14px !important;
- }
+.quantity {
+ font-weight: bold;
+}
 
- .total {
- display: flex;
- justify-content: space-between;
+.remove-btn {
+ background: #c62828 !important;
+}
+
+.total {
+ text-align: right;
  font-size: 22px;
  font-weight: bold;
- padding: 25px 0;
- border-bottom: 1px solid #eee;
- }
+ margin-top: 20px;
+}
 
- .customer-details {
- margin-top: 30px;
- }
-
- .customer-details h2 {
- margin-bottom: 20px;
- }
-
- .form-group {
- margin-bottom: 18px;
- }
-
- .form-group label {
+label {
  display: block;
  font-weight: bold;
+ margin-top: 15px;
  margin-bottom: 7px;
- }
+}
 
- .form-group input,
- .form-group select,
- .form-group textarea {
+input,
+select,
+textarea {
  width: 100%;
- padding: 13px;
+ padding: 12px;
+ box-sizing: border-box;
  border: 1px solid #ccc;
  border-radius: 6px;
  font-size: 15px;
- font-family: Arial, sans-serif;
- }
+}
 
- .form-group textarea {
+textarea {
  min-height: 100px;
  resize: vertical;
- }
+}
 
- .order-btn {
- display: block;
+.whatsapp-btn {
  width: 100%;
+ padding: 15px;
+ margin-top: 25px;
+ border: none;
+ border-radius: 7px;
  background: #25D366;
  color: white;
- text-align: center;
- padding: 15px;
- border-radius: 6px;
- font-size: 17px;
+ font-size: 18px;
  font-weight: bold;
- border: none;
  cursor: pointer;
- margin-top: 25px;
- }
+}
 
- .empty {
- text-align: center;
- padding: 40px 10px;
- color: #666;
- }
+.whatsapp-btn:hover {
+ background: #1ebe5d;
+}
 
- .continue {
+.continue-btn {
  display: block;
  text-align: center;
- margin-top: 20px;
- color: #e85d04;
+ margin-top: 15px;
+ padding: 13px;
+ background: #111;
+ color: white;
  text-decoration: none;
+ border-radius: 7px;
+}
+
+.empty-cart {
+ text-align: center;
+ padding: 30px;
+ color: #777;
+}
+
+.address-box {
+ display: none;
+}
+
+footer {
+ background: #111;
+ color: white;
+ text-align: center;
+ padding: 20px;
+ margin-top: 40px;
+}
+
+@media (max-width: 600px) {
+
+ .container {
+ padding: 10px;
+ margin: 15px auto;
  }
 
- @media (max-width: 600px) {
+ .cart-box,
+ .form-box {
+ padding: 18px;
+ }
 
  .cart-item {
- display: block;
+ flex-wrap: wrap;
  }
 
- .quantity {
- margin-top: 12px;
+ .quantity-controls {
+ width: 100%;
+ justify-content: flex-end;
  }
 
- .remove {
- margin-left: 10px;
- }
- }
- </style>
+}
+
+</style>
+
 </head>
 
 <body>
 
+
 <header>
- <h1>Comfort Grills & Bites</h1>
+
+<h1>COMFORT GRILLS & BITES</h1>
+
+<p>Your Cart</p>
+
 </header>
 
 
 <div class="container">
 
- <a href="index.html" class="back">
- ← Back to Menu
- </a>
 
+<div class="cart-box">
 
- <div class="cart-box">
+<h2>Your Order</h2>
 
- <h2>Your Order</h2>
+<div id="cartItems"></div>
 
- <div id="cartItems"></div>
+<div class="total">
 
- <div class="total">
- <span>Total</span>
- <span id="cartTotal">₦0</span>
- </div>
+Total: ₦<span id="cartTotal">0</span>
 
-
- <div class="customer-details">
-
- <h2>Order Details</h2>
-
-
- <div class="form-group">
-
- <label for="customerName">
- Your Name
- </label>
-
- <input
- type="text"
- id="customerName"
- placeholder="Enter your name"
- >
-
- </div>
-
-
- <div class="form-group">
-
- <label for="customerPhone">
- Phone Number
- </label>
-
- <input
- type="tel"
- id="customerPhone"
- placeholder="Enter your phone number"
- >
-
- </div>
-
-
- <div class="form-group">
-
- <label for="orderType">
- Order Type
- </label>
-
- <select id="orderType" onchange="toggleAddress()">
-
- <option value="Delivery">
- Delivery
- </option>
-
- <option value="Pickup">
- Pickup
- </option>
-
- </select>
-
- </div>
-
-
- <div class="form-group" id="addressGroup">
-
- <label for="customerAddress">
- Delivery Address
- </label>
-
- <textarea
- id="customerAddress"
- placeholder="Enter your delivery address"
- ></textarea>
-
- </div>
-
-
- <div class="form-group">
-
- <label for="orderNote">
- Additional Note
- </label>
-
- <textarea
- id="orderNote"
- placeholder="Any special request? (Optional)"
- ></textarea>
-
- </div>
-
-
- <button
- class="order-btn"
- onclick="orderOnWhatsApp()">
-
- Order on WhatsApp
-
- </button>
-
- </div>
-
-
- <a href="index.html" class="continue">
- Continue Shopping
- </a>
-
- </div>
+</div>
 
 </div>
 
 
+
+<div class="form-box">
+
+<h2>Customer Details</h2>
+
+
+<label for="customerName">
+Name
+</label>
+
+<input
+type="text"
+id="customerName"
+placeholder="Enter your name"
+>
+
+
+
+<label for="customerPhone">
+Phone Number
+</label>
+
+<input
+type="tel"
+id="customerPhone"
+placeholder="Enter your phone number"
+>
+
+
+
+<label for="orderType">
+Order Type
+</label>
+
+<select
+id="orderType"
+onchange="toggleAddress()"
+>
+
+<option value="Delivery">
+Delivery
+</option>
+
+<option value="Pickup">
+Pickup
+</option>
+
+</select>
+
+
+
+<div
+class="address-box"
+id="addressBox"
+>
+
+<label for="customerAddress">
+Delivery Address
+</label>
+
+<textarea
+id="customerAddress"
+placeholder="Enter your delivery address"
+></textarea>
+
+</div>
+
+
+
+<label for="orderNote">
+Additional Note
+</label>
+
+<textarea
+id="orderNote"
+placeholder="Any special request or instruction?"
+></textarea>
+
+
+
+<button
+class="whatsapp-btn"
+onclick="orderOnWhatsApp()"
+>
+
+Order on WhatsApp
+
+</button>
+
+
+<a
+href="index.html"
+class="continue-btn"
+>
+
+Continue Shopping
+
+</a>
+
+
+</div>
+
+
+</div>
+
+
+<footer>
+
+<p>© 2026 Comfort Grills & Bites</p>
+
+</footer>
+
+
+
 <script>
+
 
 function getCart() {
 
@@ -328,6 +354,7 @@ function getCart() {
  ) || [];
 
 }
+
 
 
 function saveCart(cart) {
@@ -340,11 +367,13 @@ function saveCart(cart) {
 }
 
 
+
 function formatPrice(price) {
 
- return "₦" + price.toLocaleString();
+ return Number(price).toLocaleString();
 
 }
+
 
 
 function displayCart() {
@@ -358,19 +387,15 @@ function displayCart() {
  document.getElementById("cartTotal");
 
 
- cartItems.innerHTML = "";
-
-
  if (cart.length === 0) {
 
  cartItems.innerHTML = `
- <div class="empty">
- <h3>Your cart is empty.</h3>
- <p>Add something delicious from our menu.</p>
+ <div class="empty-cart">
+ Your cart is empty.
  </div>
  `;
 
- cartTotal.textContent = "₦0";
+ cartTotal.textContent = "0";
 
  return;
 
@@ -378,6 +403,8 @@ function displayCart() {
 
 
  let total = 0;
+
+ cartItems.innerHTML = "";
 
 
  cart.forEach(function(item, index) {
@@ -394,37 +421,40 @@ function displayCart() {
 
  <div class="item-info">
 
- <h3>${item.name}</h3>
+ <div class="item-name">
+ ${item.name}
+ </div>
 
  <div class="item-price">
- ${formatPrice(item.price)} each
+ ₦${formatPrice(item.price)}
  </div>
 
  </div>
 
 
- <div class="quantity">
+ <div class="quantity-controls">
 
  <button
- onclick="changeQuantity(${index}, -1)">
- −
+ onclick="changeQuantity(${index}, -1)"
+ >
+ -
  </button>
 
- <strong>
+ <span class="quantity">
  ${item.quantity}
- </strong>
+ </span>
 
  <button
- onclick="changeQuantity(${index}, 1)">
+ onclick="changeQuantity(${index}, 1)"
+ >
  +
  </button>
 
  <button
- class="remove"
- onclick="removeItem(${index})">
-
+ class="remove-btn"
+ onclick="removeItem(${index})"
+ >
  Remove
-
  </button>
 
  </div>
@@ -442,12 +472,12 @@ function displayCart() {
 }
 
 
-function changeQuantity(index, amount) {
+
+function changeQuantity(index, change) {
 
  let cart = getCart();
 
-
- cart[index].quantity += amount;
+ cart[index].quantity += change;
 
 
  if (cart[index].quantity <= 0) {
@@ -464,13 +494,12 @@ function changeQuantity(index, amount) {
 }
 
 
+
 function removeItem(index) {
 
  let cart = getCart();
 
-
  cart.splice(index, 1);
-
 
  saveCart(cart);
 
@@ -479,29 +508,32 @@ function removeItem(index) {
 }
 
 
+
 function toggleAddress() {
 
  let orderType =
  document.getElementById("orderType").value;
 
- let addressGroup =
- document.getElementById("addressGroup");
+ let addressBox =
+ document.getElementById("addressBox");
 
 
- if (orderType === "Pickup") {
+ if (orderType === "Delivery") {
 
- addressGroup.style.display = "none";
+ addressBox.style.display = "block";
 
  } else {
 
- addressGroup.style.display = "block";
+ addressBox.style.display = "none";
 
  }
 
 }
 
 
+
 function orderOnWhatsApp() {
+
 
  let cart = getCart();
 
@@ -516,23 +548,37 @@ function orderOnWhatsApp() {
 
 
  let customerName =
- document.getElementById("customerName").value.trim();
+ document
+ .getElementById("customerName")
+ .value
+ .trim();
 
 
  let customerPhone =
- document.getElementById("customerPhone").value.trim();
+ document
+ .getElementById("customerPhone")
+ .value
+ .trim();
 
 
  let orderType =
- document.getElementById("orderType").value;
+ document
+ .getElementById("orderType")
+ .value;
 
 
  let address =
- document.getElementById("customerAddress").value.trim();
+ document
+ .getElementById("customerAddress")
+ .value
+ .trim();
 
 
  let note =
- document.getElementById("orderNote").value.trim();
+ document
+ .getElementById("orderNote")
+ .value
+ .trim();
 
 
  if (customerName === "") {
@@ -566,14 +612,15 @@ function orderOnWhatsApp() {
 
 
  let message =
- "Hello Comfort Grills & Bites,%0A%0A";
-
- message +=
- "I would like to place an order.%0A%0A";
+ "Hello Comfort Grills & Bites,\n\n";
 
 
  message +=
- "*ORDER:%*%0A";
+ "I would like to place an order.\n\n";
+
+
+ message +=
+ "ORDER:\n";
 
 
  let total = 0;
@@ -592,42 +639,39 @@ function orderOnWhatsApp() {
  item.name +
  " x " +
  item.quantity +
- " - " +
- formatPrice(itemTotal) +
- "%0A";
+ " - ₦" +
+ itemTotal.toLocaleString() +
+ "\n";
 
  });
 
 
- message += "%0A";
+ message +=
+ "\nTOTAL: ₦" +
+ total.toLocaleString() +
+ "\n\n";
 
 
  message +=
- "*TOTAL: " +
- formatPrice(total) +
- "*%0A%0A";
-
-
- message +=
- "*CUSTOMER DETAILS:*%0A";
+ "CUSTOMER DETAILS:\n";
 
 
  message +=
  "Name: " +
  customerName +
- "%0A";
+ "\n";
 
 
  message +=
  "Phone: " +
  customerPhone +
- "%0A";
+ "\n";
 
 
  message +=
  "Order Type: " +
  orderType +
- "%0A";
+ "\n";
 
 
  if (orderType === "Delivery") {
@@ -635,7 +679,7 @@ function orderOnWhatsApp() {
  message +=
  "Address: " +
  address +
- "%0A";
+ "\n";
 
  }
 
@@ -645,25 +689,13 @@ function orderOnWhatsApp() {
  message +=
  "Note: " +
  note +
- "%0A";
+ "\n";
 
  }
 
 
- message += "%0A";
-
  message +=
- "Please confirm my order. Thank you.";
-
-
- /*
- COMFORT GRILLS & BITES
- WhatsApp number:
- 09066324358
-
- International format:
- 2349066324358
- */
+ "\nPlease confirm my order. Thank you.";
 
 
  let phoneNumber =
@@ -674,22 +706,24 @@ function orderOnWhatsApp() {
  "https://wa.me/" +
  phoneNumber +
  "?text=" +
- message;
+ encodeURIComponent(message);
 
 
- window.open(
- whatsappURL,
- "_blank"
- );
+ window.location.href =
+ whatsappURL;
 
 }
+
 
 
 displayCart();
 
 toggleAddress();
 
+
 </script>
 
+
 </body>
+
 </html>
