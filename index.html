@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Comfort Grills & Bites</title>
+
+<meta name="description" content="Comfort Grills & Bites - delicious grills, meals, sides and drinks. Explore our menu and place your order.">
+
+<style>
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+html {
+scroll-behavior: smooth;
+}
+
+body {
+font-family: Arial, Helvetica, sans-serif;
+background: #fffaf3;
+color: #222;
+line-height: 1.6;
+}
+
+/* HEADER */
+
+header {
+background: #17120e;
+color: white;
+padding: 20px 6%;
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+.logo {
+font-size: 21px;
+font-weight: bold;
+}
+
+nav a {
+color: white;
+text-decoration: none;
+margin-left: 25px;
+font-size: 14px;
+}
+
+/* HERO */
+
+.hero {
+min-height: 520px;
+display: flex;
+align-items: center;
+justify-content: center;
+text-align: center;
+padding: 80px 20px;
+
+background:
+linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+url("https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=1600&q=85");
+
+background-size: cover;
+background-position: center;
+color: white;
+}
+
+.hero-content {
+max-width: 700px;
+}
+
+.hero h1 {
+font-size: 50px;
+margin-bottom: 15px;
+}
+
+.hero p {
+font-size: 19px;
+color: #eeeeee;
+margin-bottom: 30px;
+}
+
+.button {
+display: inline-block;
+background: #f28c28;
+color: white;
+padding: 14px 28px;
+border-radius: 6px;
+text-decoration: none;
+font-weight: bold;
+}
+
+.button:hover {
+opacity: 0.85;
+}
+
+/* INTRO */
+
+.intro {
+max-width: 750px;
+margin: auto;
+text-align: center;
+padding: 70px 20px 30px;
+}
+
+.intro h2 {
+font-size: 32px;
+margin-bottom: 15px;
+}
+
+.intro p {
+color: #666;
+}
+
+/* MENU */
+
+.menu {
+max-width: 1100px;
+margin: auto;
+padding: 30px 20px 80px;
+}
+
+.menu-grid {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 25px;
+}
+
+.food-card {
+background: white;
+border-radius: 12px;
+overflow: hidden;
+box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+}
+
+.food-card img {
+width: 100%;
+height: 220px;
+object-fit: cover;
+display: block;
+}
+
+.food-content {
+padding: 22px;
+}
+
+.food-content h3 {
+font-size: 21px;
+margin-bottom: 8px;
+}
+
+.food-content p {
+color: #666;
+font-size: 14px;
+margin-bottom: 15px;
+}
+
+.price {
+font-size: 21px;
+font-weight: bold;
+margin-bottom: 15px;
+}
+
+.details {
+color: #f28c28;
+text-decoration: none;
+font-weight: bold;
+font-size: 14px;
+}
+
+/* ABOUT */
+
+.about {
+background: #17120e;
+color: white;
+text-align: center;
+padding: 70px 20px;
+}
+
+.about-content {
+max-width: 750px;
+margin: auto;
+}
+
+.about h2 {
+font-size: 32px;
+margin-bottom: 15px;
+}
+
+.about p {
+color: #cccccc;
+}
+
+/* ORDER */
+
+.order {
+text-align: center;
+padding: 70px 20px;
+}
+
+.order h2 {
+font-size: 32px;
+margin-bottom: 15px;
+}
+
+.order p {
+color: #666;
+margin-bottom: 25px;
+}
+
+/* FOOTER */
+
+footer {
+background: #0f0c09;
+color: #aaa;
+text-align: center;
+padding: 30px 20px;
+font-size: 14px;
+}
+
+/* MOBILE */
+
+@media (max-width: 800px) {
+
+header {
+flex-direction: column;
+gap: 15px;
+}
+
+nav a {
+margin: 0 8px;
+}
+
+.hero {
+min-height: 480px;
+}
+
+.hero h1 {
+font-size: 38px;
+}
+
+.hero p {
+font-size: 16px;
+}
+
+.menu-grid {
+grid-template-columns: 1fr;
+}
+
+.intro h2,
+.about h2,
+.order h2 {
+font-size: 28px;
+}
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+
+<div class="logo">
+COMFORT GRILLS & BITES
+</div>
+
+<nav>
+<a href="#menu">Menu</a>
+<a href="#about">About</a>
+</nav>
+
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h1>Comfort Grills & Bites</h1>
+
+<p>
+Delicious meals, grills, sides and drinks
+prepared to give you a taste of comfort.
+</p>
+
+<a href="#menu" class="button">
+Explore Our Menu
+</a>
+
+</div>
+
+</section>
+
+
+<!-- INTRO -->
+
+<section class="intro">
+
+<h2>Welcome to Comfort</h2>
+
+<p>
+Discover our selection of delicious meals and
+freshly prepared grills. Browse our menu,
+check our prices and choose what you would like to order.
+</p>
+
+</section>
+
+
+<!-- MENU -->
+
+<section class="menu" id="menu">
+
+<div class="menu-grid">
+
+
+<!-- FOOD 1 -->
+
+<div class="food-card">
+
+<img
+src="https://images.unsplash.com/photo-1534790566855-4cb788d389ec?auto=format&fit=crop&w=900&q=80"
+alt="Grilled chicken"
+>
+
+<div class="food-content">
+
+<h3>Grilled Chicken</h3>
+
+<p>
+Juicy grilled chicken prepared with
+our signature seasoning.
+</p>
+
+<div class="price">
+₦8,000
+</div>
+
+<a href="details.html" class="details">
+View Details →
+</a>
+
+</div>
+
+</div>
+
+
+<!-- FOOD 2 -->
+
+<div class="food-card">
+
+<img
+src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=900&q=80"
+alt="Beef burger"
+>
+
+<div class="food-content">
+
+<h3>Beef Burger</h3>
+
+<p>
+A delicious beef burger prepared
+with fresh ingredients.
+</p>
+
+<div class="price">
+₦6,500
+</div>
+
+<a href="details.html" class="details">
+View Details →
+</a>
+
+</div>
+
+</div>
+
+
+<!-- FOOD 3 -->
+
+<div class="food-card">
+
+<img
+src="https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=900&q=80"
+alt="Chicken and chips"
+>
+
+<div class="food-content">
+
+<h3>Chicken & Chips</h3>
+
+<p>
+Crispy chicken served with freshly
+prepared seasoned chips.
+</p>
+
+<div class="price">
+₦7,500
+</div>
+
+<a href="details.html" class="details">
+View Details →
+</a>
+
+</div>
+
+</div>
+
+
+<!-- FOOD 4 -->
+
+<div class="food-card">
+
+<img
+src="https://images.unsplash.com/photo-1603133872878-684f208fb84b?auto=format&fit=crop&w=900&q=80"
+alt="Jollof rice and chicken"
+>
+
+<div class="food-content">
+
+<h3>Jollof Rice & Chicken</h3>
+
+<p>
+Nigerian-style jollof rice served
+with delicious chicken.
+</p>
+
+<div class="price">
+₦6,000
+</div>
+
+<a href="details.html" class="details">
+View Details →
+</a>
+
+</div>
+
+</div>
+
+
+<!-- FOOD 5 -->
+
+<div class="food-card">
+
+<img
+src="https://images.unsplash.com/photo-1612392062631-94dd858cba88?auto=format&fit=crop&w=900&q=80"
+alt="Grilled sausage"
+>
+
+<div class="food-content">
+
+<h3>Grilled Sausage</h3>
+
+<p>
+Delicious grilled sausage prepared
+fresh and served hot.
+</p>
+
+<div class="price">
+₦4,000
+</div>
+
+<a href="details.html" class="details">
+View Details →
+</a>
+
+</div>
+
+</div>
+
+
+<!-- FOOD 6 -->
+
+<div class="food-card">
+
+<img
+src="https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&w=900&q=80"
+alt="Chapman drink"
+>
+
+<div class="food-content">
+
+<h3>Chapman</h3>
+
+<p>
+A refreshing Nigerian-style cocktail
+drink perfect with your meal.
+</p>
+
+<div class="price">
+₦2,500
+</div>
+
+<a href="details.html" class="details">
+View Details →
+</a>
+
+</div>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section class="about" id="about">
+
+<div class="about-content">
+
+<h2>About Comfort Grills & Bites</h2>
+
+<p>
+We are committed to serving delicious meals,
+quality grills and refreshing drinks in a
+comfortable and welcoming environment.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- ORDER -->
+
+<section class="order">
+
+<h2>Ready to Order?</h2>
+
+<p>
+Choose your favourite meal and contact us to place your order.
+</p>
+
+<a href="#" class="button">
+Order on WhatsApp
+</a>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<p>
+© 2026 Comfort Grills & Bites. All rights reserved.
+</p>
+
+</footer>
+
+</body>
+</html>
