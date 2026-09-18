@@ -50,6 +50,10 @@ nav a:hover {
 color: #f0b429;
 }
 
+.cart-link {
+font-weight: bold;
+}
+
 .hero {
 background:
 linear-gradient(rgba(0,0,0,.65), rgba(0,0,0,.65)),
@@ -181,6 +185,7 @@ margin-top: 50px;
 }
 
 @media (max-width: 600px) {
+
 .hero {
 padding: 60px 5%;
 }
@@ -213,10 +218,23 @@ ABIR RESTAURANT
 </div>
 
 <nav>
-<a href="index.html">Home</a>
-<a href="menu.html">Menu</a>
-<a href="order.html">Order From Home</a>
-<a href="cart.html">View Cart</a>
+
+<a href="index.html">
+Home
+</a>
+
+<a href="menu.html">
+Menu
+</a>
+
+<a href="order.html">
+Order From Home
+</a>
+
+<a href="cart.html" class="cart-link">
+View Cart <span id="cartCount"></span>
+</a>
+
 </nav>
 
 </header>
@@ -224,7 +242,9 @@ ABIR RESTAURANT
 
 <section class="hero">
 
-<h1>Order From Home</h1>
+<h1>
+Order From Home
+</h1>
 
 <p>
 Enjoy your favourite meals from Abir Restaurant.
@@ -252,7 +272,10 @@ View Cart & Checkout
 
 <div class="food-card">
 
-<img src="https://images.unsplash.com/photo-1604329760661-e71dc83f8f26?auto=format&fit=crop&w=900&q=80" alt="Jollof Rice & Chicken">
+<img
+src="https://images.unsplash.com/photo-1604329760661-e71dc83f8f26?auto=format&fit=crop&w=900&q=80"
+alt="Jollof Rice & Chicken"
+>
 
 <div class="food-content">
 
@@ -262,15 +285,23 @@ View Cart & Checkout
 Flavourful Nigerian-style jollof rice served with tender chicken.
 </p>
 
-<div class="price">₦6,500</div>
+<div class="price">
+₦6,500
+</div>
 
 <div class="actions">
 
-<a class="action-button" href="details.html?item=jollof-rice&mode=order">
+<a
+class="action-button"
+href="details.html?item=jollof-rice&mode=order"
+>
 View Details
 </a>
 
-<button class="add-button" onclick="addToCart('Jollof Rice & Chicken',6500,'jollof-rice')">
+<button
+class="add-button"
+onclick="addToCart('Jollof Rice & Chicken',6500,'jollof-rice')"
+>
 Add to Cart
 </button>
 
@@ -281,7 +312,10 @@ Add to Cart
 
 <div class="food-card">
 
-<img src="https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=900&q=80" alt="Fried Rice & Chicken">
+<img
+src="https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=900&q=80"
+alt="Fried Rice & Chicken"
+>
 
 <div class="food-content">
 
@@ -291,15 +325,23 @@ Add to Cart
 Delicious fried rice served with seasoned chicken.
 </p>
 
-<div class="price">₦6,500</div>
+<div class="price">
+₦6,500
+</div>
 
 <div class="actions">
 
-<a class="action-button" href="details.html?item=fried-rice&mode=order">
+<a
+class="action-button"
+href="details.html?item=fried-rice&mode=order"
+>
 View Details
 </a>
 
-<button class="add-button" onclick="addToCart('Fried Rice & Chicken',6500,'fried-rice')">
+<button
+class="add-button"
+onclick="addToCart('Fried Rice & Chicken',6500,'fried-rice')"
+>
 Add to Cart
 </button>
 
@@ -310,7 +352,10 @@ Add to Cart
 
 <div class="food-card">
 
-<img src="https://images.unsplash.com/photo-1603133872878-684f208fb84b?auto=format&fit=crop&w=900&q=80" alt="Ofada Rice & Ayamase">
+<img
+src="https://images.unsplash.com/photo-1603133872878-684f208fb84b?auto=format&fit=crop&w=900&q=80"
+alt="Ofada Rice & Ayamase"
+>
 
 <div class="food-content">
 
@@ -320,15 +365,23 @@ Add to Cart
 Local Ofada rice served with rich and spicy Ayamase sauce.
 </p>
 
-<div class="price">₦7,500</div>
+<div class="price">
+₦7,500
+</div>
 
 <div class="actions">
 
-<a class="action-button" href="details.html?item=ofada-rice&mode=order">
+<a
+class="action-button"
+href="details.html?item=ofada-rice&mode=order"
+>
 View Details
 </a>
 
-<button class="add-button" onclick="addToCart('Ofada Rice & Ayamase',7500,'ofada-rice')">
+<button
+class="add-button"
+onclick="addToCart('Ofada Rice & Ayamase',7500,'ofada-rice')"
+>
 Add to Cart
 </button>
 
@@ -339,7 +392,10 @@ Add to Cart
 
 <div class="food-card">
 
-<img src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=900&q=80" alt="Beans & Plantain">
+<img
+src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=900&q=80"
+alt="Beans & Plantain"
+>
 
 <div class="food-content">
 
@@ -349,15 +405,23 @@ Add to Cart
 Well-cooked beans served with sweet fried plantain.
 </p>
 
-<div class="price">₦5,000</div>
+<div class="price">
+₦5,000
+</div>
 
 <div class="actions">
 
-<a class="action-button" href="details.html?item=beans-plantain&mode=order">
+<a
+class="action-button"
+href="details.html?item=beans-plantain&mode=order"
+>
 View Details
 </a>
 
-<button class="add-button" onclick="addToCart('Beans & Plantain',5000,'beans-plantain')">
+<button
+class="add-button"
+onclick="addToCart('Beans & Plantain',5000,'beans-plantain')"
+>
 Add to Cart
 </button>
 
@@ -368,7 +432,10 @@ Add to Cart
 
 <div class="food-card">
 
-<img src="https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&w=900&q=80" alt="Yam Porridge">
+<img
+src="https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&w=900&q=80"
+alt="Yam Porridge"
+>
 
 <div class="food-content">
 
@@ -378,15 +445,23 @@ Add to Cart
 Rich and hearty yam porridge prepared with vegetables and spices.
 </p>
 
-<div class="price">₦5,500</div>
+<div class="price">
+₦5,500
+</div>
 
 <div class="actions">
 
-<a class="action-button" href="details.html?item=yam-porridge&mode=order">
+<a
+class="action-button"
+href="details.html?item=yam-porridge&mode=order"
+>
 View Details
 </a>
 
-<button class="add-button" onclick="addToCart('Yam Porridge',5500,'yam-porridge')">
+<button
+class="add-button"
+onclick="addToCart('Yam Porridge',5500,'yam-porridge')"
+>
 Add to Cart
 </button>
 
@@ -409,7 +484,10 @@ Add to Cart
 
 <div class="food-card">
 
-<img src="https://images.unsplash.com/photo-1601050690117-94f5f6fa8bd7?auto=format&fit=crop&w=900&q=80" alt="Amala & Ewedu">
+<img
+src="https://images.unsplash.com/photo-1601050690117-94f5f6fa8bd7?auto=format&fit=crop&w=900&q=80"
+alt="Amala & Ewedu"
+>
 
 <div class="food-content">
 
@@ -419,15 +497,23 @@ Add to Cart
 Smooth amala served with traditional ewedu soup.
 </p>
 
-<div class="price">₦6,000</div>
+<div class="price">
+₦6,000
+</div>
 
 <div class="actions">
 
-<a class="action-button" href="details.html?item=amala-ewedu&mode=order">
+<a
+class="action-button"
+href="details.html?item=amala-ewedu&mode=order"
+>
 View Details
 </a>
 
-<button class="add-button" onclick="addToCart('Amala & Ewedu',6000,'amala-ewedu')">
+<button
+class="add-button"
+onclick="addToCart('Amala & Ewedu',6000,'amala-ewedu')"
+>
 Add to Cart
 </button>
 
@@ -438,7 +524,10 @@ Add to Cart
 
 <div class="food-card">
 
-<img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=900&q=80" alt="Pounded Yam & Egusi">
+<img
+src="https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=900&q=80"
+alt="Pounded Yam & Egusi"
+>
 
 <div class="food-content">
 
@@ -448,15 +537,23 @@ Add to Cart
 Soft pounded yam served with rich Nigerian egusi soup.
 </p>
 
-<div class="price">₦7,000</div>
+<div class="price">
+₦7,000
+</div>
 
 <div class="actions">
 
-<a class="action-button" href="details.html?item=pounded-yam-egusi&mode=order">
+<a
+class="action-button"
+href="details.html?item=pounded-yam-egusi&mode=order"
+>
 View Details
 </a>
 
-<button class="add-button" onclick="addToCart('Pounded Yam & Egusi',7000,'pounded-yam-egusi')">
+<button
+class="add-button"
+onclick="addToCart('Pounded Yam & Egusi',7000,'pounded-yam-egusi')"
+>
 Add to Cart
 </button>
 
@@ -467,7 +564,10 @@ Add to Cart
 
 <div class="food-card">
 
-<img src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=900&q=80" alt="Eba & Egusi">
+<img
+src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=900&q=80"
+alt="Eba & Egusi"
+>
 
 <div class="food-content">
 
@@ -477,15 +577,23 @@ Add to Cart
 Fresh eba served with rich and delicious egusi soup.
 </p>
 
-<div class="price">₦6,500</div>
+<div class="price">
+₦6,500
+</div>
 
 <div class="actions">
 
-<a class="action-button" href="details.html?item=eba-egusi&mode=order">
+<a
+class="action-button"
+href="details.html?item=eba-egusi&mode=order"
+>
 View Details
 </a>
 
-<button class="add-button" onclick="addToCart('Eba & Egusi',6500,'eba-egusi')">
+<button
+class="add-button"
+onclick="addToCart('Eba & Egusi',6500,'eba-egusi')"
+>
 Add to Cart
 </button>
 
@@ -496,7 +604,10 @@ Add to Cart
 
 <div class="food-card">
 
-<img src="https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&w=900&q=80" alt="Semo & Vegetable Soup">
+<img
+src="https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&w=900&q=80"
+alt="Semo & Vegetable Soup"
+>
 
 <div class="food-content">
 
@@ -506,15 +617,23 @@ Add to Cart
 Smooth semolina served with tasty vegetable soup.
 </p>
 
-<div class="price">₦6,500</div>
+<div class="price">
+₦6,500
+</div>
 
 <div class="actions">
 
-<a class="action-button" href="details.html?item=semo-vegetable&mode=order">
+<a
+class="action-button"
+href="details.html?item=semo-vegetable&mode=order"
+>
 View Details
 </a>
 
-<button class="add-button" onclick="addToCart('Semo & Vegetable Soup',6500,'semo-vegetable')">
+<button
+class="add-button"
+onclick="addToCart('Semo & Vegetable Soup',6500,'semo-vegetable')"
+>
 Add to Cart
 </button>
 
@@ -537,7 +656,10 @@ Add to Cart
 
 <div class="food-card">
 
-<img src="https://images.unsplash.com/photo-1532550907401-a500c9a57435?auto=format&fit=crop&w=900&q=80" alt="Grilled Chicken">
+<img
+src="https://images.unsplash.com/photo-1532550907401-a500c9a57435?auto=format&fit=crop&w=900&q=80"
+alt="Grilled Chicken"
+>
 
 <div class="food-content">
 
@@ -547,15 +669,23 @@ Add to Cart
 Juicy grilled chicken seasoned with special spices.
 </p>
 
-<div class="price">₦6,000</div>
+<div class="price">
+₦6,000
+</div>
 
 <div class="actions">
 
-<a class="action-button" href="details.html?item=grilled-chicken&mode=order">
+<a
+class="action-button"
+href="details.html?item=grilled-chicken&mode=order"
+>
 View Details
 </a>
 
-<button class="add-button" onclick="addToCart('Grilled Chicken',6000,'grilled-chicken')">
+<button
+class="add-button"
+onclick="addToCart('Grilled Chicken',6000,'grilled-chicken')"
+>
 Add to Cart
 </button>
 
@@ -566,7 +696,10 @@ Add to Cart
 
 <div class="food-card">
 
-<img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=900&q=80" alt="Beef Suya">
+<img
+src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=900&q=80"
+alt="Beef Suya"
+>
 
 <div class="food-content">
 
@@ -576,15 +709,23 @@ Add to Cart
 Spicy Nigerian-style beef suya with traditional seasoning.
 </p>
 
-<div class="price">₦5,500</div>
+<div class="price">
+₦5,500
+</div>
 
 <div class="actions">
 
-<a class="action-button" href="details.html?item=beef-suya&mode=order">
+<a
+class="action-button"
+href="details.html?item=beef-suya&mode=order"
+>
 View Details
 </a>
 
-<button class="add-button" onclick="addToCart('Beef Suya',5500,'beef-suya')">
+<button
+class="add-button"
+onclick="addToCart('Beef Suya',5500,'beef-suya')"
+>
 Add to Cart
 </button>
 
@@ -595,7 +736,10 @@ Add to Cart
 
 <div class="food-card">
 
-<img src="https://images.unsplash.com/photo-1600891964092-4316c288032e?auto=format&fit=crop&w=900&q=80" alt="Grilled Fish">
+<img
+src="https://images.unsplash.com/photo-1600891964092-4316c288032e?auto=format&fit=crop&w=900&q=80"
+alt="Grilled Fish"
+>
 
 <div class="food-content">
 
@@ -605,15 +749,23 @@ Add to Cart
 Fresh fish grilled and seasoned for a rich smoky taste.
 </p>
 
-<div class="price">₦8,500</div>
+<div class="price">
+₦8,500
+</div>
 
 <div class="actions">
 
-<a class="action-button" href="details.html?item=grilled-fish&mode=order">
+<a
+class="action-button"
+href="details.html?item=grilled-fish&mode=order"
+>
 View Details
 </a>
 
-<button class="add-button" onclick="addToCart('Grilled Fish',8500,'grilled-fish')">
+<button
+class="add-button"
+onclick="addToCart('Grilled Fish',8500,'grilled-fish')"
+>
 Add to Cart
 </button>
 
@@ -624,7 +776,10 @@ Add to Cart
 
 <div class="food-card">
 
-<img src="https://images.unsplash.com/photo-1558030006-450675393462?auto=format&fit=crop&w=900&q=80" alt="Asun">
+<img
+src="https://images.unsplash.com/photo-1558030006-450675393462?auto=format&fit=crop&w=900&q=80"
+alt="Asun"
+>
 
 <div class="food-content">
 
@@ -634,15 +789,23 @@ Add to Cart
 Spicy grilled goat meat prepared Nigerian-style.
 </p>
 
-<div class="price">₦7,500</div>
+<div class="price">
+₦7,500
+</div>
 
 <div class="actions">
 
-<a class="action-button" href="details.html?item=asun&mode=order">
+<a
+class="action-button"
+href="details.html?item=asun&mode=order"
+>
 View Details
 </a>
 
-<button class="add-button" onclick="addToCart('Asun',7500,'asun')">
+<button
+class="add-button"
+onclick="addToCart('Asun',7500,'asun')"
+>
 Add to Cart
 </button>
 
@@ -653,7 +816,10 @@ Add to Cart
 
 <div class="food-card">
 
-<img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=900&q=80" alt="Beef Burger">
+<img
+src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=900&q=80"
+alt="Beef Burger"
+>
 
 <div class="food-content">
 
@@ -663,15 +829,23 @@ Add to Cart
 Juicy beef burger served with fresh toppings.
 </p>
 
-<div class="price">₦5,500</div>
+<div class="price">
+₦5,500
+</div>
 
 <div class="actions">
 
-<a class="action-button" href="details.html?item=beef-burger&mode=order">
+<a
+class="action-button"
+href="details.html?item=beef-burger&mode=order"
+>
 View Details
 </a>
 
-<button class="add-button" onclick="addToCart('Beef Burger',5500,'beef-burger')">
+<button
+class="add-button"
+onclick="addToCart('Beef Burger',5500,'beef-burger')"
+>
 Add to Cart
 </button>
 
@@ -682,7 +856,10 @@ Add to Cart
 
 <div class="food-card">
 
-<img src="https://images.unsplash.com/photo-1562967916-eb82221dfb36?auto=format&fit=crop&w=900&q=80" alt="Chicken & Chips">
+<img
+src="https://images.unsplash.com/photo-1562967916-eb82221dfb36?auto=format&fit=crop&w=900&q=80"
+alt="Chicken & Chips"
+>
 
 <div class="food-content">
 
@@ -692,15 +869,23 @@ Add to Cart
 Crispy chicken served with golden French fries.
 </p>
 
-<div class="price">₦6,000</div>
+<div class="price">
+₦6,000
+</div>
 
 <div class="actions">
 
-<a class="action-button" href="details.html?item=chicken-chips&mode=order">
+<a
+class="action-button"
+href="details.html?item=chicken-chips&mode=order"
+>
 View Details
 </a>
 
-<button class="add-button" onclick="addToCart('Chicken & Chips',6000,'chicken-chips')">
+<button
+class="add-button"
+onclick="addToCart('Chicken & Chips',6000,'chicken-chips')"
+>
 Add to Cart
 </button>
 
@@ -723,7 +908,10 @@ Add to Cart
 
 <div class="food-card">
 
-<img src="https://images.unsplash.com/photo-1626804475297-41608ea09aeb?auto=format&fit=crop&w=900&q=80" alt="Puff Puff">
+<img
+src="https://images.unsplash.com/photo-1626804475297-41608ea09aeb?auto=format&fit=crop&w=900&q=80"
+alt="Puff Puff"
+>
 
 <div class="food-content">
 
@@ -733,15 +921,23 @@ Add to Cart
 Soft and fluffy Nigerian puff puff.
 </p>
 
-<div class="price">₦2,000</div>
+<div class="price">
+₦2,000
+</div>
 
 <div class="actions">
 
-<a class="action-button" href="details.html?item=puff-puff&mode=order">
+<a
+class="action-button"
+href="details.html?item=puff-puff&mode=order"
+>
 View Details
 </a>
 
-<button class="add-button" onclick="addToCart('Puff Puff',2000,'puff-puff')">
+<button
+class="add-button"
+onclick="addToCart('Puff Puff',2000,'puff-puff')"
+>
 Add to Cart
 </button>
 
@@ -752,7 +948,10 @@ Add to Cart
 
 <div class="food-card">
 
-<img src="https://images.unsplash.com/photo-1626804475297-41608ea09aeb?auto=format&fit=crop&w=900&q=80" alt="Samosa">
+<img
+src="https://images.unsplash.com/photo-1626804475297-41608ea09aeb?auto=format&fit=crop&w=900&q=80"
+alt="Samosa"
+>
 
 <div class="food-content">
 
@@ -762,15 +961,23 @@ Add to Cart
 Crispy pastry filled with a savoury seasoned filling.
 </p>
 
-<div class="price">₦2,500</div>
+<div class="price">
+₦2,500
+</div>
 
 <div class="actions">
 
-<a class="action-button" href="details.html?item=samosa&mode=order">
+<a
+class="action-button"
+href="details.html?item=samosa&mode=order"
+>
 View Details
 </a>
 
-<button class="add-button" onclick="addToCart('Samosa',2500,'samosa')">
+<button
+class="add-button"
+onclick="addToCart('Samosa',2500,'samosa')"
+>
 Add to Cart
 </button>
 
@@ -781,7 +988,10 @@ Add to Cart
 
 <div class="food-card">
 
-<img src="https://images.unsplash.com/photo-1612874742237-6526221588e3?auto=format&fit=crop&w=900&q=80" alt="Spring Rolls">
+<img
+src="https://images.unsplash.com/photo-1612874742237-6526221588e3?auto=format&fit=crop&w=900&q=80"
+alt="Spring Rolls"
+>
 
 <div class="food-content">
 
@@ -791,15 +1001,23 @@ Add to Cart
 Crispy spring rolls with a tasty savoury filling.
 </p>
 
-<div class="price">₦2,500</div>
+<div class="price">
+₦2,500
+</div>
 
 <div class="actions">
 
-<a class="action-button" href="details.html?item=spring-rolls&mode=order">
+<a
+class="action-button"
+href="details.html?item=spring-rolls&mode=order"
+>
 View Details
 </a>
 
-<button class="add-button" onclick="addToCart('Spring Rolls',2500,'spring-rolls')">
+<button
+class="add-button"
+onclick="addToCart('Spring Rolls',2500,'spring-rolls')"
+>
 Add to Cart
 </button>
 
@@ -810,7 +1028,10 @@ Add to Cart
 
 <div class="food-card">
 
-<img src="https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&w=900&q=80" alt="Gizdodo">
+<img
+src="https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&w=900&q=80"
+alt="Gizdodo"
+>
 
 <div class="food-content">
 
@@ -820,15 +1041,23 @@ Add to Cart
 Spicy gizzard and plantain prepared in a rich sauce.
 </p>
 
-<div class="price">₦4,500</div>
+<div class="price">
+₦4,500
+</div>
 
 <div class="actions">
 
-<a class="action-button" href="details.html?item=gizdodo&mode=order">
+<a
+class="action-button"
+href="details.html?item=gizdodo&mode=order"
+>
 View Details
 </a>
 
-<button class="add-button" onclick="addToCart('Gizdodo',4500,'gizdodo')">
+<button
+class="add-button"
+onclick="addToCart('Gizdodo',4500,'gizdodo')"
+>
 Add to Cart
 </button>
 
@@ -840,7 +1069,7 @@ Add to Cart
 </section>
 
 
-<!-- DRINKS -->
+<!-- NIGERIAN DRINKS -->
 
 <section class="category">
 
@@ -851,7 +1080,10 @@ Add to Cart
 
 <div class="food-card">
 
-<img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=900&q=80" alt="Chapman">
+<img
+src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=900&q=80"
+alt="Chapman"
+>
 
 <div class="food-content">
 
@@ -861,15 +1093,23 @@ Add to Cart
 Refreshing Nigerian Chapman cocktail.
 </p>
 
-<div class="price">₦3,500</div>
+<div class="price">
+₦3,500
+</div>
 
 <div class="actions">
 
-<a class="action-button" href="details.html?item=chapman&mode=order">
+<a
+class="action-button"
+href="details.html?item=chapman&mode=order"
+>
 View Details
 </a>
 
-<button class="add-button" onclick="addToCart('Chapman',3500,'chapman')">
+<button
+class="add-button"
+onclick="addToCart('Chapman',3500,'chapman')"
+>
 Add to Cart
 </button>
 
@@ -880,7 +1120,10 @@ Add to Cart
 
 <div class="food-card">
 
-<img src="https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&w=900&q=80" alt="Zobo">
+<img
+src="https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&w=900&q=80"
+alt="Zobo"
+>
 
 <div class="food-content">
 
@@ -890,15 +1133,23 @@ Add to Cart
 Refreshing hibiscus drink served chilled.
 </p>
 
-<div class="price">₦2,000</div>
+<div class="price">
+₦2,000
+</div>
 
 <div class="actions">
 
-<a class="action-button" href="details.html?item=zobo&mode=order">
+<a
+class="action-button"
+href="details.html?item=zobo&mode=order"
+>
 View Details
 </a>
 
-<button class="add-button" onclick="addToCart('Zobo',2000,'zobo')">
+<button
+class="add-button"
+onclick="addToCart('Zobo',2000,'zobo')"
+>
 Add to Cart
 </button>
 
@@ -909,7 +1160,10 @@ Add to Cart
 
 <div class="food-card">
 
-<img src="https://images.unsplash.com/photo-1600271886742-f049cd451bba?auto=format&fit=crop&w=900&q=80" alt="Fresh Pineapple Juice">
+<img
+src="https://images.unsplash.com/photo-1600271886742-f049cd451bba?auto=format&fit=crop&w=900&q=80"
+alt="Fresh Pineapple Juice"
+>
 
 <div class="food-content">
 
@@ -919,15 +1173,23 @@ Add to Cart
 Freshly prepared pineapple juice.
 </p>
 
-<div class="price">₦3,000</div>
+<div class="price">
+₦3,000
+</div>
 
 <div class="actions">
 
-<a class="action-button" href="details.html?item=pineapple-juice&mode=order">
+<a
+class="action-button"
+href="details.html?item=pineapple-juice&mode=order"
+>
 View Details
 </a>
 
-<button class="add-button" onclick="addToCart('Fresh Pineapple Juice',3000,'pineapple-juice')">
+<button
+class="add-button"
+onclick="addToCart('Fresh Pineapple Juice',3000,'pineapple-juice')"
+>
 Add to Cart
 </button>
 
@@ -938,7 +1200,10 @@ Add to Cart
 
 <div class="food-card">
 
-<img src="https://images.unsplash.com/photo-1623065422902-30a2d299bbe4?auto=format&fit=crop&w=900&q=80" alt="Watermelon Juice">
+<img
+src="https://images.unsplash.com/photo-1623065422902-30a2d299bbe4?auto=format&fit=crop&w=900&q=80"
+alt="Watermelon Juice"
+>
 
 <div class="food-content">
 
@@ -948,15 +1213,23 @@ Add to Cart
 Fresh and refreshing watermelon juice.
 </p>
 
-<div class="price">₦3,000</div>
+<div class="price">
+₦3,000
+</div>
 
 <div class="actions">
 
-<a class="action-button" href="details.html?item=watermelon-juice&mode=order">
+<a
+class="action-button"
+href="details.html?item=watermelon-juice&mode=order"
+>
 View Details
 </a>
 
-<button class="add-button" onclick="addToCart('Watermelon Juice',3000,'watermelon-juice')">
+<button
+class="add-button"
+onclick="addToCart('Watermelon Juice',3000,'watermelon-juice')"
+>
 Add to Cart
 </button>
 
@@ -979,7 +1252,10 @@ Add to Cart
 
 <div class="food-card">
 
-<img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=900&q=80" alt="Mojito">
+<img
+src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=900&q=80"
+alt="Mojito"
+>
 
 <div class="food-content">
 
@@ -989,15 +1265,23 @@ Add to Cart
 Refreshing mint and lime cocktail.
 </p>
 
-<div class="price">₦6,000</div>
+<div class="price">
+₦6,000
+</div>
 
 <div class="actions">
 
-<a class="action-button" href="details.html?item=mojito&mode=order">
+<a
+class="action-button"
+href="details.html?item=mojito&mode=order"
+>
 View Details
 </a>
 
-<button class="add-button" onclick="addToCart('Mojito',6000,'mojito')">
+<button
+class="add-button"
+onclick="addToCart('Mojito',6000,'mojito')"
+>
 Add to Cart
 </button>
 
@@ -1008,7 +1292,10 @@ Add to Cart
 
 <div class="food-card">
 
-<img src="https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&w=900&q=80" alt="Strawberry Mojito">
+<img
+src="https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&w=900&q=80"
+alt="Strawberry Mojito"
+>
 
 <div class="food-content">
 
@@ -1018,15 +1305,23 @@ Add to Cart
 Refreshing mojito with strawberry flavour.
 </p>
 
-<div class="price">₦6,500</div>
+<div class="price">
+₦6,500
+</div>
 
 <div class="actions">
 
-<a class="action-button" href="details.html?item=strawberry-mojito&mode=order">
+<a
+class="action-button"
+href="details.html?item=strawberry-mojito&mode=order"
+>
 View Details
 </a>
 
-<button class="add-button" onclick="addToCart('Strawberry Mojito',6500,'strawberry-mojito')">
+<button
+class="add-button"
+onclick="addToCart('Strawberry Mojito',6500,'strawberry-mojito')"
+>
 Add to Cart
 </button>
 
@@ -1037,7 +1332,10 @@ Add to Cart
 
 <div class="food-card">
 
-<img src="https://images.unsplash.com/photo-1572116469696-31de0f17cc34?auto=format&fit=crop&w=900&q=80" alt="Pina Colada">
+<img
+src="https://images.unsplash.com/photo-1572116469696-31de0f17cc34?auto=format&fit=crop&w=900&q=80"
+alt="Pina Colada"
+>
 
 <div class="food-content">
 
@@ -1047,15 +1345,23 @@ Add to Cart
 Creamy tropical coconut and pineapple cocktail.
 </p>
 
-<div class="price">₦7,000</div>
+<div class="price">
+₦7,000
+</div>
 
 <div class="actions">
 
-<a class="action-button" href="details.html?item=pina-colada&mode=order">
+<a
+class="action-button"
+href="details.html?item=pina-colada&mode=order"
+>
 View Details
 </a>
 
-<button class="add-button" onclick="addToCart('Pina Colada',7000,'pina-colada')">
+<button
+class="add-button"
+onclick="addToCart('Pina Colada',7000,'pina-colada')"
+>
 Add to Cart
 </button>
 
@@ -1066,7 +1372,10 @@ Add to Cart
 
 <div class="food-card">
 
-<img src="https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&w=900&q=80" alt="Passion Fruit Cocktail">
+<img
+src="https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&w=900&q=80"
+alt="Passion Fruit Cocktail"
+>
 
 <div class="food-content">
 
@@ -1076,15 +1385,23 @@ Add to Cart
 Sweet and refreshing passion fruit cocktail.
 </p>
 
-<div class="price">₦6,500</div>
+<div class="price">
+₦6,500
+</div>
 
 <div class="actions">
 
-<a class="action-button" href="details.html?item=passion-fruit-cocktail&mode=order">
+<a
+class="action-button"
+href="details.html?item=passion-fruit-cocktail&mode=order"
+>
 View Details
 </a>
 
-<button class="add-button" onclick="addToCart('Passion Fruit Cocktail',6500,'passion-fruit-cocktail')">
+<button
+class="add-button"
+onclick="addToCart('Passion Fruit Cocktail',6500,'passion-fruit-cocktail')"
+>
 Add to Cart
 </button>
 
@@ -1107,7 +1424,10 @@ Add to Cart
 
 <div class="food-card">
 
-<img src="https://images.unsplash.com/photo-1623238913973-21e45cced554?auto=format&fit=crop&w=900&q=80" alt="Fried Plantain">
+<img
+src="https://images.unsplash.com/photo-1623238913973-21e45cced554?auto=format&fit=crop&w=900&q=80"
+alt="Fried Plantain"
+>
 
 <div class="food-content">
 
@@ -1117,15 +1437,23 @@ Add to Cart
 Golden fried ripe plantain.
 </p>
 
-<div class="price">₦2,000</div>
+<div class="price">
+₦2,000
+</div>
 
 <div class="actions">
 
-<a class="action-button" href="details.html?item=fried-plantain&mode=order">
+<a
+class="action-button"
+href="details.html?item=fried-plantain&mode=order"
+>
 View Details
 </a>
 
-<button class="add-button" onclick="addToCart('Fried Plantain',2000,'fried-plantain')">
+<button
+class="add-button"
+onclick="addToCart('Fried Plantain',2000,'fried-plantain')"
+>
 Add to Cart
 </button>
 
@@ -1136,7 +1464,10 @@ Add to Cart
 
 <div class="food-card">
 
-<img src="https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=900&q=80" alt="French Fries">
+<img
+src="https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=900&q=80"
+alt="French Fries"
+>
 
 <div class="food-content">
 
@@ -1146,15 +1477,23 @@ Add to Cart
 Crispy golden French fries.
 </p>
 
-<div class="price">₦2,500</div>
+<div class="price">
+₦2,500
+</div>
 
 <div class="actions">
 
-<a class="action-button" href="details.html?item=french-fries&mode=order">
+<a
+class="action-button"
+href="details.html?item=french-fries&mode=order"
+>
 View Details
 </a>
 
-<button class="add-button" onclick="addToCart('French Fries',2500,'french-fries')">
+<button
+class="add-button"
+onclick="addToCart('French Fries',2500,'french-fries')"
+>
 Add to Cart
 </button>
 
@@ -1165,7 +1504,10 @@ Add to Cart
 
 <div class="food-card">
 
-<img src="https://images.unsplash.com/photo-1590301157890-4810ed352733?auto=format&fit=crop&w=900&q=80" alt="Coleslaw">
+<img
+src="https://images.unsplash.com/photo-1590301157890-4810ed352733?auto=format&fit=crop&w=900&q=80"
+alt="Coleslaw"
+>
 
 <div class="food-content">
 
@@ -1175,15 +1517,23 @@ Add to Cart
 Fresh creamy coleslaw.
 </p>
 
-<div class="price">₦1,500</div>
+<div class="price">
+₦1,500
+</div>
 
 <div class="actions">
 
-<a class="action-button" href="details.html?item=coleslaw&mode=order">
+<a
+class="action-button"
+href="details.html?item=coleslaw&mode=order"
+>
 View Details
 </a>
 
-<button class="add-button" onclick="addToCart('Coleslaw',1500,'coleslaw')">
+<button
+class="add-button"
+onclick="addToCart('Coleslaw',1500,'coleslaw')"
+>
 Add to Cart
 </button>
 
@@ -1194,7 +1544,10 @@ Add to Cart
 
 <div class="food-card">
 
-<img src="https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=900&q=80" alt="Moi Moi">
+<img
+src="https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=900&q=80"
+alt="Moi Moi"
+>
 
 <div class="food-content">
 
@@ -1204,15 +1557,23 @@ Add to Cart
 Steamed Nigerian bean pudding.
 </p>
 
-<div class="price">₦2,500</div>
+<div class="price">
+₦2,500
+</div>
 
 <div class="actions">
 
-<a class="action-button" href="details.html?item=moi-moi&mode=order">
+<a
+class="action-button"
+href="details.html?item=moi-moi&mode=order"
+>
 View Details
 </a>
 
-<button class="add-button" onclick="addToCart('Moi Moi',2500,'moi-moi')">
+<button
+class="add-button"
+onclick="addToCart('Moi Moi',2500,'moi-moi')"
+>
 Add to Cart
 </button>
 
@@ -1248,6 +1609,7 @@ return JSON.parse(cart);
 } catch (error) {
 return [];
 }
+
 }
 
 
@@ -1261,11 +1623,43 @@ JSON.stringify(cart)
 }
 
 
+function updateCartCounter() {
+
+let cart = getCart();
+
+let totalItems = 0;
+
+cart.forEach(function(item) {
+
+totalItems += Number(item.quantity) || 0;
+
+});
+
+
+let counter =
+document.getElementById("cartCount");
+
+
+if (totalItems > 0) {
+
+counter.textContent =
+" (" + totalItems + ")";
+
+} else {
+
+counter.textContent = "";
+
+}
+
+}
+
+
 function addToCart(name, price, id) {
 
 let cart = getCart();
 
-let existingItem = cart.find(function(item) {
+let existingItem =
+cart.find(function(item) {
 
 return item.id === id;
 
@@ -1292,9 +1686,17 @@ quantity: 1
 
 saveCart(cart);
 
-alert(name + " has been added to your cart.");
+updateCartCounter();
+
+alert(
+name +
+" has been added to your cart."
+);
 
 }
+
+
+updateCartCounter();
 
 </script>
 
