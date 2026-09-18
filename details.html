@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -9,94 +10,94 @@
 <style>
 
 * {
+box-sizing: border-box;
 margin: 0;
 padding: 0;
-box-sizing: border-box;
 }
 
 body {
 font-family: Arial, sans-serif;
-background: #f8f8f8;
+background: #f8f5ef;
 color: #222;
 }
 
 header {
 background: #111;
 color: white;
-padding: 18px 20px;
-display: flex;
-justify-content: space-between;
-align-items: center;
+padding: 20px;
+text-align: center;
 }
 
 header h1 {
-font-size: 23px;
+font-size: 24px;
 }
 
-.cart-button {
-background: #1f8f4d;
+.cart-link {
+display: none;
+margin-top: 12px;
+background: #d88b00;
 color: white;
 text-decoration: none;
-padding: 11px 17px;
-border-radius: 6px;
-font-weight: bold;
+padding: 10px 18px;
+border-radius: 7px;
 }
 
-.back {
-max-width: 1100px;
-margin: 25px auto 0;
-padding: 0 20px;
+.container {
+max-width: 850px;
+margin: auto;
+padding: 30px 18px 50px;
 }
 
-.back a {
-color: #222;
+.back-link {
+display: inline-block;
+margin-bottom: 20px;
+color: #111;
 text-decoration: none;
 font-weight: bold;
 }
 
-.product {
-max-width: 1100px;
-margin: 25px auto 60px;
-padding: 0 20px;
-
-display: grid;
-grid-template-columns: 1fr 1fr;
-gap: 45px;
-align-items: center;
-}
-
-.product-image img {
-width: 100%;
-height: 500px;
-object-fit: cover;
+.food-detail {
+background: white;
 border-radius: 14px;
+overflow: hidden;
+box-shadow: 0 5px 20px rgba(0,0,0,0.1);
 }
 
-.product-info h2 {
-font-size: 38px;
-margin-bottom: 12px;
+.food-detail img {
+width: 100%;
+height: 400px;
+object-fit: cover;
+display: block;
+}
+
+.food-info {
+padding: 25px;
+}
+
+.food-info h2 {
+font-size: 32px;
+margin-bottom: 10px;
 }
 
 .price {
-color: #1f8f4d;
-font-size: 28px;
+color: #c97800;
+font-size: 23px;
 font-weight: bold;
-margin-bottom: 20px;
+margin-bottom: 18px;
 }
 
 .description {
 color: #555;
 line-height: 1.7;
 font-size: 16px;
-margin-bottom: 25px;
 }
 
 .features {
-margin-bottom: 30px;
+margin-top: 25px;
 }
 
 .features h3 {
-margin-bottom: 12px;
+margin-bottom: 10px;
 }
 
 .features ul {
@@ -105,213 +106,440 @@ color: #555;
 line-height: 1.8;
 }
 
-.order-actions {
-display: none;
+.actions {
+margin-top: 25px;
+display: flex;
 gap: 10px;
 flex-wrap: wrap;
 }
 
-.order-actions button,
-.order-actions a {
+button,
+.action-link {
 border: none;
-text-decoration: none;
-padding: 14px 18px;
-border-radius: 6px;
-font-size: 15px;
-font-weight: bold;
+padding: 13px 18px;
+border-radius: 7px;
 cursor: pointer;
-text-align: center;
+font-size: 15px;
+text-decoration: none;
 }
 
-.add-button {
-background: #1f8f4d;
+.add-btn {
+background: #d88b00;
 color: white;
 }
 
-.order-button {
+.cart-btn {
 background: #111;
 color: white;
 }
 
-.cart-link {
-background: #e8e8e8;
-color: #222;
-}
-
-.message {
-display: none;
-margin-top: 15px;
-color: #1f8f4d;
-font-weight: bold;
-}
-
 .restaurant-note {
-display: none;
-background: white;
+background: #fff3d6;
 padding: 18px;
-border-radius: 8px;
-margin-top: 20px;
+border-radius: 10px;
+margin-top: 25px;
 color: #555;
 line-height: 1.6;
 }
 
 footer {
 background: #111;
-color: #aaa;
+color: #bbb;
 text-align: center;
-padding: 20px;
-font-size: 14px;
+padding: 25px 15px;
 }
 
-@media (max-width: 750px) {
+@media (max-width: 600px) {
 
-header h1 {
-font-size: 18px;
+.food-detail img {
+height: 280px;
 }
 
-.cart-button {
-padding: 9px 12px;
-font-size: 14px;
-}
-
-.product {
-grid-template-columns: 1fr;
-gap: 25px;
-}
-
-.product-image img {
-height: 330px;
-}
-
-.product-info h2 {
-font-size: 30px;
-}
-
-.order-actions {
-flex-direction: column;
-}
-
-.order-actions button,
-.order-actions a {
-width: 100%;
+.food-info h2 {
+font-size: 26px;
 }
 
 }
 
 </style>
+
 </head>
 
+
 <body>
+
 
 <header>
 
 <h1>COMFORT GRILLS & BITES</h1>
 
-<a href="cart.html" class="cart-button" id="headerCart">
+<a href="cart.html"
+id="cartLink"
+class="cart-link">
 View Cart
 </a>
 
 </header>
 
 
-<div class="back" id="backArea">
+<div class="container">
 
-<a href="index.html" id="backLink">
-← Back
+<a href="menu.html"
+id="backLink"
+class="back-link">
+← Back to Menu
 </a>
 
-</div>
 
+<div class="food-detail">
 
-<section class="product">
+<img id="foodImage" src="" alt="Food">
 
-<div class="product-image">
-
-<img id="foodImage" src="" alt="">
-
-</div>
-
-
-<div class="product-info">
+<div class="food-info">
 
 <h2 id="foodName"></h2>
 
-<div class="price" id="foodPrice"></div>
+<p class="price" id="foodPrice"></p>
 
-<p class="description" id="foodDescription"></p>
+<p class="description"
+id="foodDescription"></p>
 
 
 <div class="features">
 
-<h3>About this meal</h3>
+<h3>About This Item</h3>
 
 <ul id="foodFeatures"></ul>
 
 </div>
 
 
-<div class="order-actions" id="orderActions">
+<div class="actions"
+id="orderActions">
 
-<button
-class="add-button"
+<button class="add-btn"
 id="addButton">
 Add to Cart
 </button>
 
-<a
-href="cart.html"
-class="cart-link">
+<a href="cart.html"
+class="action-link cart-btn">
 View Cart
 </a>
 
 </div>
 
 
-<div class="message" id="message">
+<div class="restaurant-note"
+id="restaurantNote">
 
-Added to your cart!
-
-</div>
-
-
-<div class="restaurant-note" id="restaurantNote">
-
-You are viewing this meal from the restaurant menu.
-Prices shown are for the current menu.
+Prices and availability may vary.
+Please confirm your order before payment.
 
 </div>
 
 </div>
 
-</section>
+</div>
+
+</div>
 
 
 <footer>
 
-<p>© 2026 Comfort Grills & Bites. All rights reserved.</p>
+<p>© 2026 Comfort Grills & Bites</p>
+
+<p>Good Food. Great Taste.</p>
 
 </footer>
 
 
 <script>
 
+
 const foods = {
+
+
+/* =========================
+RICE & MAIN MEALS
+========================= */
+
+
+"jollof-rice": {
+
+name: "Jollof Rice & Chicken",
+
+price: 6500,
+
+image: "https://images.unsplash.com/photo-1604329760661-e71dc83f8f26?auto=format&fit=crop&w=900&q=80",
+
+description:
+"Delicious Nigerian-style jollof rice served with juicy grilled chicken.",
+
+features: [
+"Nigerian-style jollof rice",
+"Grilled chicken",
+"Rich tomato and pepper sauce",
+"Freshly prepared"
+]
+
+},
+
+
+"fried-rice": {
+
+name: "Fried Rice & Chicken",
+
+price: 6500,
+
+image: "https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=900&q=80",
+
+description:
+"Nigerian fried rice served with juicy grilled chicken.",
+
+features: [
+"Seasoned fried rice",
+"Mixed vegetables",
+"Grilled chicken",
+"Freshly prepared"
+]
+
+},
+
+
+"ofada-rice": {
+
+name: "Ofada Rice & Ayamase",
+
+price: 7500,
+
+image: "https://images.unsplash.com/photo-1627308595229-7830a5c91f9f?auto=format&fit=crop&w=900&q=80",
+
+description:
+"Local Ofada rice served with spicy Ayamase sauce and assorted meat.",
+
+features: [
+"Local Ofada rice",
+"Spicy Ayamase sauce",
+"Assorted meat",
+"Traditional Nigerian flavour"
+]
+
+},
+
+
+"beans-plantain": {
+
+name: "Beans & Plantain",
+
+price: 5000,
+
+image: "https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=900&q=80",
+
+description:
+"Nigerian beans cooked with rich spices and served with sweet fried plantain.",
+
+features: [
+"Well-seasoned beans",
+"Fried ripe plantain",
+"Nigerian-style preparation"
+]
+
+},
+
+
+"yam-porridge": {
+
+name: "Yam Porridge",
+
+price: 5500,
+
+image: "https://images.unsplash.com/photo-1604329760661-e71dc83f8f26?auto=format&fit=crop&w=900&q=80",
+
+description:
+"Soft yam cooked in a rich and spicy Nigerian sauce.",
+
+features: [
+"Soft yam",
+"Pepper and tomato sauce",
+"Traditional Nigerian seasoning"
+]
+
+},
+
+
+
+/* =========================
+SWALLOW & SOUPS
+========================= */
+
+
+"amala-ewedu": {
+
+name: "Amala & Ewedu",
+
+price: 6000,
+
+image: "https://images.unsplash.com/photo-1601050690117-94f5f6fa8bd7?auto=format&fit=crop&w=900&q=80",
+
+description:
+"Smooth Nigerian amala served with ewedu, gbegiri and stew.",
+
+features: [
+"Fresh amala",
+"Ewedu soup",
+"Gbegiri",
+"Pepper stew"
+]
+
+},
+
+
+"pounded-yam-egusi": {
+
+name: "Pounded Yam & Egusi",
+
+price: 7000,
+
+image: "https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=900&q=80",
+
+description:
+"Fresh pounded yam served with rich Nigerian egusi soup.",
+
+features: [
+"Fresh pounded yam",
+"Rich egusi soup",
+"Seasoned meat",
+"Traditional Nigerian preparation"
+]
+
+},
+
+
+"eba-egusi": {
+
+name: "Eba & Egusi",
+
+price: 6500,
+
+image: "https://images.unsplash.com/photo-1604329760661-e71dc83f8f26?auto=format&fit=crop&w=900&q=80",
+
+description:
+"Garri eba served with rich Nigerian egusi soup.",
+
+features: [
+"Fresh eba",
+"Egusi soup",
+"Seasoned meat",
+"Traditional Nigerian flavour"
+]
+
+},
+
+
+"semo-vegetable": {
+
+name: "Semo & Vegetable Soup",
+
+price: 6500,
+
+image: "https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=900&q=80",
+
+description:
+"Smooth semolina served with freshly prepared vegetable soup.",
+
+features: [
+"Smooth semolina",
+"Fresh vegetable soup",
+"Seasoned meat"
+]
+
+},
+
+
+
+/* =========================
+GRILLS & BBQ
+========================= */
+
 
 "grilled-chicken": {
 
 name: "Grilled Chicken",
 
-price: 8000,
+price: 6000,
 
-image: "https://images.unsplash.com/photo-1598514982901-ae627e5d4a8d?auto=format&fit=crop&w=1200&q=80",
+image: "https://images.unsplash.com/photo-1532550907401-a500c9a57435?auto=format&fit=crop&w=900&q=80",
 
 description:
-"Juicy grilled chicken prepared with our special seasoning and grilled to perfection.",
+"Juicy chicken marinated with our special house seasoning and grilled to perfection.",
 
 features: [
-"Freshly prepared",
-"Special house seasoning",
-"Grilled to perfection"
+"Juicy grilled chicken",
+"House seasoning",
+"Smoky grilled flavour"
+]
+
+},
+
+
+"beef-suya": {
+
+name: "Beef Suya",
+
+price: 5500,
+
+image: "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=900&q=80",
+
+description:
+"Spicy Nigerian beef suya served with onions and fresh pepper.",
+
+features: [
+"Seasoned beef",
+"Suya spice",
+"Fresh onions",
+"Pepper"
+]
+
+},
+
+
+"grilled-fish": {
+
+name: "Grilled Fish",
+
+price: 8500,
+
+image: "https://images.unsplash.com/photo-1600891964092-4316c288032e?auto=format&fit=crop&w=900&q=80",
+
+description:
+"Fresh grilled fish served with pepper sauce.",
+
+features: [
+"Fresh fish",
+"Grilled preparation",
+"Pepper sauce"
+]
+
+},
+
+
+"asun": {
+
+name: "Asun",
+
+price: 7500,
+
+image: "https://images.unsplash.com/photo-1558030006-450675393462?auto=format&fit=crop&w=900&q=80",
+
+description:
+"Smoky spicy grilled goat meat prepared in Nigerian style.",
+
+features: [
+"Grilled goat meat",
+"Fresh pepper",
+"Onions",
+"Smoky flavour"
 ]
 
 },
@@ -321,17 +549,18 @@ features: [
 
 name: "Beef Burger",
 
-price: 6500,
+price: 5500,
 
-image: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=1200&q=80",
+image: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=900&q=80",
 
 description:
-"A delicious beef burger served with fresh vegetables and our special sauce.",
+"Juicy beef burger served with fresh vegetables and house sauce.",
 
 features: [
-"Juicy beef patty",
+"Beef patty",
 "Fresh vegetables",
-"Special house sauce"
+"Burger bun",
+"House sauce"
 ]
 
 },
@@ -341,82 +570,369 @@ features: [
 
 name: "Chicken & Chips",
 
-price: 7500,
+price: 6000,
 
-image: "https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=1200&q=80",
+image: "https://images.unsplash.com/photo-1562967916-eb82221dfb36?auto=format&fit=crop&w=900&q=80",
 
 description:
-"Crispy chicken served with golden chips for a satisfying meal.",
+"Crispy chicken served with golden fries and sauce.",
 
 features: [
 "Crispy chicken",
-"Golden chips",
+"Golden fries",
+"Dipping sauce"
+]
+
+},
+
+
+
+/* =========================
+SMALL CHOPS
+========================= */
+
+
+"puff-puff": {
+
+name: "Puff Puff",
+
+price: 2000,
+
+image: "https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=900&q=80",
+
+description:
+"Soft and fluffy Nigerian puff puff served hot.",
+
+features: [
+"Soft texture",
+"Lightly sweetened",
+"Nigerian-style snack"
+]
+
+},
+
+
+"samosa": {
+
+name: "Samosa",
+
+price: 2500,
+
+image: "https://images.unsplash.com/photo-1626804475297-41608ea09aeb?auto=format&fit=crop&w=900&q=80",
+
+description:
+"Crispy pastry filled with seasoned meat and vegetables.",
+
+features: [
+"Crispy pastry",
+"Seasoned filling",
+"Meat and vegetables"
+]
+
+},
+
+
+"spring-rolls": {
+
+name: "Spring Rolls",
+
+price: 2500,
+
+image: "https://images.unsplash.com/photo-1612874742237-6526221588e3?auto=format&fit=crop&w=900&q=80",
+
+description:
+"Crispy rolls filled with seasoned vegetables.",
+
+features: [
+"Crispy wrapper",
+"Vegetable filling",
 "Freshly prepared"
 ]
 
 },
 
 
-"jollof-rice": {
+"gizdodo": {
 
-name: "Jollof Rice & Chicken",
+name: "Gizdodo",
 
-price: 6000,
+price: 4500,
 
-image: "https://images.unsplash.com/photo-1603133872878-684f208fb84b?auto=format&fit=crop&w=1200&q=80",
+image: "https://images.unsplash.com/photo-1601050690117-94f5f6fa8bd7?auto=format&fit=crop&w=900&q=80",
 
 description:
-"Flavourful Nigerian jollof rice served with perfectly seasoned chicken.",
+"Spicy gizzard and ripe plantain cooked in pepper sauce.",
 
 features: [
-"Nigerian-style jollof rice",
-"Seasoned chicken",
-"Freshly prepared"
+"Seasoned gizzard",
+"Ripe plantain",
+"Pepper sauce",
+"Spicy Nigerian flavour"
 ]
 
 },
 
 
-"grilled-sausage": {
 
-name: "Grilled Sausage",
-
-price: 4000,
-
-image: "https://images.unsplash.com/photo-1527477396000-e27163b481c2?auto=format&fit=crop&w=1200&q=80",
-
-description:
-"Well-seasoned grilled sausage prepared fresh and served hot.",
-
-features: [
-"Fresh sausage",
-"Well seasoned",
-"Grilled and served hot"
-]
-
-},
+/* =========================
+DRINKS
+========================= */
 
 
 "chapman": {
 
 name: "Chapman",
 
-price: 2500,
+price: 3500,
 
-image: "https://images.unsplash.com/photo-1601050690117-94f5f6fa8bd7?auto=format&fit=crop&w=1200&q=80",
+image: "https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=900&q=80",
 
 description:
-"A refreshing Nigerian-style cocktail made with a blend of fruity flavours.",
+"Classic Nigerian Chapman with citrus, bitters and refreshing flavours.",
 
 features: [
-"Refreshing drink",
-"Fruity flavour",
+"Citrus flavours",
+"Nigerian-style Chapman",
 "Served chilled"
+]
+
+},
+
+
+"zobo": {
+
+name: "Zobo",
+
+price: 2000,
+
+image: "https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&w=900&q=80",
+
+description:
+"Chilled Nigerian hibiscus drink infused with natural spices.",
+
+features: [
+"Hibiscus drink",
+"Natural spices",
+"Served chilled"
+]
+
+},
+
+
+"pineapple-juice": {
+
+name: "Fresh Pineapple Juice",
+
+price: 3000,
+
+image: "https://images.unsplash.com/photo-1600271886742-f049cd451bba?auto=format&fit=crop&w=900&q=80",
+
+description:
+"Fresh pineapple juice served chilled.",
+
+features: [
+"Fresh pineapple",
+"Naturally refreshing",
+"Served chilled"
+]
+
+},
+
+
+"watermelon-juice": {
+
+name: "Watermelon Juice",
+
+price: 3000,
+
+image: "https://images.unsplash.com/photo-1623065422902-30a2d299bbe4?auto=format&fit=crop&w=900&q=80",
+
+description:
+"Fresh watermelon blended into a refreshing natural drink.",
+
+features: [
+"Fresh watermelon",
+"Naturally refreshing",
+"Served chilled"
+]
+
+},
+
+
+
+/* =========================
+COCKTAILS
+========================= */
+
+
+"mojito": {
+
+name: "Mojito",
+
+price: 6000,
+
+image: "https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=900&q=80",
+
+description:
+"Refreshing mint and lime cocktail with a crisp finish.",
+
+features: [
+"Mint",
+"Lime",
+"Refreshing cocktail"
+]
+
+},
+
+
+"strawberry-mojito": {
+
+name: "Strawberry Mojito",
+
+price: 6500,
+
+image: "https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&w=900&q=80",
+
+description:
+"Strawberry, mint and lime cocktail served chilled.",
+
+features: [
+"Fresh strawberry",
+"Mint",
+"Lime",
+"Served chilled"
+]
+
+},
+
+
+"pina-colada": {
+
+name: "Pina Colada",
+
+price: 7000,
+
+image: "https://images.unsplash.com/photo-1572116469696-31de0f17cc34?auto=format&fit=crop&w=900&q=80",
+
+description:
+"Creamy coconut and pineapple cocktail with a tropical taste.",
+
+features: [
+"Coconut",
+"Pineapple",
+"Tropical cocktail"
+]
+
+},
+
+
+"passion-fruit-cocktail": {
+
+name: "Passion Fruit Cocktail",
+
+price: 6500,
+
+image: "https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&w=900&q=80",
+
+description:
+"Tropical passion fruit cocktail with a sweet and refreshing taste.",
+
+features: [
+"Passion fruit",
+"Tropical flavours",
+"Served chilled"
+]
+
+},
+
+
+
+/* =========================
+EXTRAS
+========================= */
+
+
+"fried-plantain": {
+
+name: "Fried Plantain",
+
+price: 2000,
+
+image: "https://images.unsplash.com/photo-1623238913973-21e45cced554?auto=format&fit=crop&w=900&q=80",
+
+description:
+"Sweet ripe plantain fried until golden brown.",
+
+features: [
+"Ripe plantain",
+"Golden fried finish",
+"Perfect side dish"
+]
+
+},
+
+
+"french-fries": {
+
+name: "French Fries",
+
+price: 2500,
+
+image: "https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=900&q=80",
+
+description:
+"Crispy golden fries served with your favourite meal.",
+
+features: [
+"Golden fries",
+"Crispy texture",
+"Perfect side dish"
+]
+
+},
+
+
+"coleslaw": {
+
+name: "Coleslaw",
+
+price: 1500,
+
+image: "https://images.unsplash.com/photo-1590301157890-4810ed352733?auto=format&fit=crop&w=900&q=80",
+
+description:
+"Fresh creamy coleslaw prepared with crunchy vegetables.",
+
+features: [
+"Fresh vegetables",
+"Creamy dressing",
+"Crunchy texture"
+]
+
+},
+
+
+"moi-moi": {
+
+name: "Moi Moi",
+
+price: 2500,
+
+image: "https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=900&q=80",
+
+description:
+"Steamed Nigerian bean pudding prepared with spices.",
+
+features: [
+"Ground beans",
+"Nigerian-style preparation",
+"Steamed to perfection"
 ]
 
 }
 
 };
+
 
 
 const params =
@@ -435,22 +951,35 @@ const food =
 foods[item];
 
 
-if (food) {
+if (!food) {
+
+document.getElementById("foodName").textContent =
+"Item Not Found";
+
+document.getElementById("foodDescription").textContent =
+"Sorry, this menu item could not be found.";
+
+} else {
+
 
 document.getElementById("foodName").textContent =
 food.name;
 
+
 document.getElementById("foodPrice").textContent =
 "₦" + food.price.toLocaleString();
 
-document.getElementById("foodDescription").textContent =
-food.description;
 
 document.getElementById("foodImage").src =
 food.image;
 
+
 document.getElementById("foodImage").alt =
 food.name;
+
+
+document.getElementById("foodDescription").textContent =
+food.description;
 
 
 const featureList =
@@ -470,16 +999,8 @@ featureList.appendChild(li);
 });
 
 
-document.title =
-food.name + " | Comfort Grills & Bites";
-
-
-const addButton =
-document.getElementById("addButton");
-
-
-addButton.onclick =
-function() {
+document.getElementById("addButton")
+.onclick = function() {
 
 addToCart(
 food.name,
@@ -488,44 +1009,43 @@ food.price
 
 };
 
+}
+
+
+/* MENU MODE */
 
 if (mode === "menu") {
 
-document.getElementById("orderActions").style.display =
-"none";
+document.getElementById("orderActions")
+.style.display = "none";
 
-document.getElementById("headerCart").style.display =
-"none";
+document.getElementById("cartLink")
+.style.display = "none";
 
-document.getElementById("restaurantNote").style.display =
-"block";
+document.getElementById("backLink")
+.href = "menu.html";
 
-document.getElementById("backLink").href =
-"menu.html";
-
-document.getElementById("backLink").textContent =
-"← Back to Menu";
-
-} else {
-
-document.getElementById("orderActions").style.display =
-"flex";
-
-document.getElementById("headerCart").style.display =
-"block";
-
-document.getElementById("restaurantNote").style.display =
-"none";
-
-document.getElementById("backLink").href =
-"order.html";
-
-document.getElementById("backLink").textContent =
-"← Back to Order";
+document.getElementById("backLink")
+.textContent = "← Back to Menu";
 
 }
 
+
+/* ORDER MODE */
+
+else {
+
+document.getElementById("cartLink")
+.style.display = "inline-block";
+
+document.getElementById("backLink")
+.href = "order.html";
+
+document.getElementById("backLink")
+.textContent = "← Back to Order";
+
 }
+
 
 
 function getCart() {
@@ -539,21 +1059,24 @@ localStorage.getItem("comfortCart")
 
 function addToCart(name, price) {
 
-let cart =
-getCart();
+let cart = getCart();
 
 
 let existingItem =
-cart.find(
-item => item.name === name
-);
+cart.find(function(item) {
+
+return item.name === name;
+
+});
 
 
 if (existingItem) {
 
 existingItem.quantity += 1;
 
-} else {
+}
+
+else {
 
 cart.push({
 
@@ -572,10 +1095,12 @@ JSON.stringify(cart)
 );
 
 
-document.getElementById("message").style.display =
-"block";
+alert(
+name + " added to cart."
+);
 
 }
+
 
 </script>
 
