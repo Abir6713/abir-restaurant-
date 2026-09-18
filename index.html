@@ -4,129 +4,137 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Comfort Grills & Bites</title>
+<title>Abir Restaurant</title>
 
 <style>
 
 * {
-margin: 0;
-padding: 0;
 box-sizing: border-box;
 }
 
 body {
+margin: 0;
 font-family: Arial, sans-serif;
-background: #f8f8f8;
+background: #f7f7f7;
 color: #222;
 }
 
 header {
 background: #111;
 color: white;
-padding: 22px 20px;
+padding: 20px;
 text-align: center;
 }
 
-header h1 {
-font-size: 26px;
-letter-spacing: 1px;
+.logo {
+font-size: 24px;
+font-weight: bold;
 }
 
 .hero {
-min-height: 75vh;
+min-height: 70vh;
+background:
+linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1600&q=80");
+
+background-size: cover;
+background-position: center;
+
 display: flex;
 align-items: center;
 justify-content: center;
+
 text-align: center;
-padding: 40px 20px;
-background:
-linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
-url("https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=1600&q=80")
-center/cover;
+color: white;
+padding: 30px 20px;
 }
 
 .hero-content {
 max-width: 700px;
-color: white;
 }
 
-.hero h2 {
-font-size: 48px;
-margin-bottom: 15px;
+.hero h1 {
+font-size: 46px;
+margin-bottom: 12px;
 }
 
 .hero p {
 font-size: 19px;
-line-height: 1.6;
-margin-bottom: 35px;
+color: #eee;
 }
 
 .options {
-display: flex;
-gap: 20px;
-justify-content: center;
-flex-wrap: wrap;
+max-width: 1000px;
+margin: -60px auto 60px;
+padding: 0 20px;
+
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+gap: 25px;
+
+position: relative;
 }
 
-.option {
+.option-card {
 background: white;
-color: #222;
-text-decoration: none;
-width: 280px;
-padding: 28px 20px;
+padding: 35px 25px;
 border-radius: 12px;
-transition: 0.3s;
+text-align: center;
+
+box-shadow: 0 6px 25px rgba(0,0,0,0.12);
 }
 
-.option:hover {
-transform: translateY(-5px);
+.option-card h2 {
+margin-top: 0;
+font-size: 25px;
 }
 
-.option h3 {
-margin-bottom: 10px;
-font-size: 22px;
-}
-
-.option p {
+.option-card p {
 color: #666;
-font-size: 15px;
-margin: 0;
+line-height: 1.6;
 }
 
-.menu-button {
-border: 3px solid #222;
-}
+.option-btn {
+display: inline-block;
+margin-top: 15px;
 
-.order-button {
-background: #1f8f4d;
+padding: 13px 22px;
+
+background: #111;
 color: white;
+
+text-decoration: none;
+border-radius: 6px;
+
+font-weight: bold;
 }
 
-.order-button p {
-color: #e8f5ed;
+.option-btn:hover {
+background: #f4b400;
+color: #111;
+}
+
+.order-btn {
+background: #f4b400;
+color: #111;
 }
 
 footer {
 background: #111;
 color: #aaa;
 text-align: center;
-padding: 20px;
-font-size: 14px;
+padding: 25px 20px;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
 
-.hero h2 {
-font-size: 36px;
+.hero h1 {
+font-size: 34px;
 }
 
-.hero p {
-font-size: 16px;
-}
-
-.option {
-width: 100%;
-max-width: 330px;
+.options {
+grid-template-columns: 1fr;
+margin-top: 25px;
 }
 
 }
@@ -137,54 +145,71 @@ max-width: 330px;
 <body>
 
 <header>
-<h1>COMFORT GRILLS & BITES</h1>
+
+<div class="logo">
+ABIR RESTAURANT
+</div>
+
 </header>
+
 
 <section class="hero">
 
 <div class="hero-content">
 
-<h2>Good Food. Great Taste.</h2>
+<h1>Good Food. Great Taste.</h1>
 
 <p>
-Welcome to Comfort Grills & Bites.
-Choose how you would like to explore our menu.
+Enjoy delicious meals, refreshing drinks and great food prepared for you.
 </p>
-
-<div class="options">
-
-<a href="menu.html" class="option menu-button">
-
-<h3>View Menu & Prices</h3>
-
-<p>
-Already at the restaurant?
-Browse our meals, pictures and prices.
-</p>
-
-</a>
-
-
-<a href="order.html" class="option order-button">
-
-<h3>Order From Home</h3>
-
-<p>
-Not at the restaurant?
-Order for delivery or pickup.
-</p>
-
-</a>
-
-</div>
 
 </div>
 
 </section>
 
+
+<section class="options">
+
+
+<div class="option-card">
+
+<h2>View Menu & Prices</h2>
+
+<p>
+Already at the restaurant? Browse our meals, pictures and prices.
+</p>
+
+<a href="menu.html" class="option-btn">
+View Menu
+</a>
+
+</div>
+
+
+
+<div class="option-card">
+
+<h2>Order From Home</h2>
+
+<p>
+Not at the restaurant? Order your favourite meals for delivery or pickup.
+</p>
+
+<a href="order.html" class="option-btn order-btn">
+Order From Home
+</a>
+
+</div>
+
+
+</section>
+
+
 <footer>
 
-<p>© 2026 Comfort Grills & Bites. All rights reserved.</p>
+<p>
+© 2026 Abir Restaurant. All rights reserved.
+</p>
 
 </footer>
 
