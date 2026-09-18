@@ -4,145 +4,161 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Menu & Prices | Comfort Grills & Bites</title>
+<title>Menu | Comfort Grills & Bites</title>
 
 <style>
 
 * {
-margin: 0;
-padding: 0;
-box-sizing: border-box;
+ box-sizing: border-box;
+ margin: 0;
+ padding: 0;
 }
 
 body {
-font-family: Arial, sans-serif;
-background: #f8f8f8;
-color: #222;
+ font-family: Arial, sans-serif;
+ background: #f8f5ef;
+ color: #222;
 }
 
 header {
-background: #111;
-color: white;
-padding: 20px;
-text-align: center;
+ background: #111;
+ color: white;
+ padding: 22px 20px;
+ text-align: center;
 }
 
 header h1 {
-font-size: 24px;
+ font-size: 25px;
+ letter-spacing: 1px;
 }
 
-.top {
-text-align: center;
-padding: 35px 20px 20px;
+header p {
+ margin-top: 6px;
+ color: #ddd;
 }
 
-.top h2 {
-font-size: 32px;
-margin-bottom: 10px;
+.container {
+ max-width: 1100px;
+ margin: auto;
+ padding: 25px 18px 50px;
 }
 
-.top p {
-color: #666;
-line-height: 1.6;
+.intro {
+ text-align: center;
+ margin-bottom: 30px;
 }
 
-.menu {
-max-width: 1100px;
-margin: 20px auto 50px;
-padding: 0 20px;
-display: grid;
-grid-template-columns: repeat(3, 1fr);
-gap: 25px;
+.intro h2 {
+ font-size: 30px;
+ margin-bottom: 8px;
 }
 
-.food {
-background: white;
-border-radius: 12px;
-overflow: hidden;
-box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+.intro p {
+ color: #666;
 }
 
-.food img {
-width: 100%;
-height: 220px;
-object-fit: cover;
+.category {
+ margin-top: 40px;
+}
+
+.category-title {
+ font-size: 25px;
+ margin-bottom: 18px;
+ border-left: 5px solid #d88b00;
+ padding-left: 12px;
+}
+
+.food-grid {
+ display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+ gap: 20px;
+}
+
+.food-card {
+ background: white;
+ border-radius: 12px;
+ overflow: hidden;
+ box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.food-card img {
+ width: 100%;
+ height: 190px;
+ object-fit: cover;
+ display: block;
 }
 
 .food-content {
-padding: 20px;
+ padding: 17px;
 }
 
-.food h3 {
-font-size: 21px;
-margin-bottom: 8px;
-}
-
-.price {
-color: #1f8f4d;
-font-size: 20px;
-font-weight: bold;
-margin-bottom: 10px;
+.food-content h3 {
+ font-size: 20px;
+ margin-bottom: 7px;
 }
 
 .description {
-color: #666;
-line-height: 1.5;
-font-size: 15px;
-margin-bottom: 18px;
+ color: #666;
+ font-size: 14px;
+ line-height: 1.5;
+ min-height: 42px;
 }
 
-.details-button {
-display: block;
-width: 100%;
-text-align: center;
-text-decoration: none;
-background: #111;
-color: white;
-padding: 12px;
-border-radius: 6px;
-font-size: 14px;
-font-weight: bold;
+.price {
+ color: #c97800;
+ font-size: 19px;
+ font-weight: bold;
+ margin: 12px 0;
 }
 
-.back {
-text-align: center;
-margin-bottom: 40px;
+.details-btn {
+ display: inline-block;
+ text-decoration: none;
+ background: #111;
+ color: white;
+ padding: 10px 15px;
+ border-radius: 7px;
+ font-size: 14px;
 }
 
-.back a {
-display: inline-block;
-background: #111;
-color: white;
-text-decoration: none;
-padding: 13px 22px;
-border-radius: 6px;
+.details-btn:hover {
+ background: #d88b00;
+}
+
+.restaurant-note {
+ background: #fff3d6;
+ border-radius: 10px;
+ padding: 18px;
+ margin-top: 40px;
+ line-height: 1.6;
+ color: #555;
 }
 
 footer {
-background: #111;
-color: #aaa;
-text-align: center;
-padding: 20px;
-font-size: 14px;
+ background: #111;
+ color: #bbb;
+ text-align: center;
+ padding: 25px 15px;
+ margin-top: 20px;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 600px) {
 
-.menu {
-grid-template-columns: repeat(2, 1fr);
-}
+ header h1 {
+ font-size: 21px;
+ }
 
-}
+ .intro h2 {
+ font-size: 25px;
+ }
 
-@media (max-width: 550px) {
+ .category-title {
+ font-size: 22px;
+ }
 
-.menu {
-grid-template-columns: 1fr;
-}
-
-.top h2 {
-font-size: 28px;
-}
+ .food-card img {
+ height: 200px;
+ }
 
 }
 
@@ -153,194 +169,900 @@ font-size: 28px;
 
 <header>
 
-<h1>COMFORT GRILLS & BITES</h1>
+ <h1>COMFORT GRILLS & BITES</h1>
+
+ <p>Good Food. Great Taste.</p>
 
 </header>
 
 
-<section class="top">
+<div class="container">
 
-<h2>Our Menu</h2>
+ <div class="intro">
 
-<p>
-Browse our meals, descriptions and prices.
-<br>
-Select a meal to see more details.
-</p>
+ <h2>Our Menu</h2>
 
-</section>
+ <p>
+ Enjoy delicious Nigerian meals, grills, small chops,
+ refreshing drinks and cocktails.
+ </p>
 
+ </div>
 
-<section class="menu">
 
+ <!-- RICE & MAIN MEALS -->
 
-<div class="food">
+ <section class="category">
 
-<img src="https://images.unsplash.com/photo-1598514982901-ae627e5d4a8d?auto=format&fit=crop&w=900&q=80">
+ <h2 class="category-title">
+ Rice & Main Meals
+ </h2>
 
-<div class="food-content">
+ <div class="food-grid">
 
-<h3>Grilled Chicken</h3>
 
-<div class="price">₦8,000</div>
+ <div class="food-card">
 
-<p class="description">
-Juicy grilled chicken prepared with our special seasoning
-and grilled to perfection.
-</p>
+ <img src="https://images.unsplash.com/photo-1604329760661-e71dc83f8f26?auto=format&fit=crop&w=900&q=80">
 
-<a
-href="details.html?item=grilled-chicken&mode=menu"
-class="details-button">
-View Details
-</a>
+ <div class="food-content">
 
-</div>
+ <h3>Jollof Rice & Chicken</h3>
 
-</div>
+ <p class="description">
+ Delicious Nigerian-style jollof rice served with grilled chicken.
+ </p>
 
+ <p class="price">₦6,500</p>
 
-<div class="food">
+ <a class="details-btn"
+ href="details.html?item=jollof-rice&mode=menu">
+ View Details
+ </a>
 
-<img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=900&q=80">
+ </div>
 
-<div class="food-content">
+ </div>
 
-<h3>Beef Burger</h3>
 
-<div class="price">₦6,500</div>
+ <div class="food-card">
 
-<p class="description">
-A delicious beef burger served with fresh vegetables
-and our special sauce.
-</p>
+ <img src="https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=900&q=80">
 
-<a
-href="details.html?item=beef-burger&mode=menu"
-class="details-button">
-View Details
-</a>
+ <div class="food-content">
 
-</div>
+ <h3>Fried Rice & Chicken</h3>
 
-</div>
+ <p class="description">
+ Nigerian fried rice served with juicy grilled chicken.
+ </p>
 
+ <p class="price">₦6,500</p>
 
-<div class="food">
+ <a class="details-btn"
+ href="details.html?item=fried-rice&mode=menu">
+ View Details
+ </a>
 
-<img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=900&q=80">
+ </div>
 
-<div class="food-content">
+ </div>
 
-<h3>Chicken & Chips</h3>
 
-<div class="price">₦7,500</div>
+ <div class="food-card">
 
-<p class="description">
-Crispy chicken served with golden chips for a satisfying meal.
-</p>
+ <img src="https://images.unsplash.com/photo-1627308595229-7830a5c91f9f?auto=format&fit=crop&w=900&q=80">
 
-<a
-href="details.html?item=chicken-chips&mode=menu"
-class="details-button">
-View Details
-</a>
+ <div class="food-content">
 
-</div>
+ <h3>Ofada Rice & Ayamase</h3>
 
-</div>
+ <p class="description">
+ Local Ofada rice served with spicy Ayamase sauce and assorted meat.
+ </p>
 
+ <p class="price">₦7,500</p>
 
-<div class="food">
+ <a class="details-btn"
+ href="details.html?item=ofada-rice&mode=menu">
+ View Details
+ </a>
 
-<img src="https://images.unsplash.com/photo-1603133872878-684f208fb84b?auto=format&fit=crop&w=900&q=80">
+ </div>
 
-<div class="food-content">
+ </div>
 
-<h3>Jollof Rice & Chicken</h3>
 
-<div class="price">₦6,000</div>
+ <div class="food-card">
 
-<p class="description">
-Flavourful Nigerian jollof rice served with perfectly
-seasoned chicken.
-</p>
+ <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=900&q=80">
 
-<a
-href="details.html?item=jollof-rice&mode=menu"
-class="details-button">
-View Details
-</a>
+ <div class="food-content">
 
-</div>
+ <h3>Beans & Plantain</h3>
 
-</div>
+ <p class="description">
+ Nigerian beans cooked with rich spices and served with fried plantain.
+ </p>
 
+ <p class="price">₦5,000</p>
 
-<div class="food">
+ <a class="details-btn"
+ href="details.html?item=beans-plantain&mode=menu">
+ View Details
+ </a>
 
-<img src="https://images.unsplash.com/photo-1527477396000-e27163b481c2?auto=format&fit=crop&w=900&q=80">
+ </div>
 
-<div class="food-content">
+ </div>
 
-<h3>Grilled Sausage</h3>
 
-<div class="price">₦4,000</div>
+ <div class="food-card">
 
-<p class="description">
-Well-seasoned grilled sausage prepared fresh and served hot.
-</p>
+ <img src="https://images.unsplash.com/photo-1604329760661-e71dc83f8f26?auto=format&fit=crop&w=900&q=80">
 
-<a
-href="details.html?item=grilled-sausage&mode=menu"
-class="details-button">
-View Details
-</a>
+ <div class="food-content">
 
-</div>
+ <h3>Yam Porridge</h3>
 
-</div>
+ <p class="description">
+ Soft yam cooked in a rich, spicy Nigerian sauce.
+ </p>
 
+ <p class="price">₦5,500</p>
 
-<div class="food">
+ <a class="details-btn"
+ href="details.html?item=yam-porridge&mode=menu">
+ View Details
+ </a>
 
-<img src="https://images.unsplash.com/photo-1601050690117-94f5f6fa8bd7?auto=format&fit=crop&w=900&q=80">
+ </div>
 
-<div class="food-content">
+ </div>
 
-<h3>Chapman</h3>
+ </div>
 
-<div class="price">₦2,500</div>
+ </section>
 
-<p class="description">
-A refreshing Nigerian-style cocktail made with a blend
-of fruity flavours.
-</p>
 
-<a
-href="details.html?item=chapman&mode=menu"
-class="details-button">
-View Details
-</a>
 
-</div>
+ <!-- SWALLOW & SOUP -->
 
-</div>
+ <section class="category">
 
+ <h2 class="category-title">
+ Swallow & Soups
+ </h2>
 
-</section>
+ <div class="food-grid">
 
 
-<div class="back">
+ <div class="food-card">
 
-<a href="index.html">← Back to Home</a>
+ <img src="https://images.unsplash.com/photo-1601050690117-94f5f6fa8bd7?auto=format&fit=crop&w=900&q=80">
+
+ <div class="food-content">
+
+ <h3>Amala & Ewedu</h3>
+
+ <p class="description">
+ Smooth Nigerian amala served with ewedu, gbegiri and stew.
+ </p>
+
+ <p class="price">₦6,000</p>
+
+ <a class="details-btn"
+ href="details.html?item=amala-ewedu&mode=menu">
+ View Details
+ </a>
+
+ </div>
+
+ </div>
+
+
+ <div class="food-card">
+
+ <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=900&q=80">
+
+ <div class="food-content">
+
+ <h3>Pounded Yam & Egusi</h3>
+
+ <p class="description">
+ Fresh pounded yam served with rich Nigerian egusi soup.
+ </p>
+
+ <p class="price">₦7,000</p>
+
+ <a class="details-btn"
+ href="details.html?item=pounded-yam-egusi&mode=menu">
+ View Details
+ </a>
+
+ </div>
+
+ </div>
+
+
+ <div class="food-card">
+
+ <img src="https://images.unsplash.com/photo-1604329760661-e71dc83f8f26?auto=format&fit=crop&w=900&q=80">
+
+ <div class="food-content">
+
+ <h3>Eba & Egusi</h3>
+
+ <p class="description">
+ Garri eba served with rich, well-seasoned egusi soup.
+ </p>
+
+ <p class="price">₦6,500</p>
+
+ <a class="details-btn"
+ href="details.html?item=eba-egusi&mode=menu">
+ View Details
+ </a>
+
+ </div>
+
+ </div>
+
+
+ <div class="food-card">
+
+ <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=900&q=80">
+
+ <div class="food-content">
+
+ <h3>Semo & Vegetable Soup</h3>
+
+ <p class="description">
+ Smooth semolina served with freshly prepared vegetable soup.
+ </p>
+
+ <p class="price">₦6,500</p>
+
+ <a class="details-btn"
+ href="details.html?item=semo-vegetable&mode=menu">
+ View Details
+ </a>
+
+ </div>
+
+ </div>
+
+ </div>
+
+ </section>
+
+
+
+ <!-- GRILLS -->
+
+ <section class="category">
+
+ <h2 class="category-title">
+ Grills & BBQ
+ </h2>
+
+ <div class="food-grid">
+
+
+ <div class="food-card">
+
+ <img src="https://images.unsplash.com/photo-1532550907401-a500c9a57435?auto=format&fit=crop&w=900&q=80">
+
+ <div class="food-content">
+
+ <h3>Grilled Chicken</h3>
+
+ <p class="description">
+ Juicy chicken marinated with our special house seasoning.
+ </p>
+
+ <p class="price">₦6,000</p>
+
+ <a class="details-btn"
+ href="details.html?item=grilled-chicken&mode=menu">
+ View Details
+ </a>
+
+ </div>
+
+ </div>
+
+
+ <div class="food-card">
+
+ <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=900&q=80">
+
+ <div class="food-content">
+
+ <h3>Beef Suya</h3>
+
+ <p class="description">
+ Spicy Nigerian beef suya served with onions and fresh pepper.
+ </p>
+
+ <p class="price">₦5,500</p>
+
+ <a class="details-btn"
+ href="details.html?item=beef-suya&mode=menu">
+ View Details
+ </a>
+
+ </div>
+
+ </div>
+
+
+ <div class="food-card">
+
+ <img src="https://images.unsplash.com/photo-1600891964092-4316c288032e?auto=format&fit=crop&w=900&q=80">
+
+ <div class="food-content">
+
+ <h3>Grilled Fish</h3>
+
+ <p class="description">
+ Fresh grilled fish served with pepper sauce.
+ </p>
+
+ <p class="price">₦8,500</p>
+
+ <a class="details-btn"
+ href="details.html?item=grilled-fish&mode=menu">
+ View Details
+ </a>
+
+ </div>
+
+ </div>
+
+
+ <div class="food-card">
+
+ <img src="https://images.unsplash.com/photo-1558030006-450675393462?auto=format&fit=crop&w=900&q=80">
+
+ <div class="food-content">
+
+ <h3>Asun</h3>
+
+ <p class="description">
+ Smoky spicy grilled goat meat prepared in Nigerian style.
+ </p>
+
+ <p class="price">₦7,500</p>
+
+ <a class="details-btn"
+ href="details.html?item=asun&mode=menu">
+ View Details
+ </a>
+
+ </div>
+
+ </div>
+
+
+ <div class="food-card">
+
+ <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=900&q=80">
+
+ <div class="food-content">
+
+ <h3>Beef Burger</h3>
+
+ <p class="description">
+ Juicy beef burger served with fresh vegetables and sauce.
+ </p>
+
+ <p class="price">₦5,500</p>
+
+ <a class="details-btn"
+ href="details.html?item=beef-burger&mode=menu">
+ View Details
+ </a>
+
+ </div>
+
+ </div>
+
+
+ <div class="food-card">
+
+ <img src="https://images.unsplash.com/photo-1562967916-eb82221dfb36?auto=format&fit=crop&w=900&q=80">
+
+ <div class="food-content">
+
+ <h3>Chicken & Chips</h3>
+
+ <p class="description">
+ Crispy chicken served with golden fries and sauce.
+ </p>
+
+ <p class="price">₦6,000</p>
+
+ <a class="details-btn"
+ href="details.html?item=chicken-chips&mode=menu">
+ View Details
+ </a>
+
+ </div>
+
+ </div>
+
+ </div>
+
+ </section>
+
+
+
+ <!-- SMALL CHOPS -->
+
+ <section class="category">
+
+ <h2 class="category-title">
+ Small Chops
+ </h2>
+
+ <div class="food-grid">
+
+
+ <div class="food-card">
+
+ <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=900&q=80">
+
+ <div class="food-content">
+
+ <h3>Puff Puff</h3>
+
+ <p class="description">
+ Soft, fluffy Nigerian puff puff served hot.
+ </p>
+
+ <p class="price">₦2,000</p>
+
+ <a class="details-btn"
+ href="details.html?item=puff-puff&mode=menu">
+ View Details
+ </a>
+
+ </div>
+
+ </div>
+
+
+ <div class="food-card">
+
+ <img src="https://images.unsplash.com/photo-1626804475297-41608ea09aeb?auto=format&fit=crop&w=900&q=80">
+
+ <div class="food-content">
+
+ <h3>Samosa</h3>
+
+ <p class="description">
+ Crispy pastry filled with seasoned meat and vegetables.
+ </p>
+
+ <p class="price">₦2,500</p>
+
+ <a class="details-btn"
+ href="details.html?item=samosa&mode=menu">
+ View Details
+ </a>
+
+ </div>
+
+ </div>
+
+
+ <div class="food-card">
+
+ <img src="https://images.unsplash.com/photo-1612874742237-6526221588e3?auto=format&fit=crop&w=900&q=80">
+
+ <div class="food-content">
+
+ <h3>Spring Rolls</h3>
+
+ <p class="description">
+ Crispy rolls filled with seasoned vegetables.
+ </p>
+
+ <p class="price">₦2,500</p>
+
+ <a class="details-btn"
+ href="details.html?item=spring-rolls&mode=menu">
+ View Details
+ </a>
+
+ </div>
+
+ </div>
+
+
+ <div class="food-card">
+
+ <img src="https://images.unsplash.com/photo-1601050690117-94f5f6fa8bd7?auto=format&fit=crop&w=900&q=80">
+
+ <div class="food-content">
+
+ <h3>Gizdodo</h3>
+
+ <p class="description">
+ Spicy gizzard and ripe plantain cooked in pepper sauce.
+ </p>
+
+ <p class="price">₦4,500</p>
+
+ <a class="details-btn"
+ href="details.html?item=gizdodo&mode=menu">
+ View Details
+ </a>
+
+ </div>
+
+ </div>
+
+ </div>
+
+ </section>
+
+
+
+ <!-- NIGERIAN DRINKS -->
+
+ <section class="category">
+
+ <h2 class="category-title">
+ Nigerian Drinks & Refreshments
+ </h2>
+
+ <div class="food-grid">
+
+
+ <div class="food-card">
+
+ <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=900&q=80">
+
+ <div class="food-content">
+
+ <h3>Chapman</h3>
+
+ <p class="description">
+ Classic Nigerian Chapman with citrus, bitters and refreshing flavours.
+ </p>
+
+ <p class="price">₦3,500</p>
+
+ <a class="details-btn"
+ href="details.html?item=chapman&mode=menu">
+ View Details
+ </a>
+
+ </div>
+
+ </div>
+
+
+ <div class="food-card">
+
+ <img src="https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&w=900&q=80">
+
+ <div class="food-content">
+
+ <h3>Zobo</h3>
+
+ <p class="description">
+ Chilled Nigerian hibiscus drink infused with natural spices.
+ </p>
+
+ <p class="price">₦2,000</p>
+
+ <a class="details-btn"
+ href="details.html?item=zobo&mode=menu">
+ View Details
+ </a>
+
+ </div>
+
+ </div>
+
+
+ <div class="food-card">
+
+ <img src="https://images.unsplash.com/photo-1600271886742-f049cd451bba?auto=format&fit=crop&w=900&q=80">
+
+ <div class="food-content">
+
+ <h3>Fresh Pineapple Juice</h3>
+
+ <p class="description">
+ Fresh pineapple juice served chilled.
+ </p>
+
+ <p class="price">₦3,000</p>
+
+ <a class="details-btn"
+ href="details.html?item=pineapple-juice&mode=menu">
+ View Details
+ </a>
+
+ </div>
+
+ </div>
+
+
+ <div class="food-card">
+
+ <img src="https://images.unsplash.com/photo-1623065422902-30a2d299bbe4?auto=format&fit=crop&w=900&q=80">
+
+ <div class="food-content">
+
+ <h3>Watermelon Juice</h3>
+
+ <p class="description">
+ Fresh watermelon blended into a refreshing natural drink.
+ </p>
+
+ <p class="price">₦3,000</p>
+
+ <a class="details-btn"
+ href="details.html?item=watermelon-juice&mode=menu">
+ View Details
+ </a>
+
+ </div>
+
+ </div>
+
+ </div>
+
+ </section>
+
+
+
+ <!-- COCKTAILS -->
+
+ <section class="category">
+
+ <h2 class="category-title">
+ Cocktails
+ </h2>
+
+ <div class="food-grid">
+
+
+ <div class="food-card">
+
+ <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=900&q=80">
+
+ <div class="food-content">
+
+ <h3>Mojito</h3>
+
+ <p class="description">
+ Refreshing mint and lime cocktail with a crisp finish.
+ </p>
+
+ <p class="price">₦6,000</p>
+
+ <a class="details-btn"
+ href="details.html?item=mojito&mode=menu">
+ View Details
+ </a>
+
+ </div>
+
+ </div>
+
+
+ <div class="food-card">
+
+ <img src="https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&w=900&q=80">
+
+ <div class="food-content">
+
+ <h3>Strawberry Mojito</h3>
+
+ <p class="description">
+ Strawberry, mint and lime cocktail served chilled.
+ </p>
+
+ <p class="price">₦6,500</p>
+
+ <a class="details-btn"
+ href="details.html?item=strawberry-mojito&mode=menu">
+ View Details
+ </a>
+
+ </div>
+
+ </div>
+
+
+ <div class="food-card">
+
+ <img src="https://images.unsplash.com/photo-1572116469696-31de0f17cc34?auto=format&fit=crop&w=900&q=80">
+
+ <div class="food-content">
+
+ <h3>Pina Colada</h3>
+
+ <p class="description">
+ Creamy coconut and pineapple cocktail with a tropical taste.
+ </p>
+
+ <p class="price">₦7,000</p>
+
+ <a class="details-btn"
+ href="details.html?item=pina-colada&mode=menu">
+ View Details
+ </a>
+
+ </div>
+
+ </div>
+
+
+ <div class="food-card">
+
+ <img src="https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&w=900&q=80">
+
+ <div class="food-content">
+
+ <h3>Passion Fruit Cocktail</h3>
+
+ <p class="description">
+ Tropical passion fruit cocktail with a sweet and refreshing taste.
+ </p>
+
+ <p class="price">₦6,500</p>
+
+ <a class="details-btn"
+ href="details.html?item=passion-fruit-cocktail&mode=menu">
+ View Details
+ </a>
+
+ </div>
+
+ </div>
+
+ </div>
+
+ </section>
+
+
+
+ <!-- EXTRAS -->
+
+ <section class="category">
+
+ <h2 class="category-title">
+ Extras & Sides
+ </h2>
+
+ <div class="food-grid">
+
+
+ <div class="food-card">
+
+ <img src="https://images.unsplash.com/photo-1623238913973-21e45cced554?auto=format&fit=crop&w=900&q=80">
+
+ <div class="food-content">
+
+ <h3>Fried Plantain</h3>
+
+ <p class="description">
+ Sweet ripe plantain fried until golden brown.
+ </p>
+
+ <p class="price">₦2,000</p>
+
+ <a class="details-btn"
+ href="details.html?item=fried-plantain&mode=menu">
+ View Details
+ </a>
+
+ </div>
+
+ </div>
+
+
+ <div class="food-card">
+
+ <img src="https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=900&q=80">
+
+ <div class="food-content">
+
+ <h3>French Fries</h3>
+
+ <p class="description">
+ Crispy golden fries served with your favourite meal.
+ </p>
+
+ <p class="price">₦2,500</p>
+
+ <a class="details-btn"
+ href="details.html?item=french-fries&mode=menu">
+ View Details
+ </a>
+
+ </div>
+
+ </div>
+
+
+ <div class="food-card">
+
+ <img src="https://images.unsplash.com/photo-1590301157890-4810ed352733?auto=format&fit=crop&w=900&q=80">
+
+ <div class="food-content">
+
+ <h3>Coleslaw</h3>
+
+ <p class="description">
+ Fresh creamy coleslaw prepared with crunchy vegetables.
+ </p>
+
+ <p class="price">₦1,500</p>
+
+ <a class="details-btn"
+ href="details.html?item=coleslaw&mode=menu">
+ View Details
+ </a>
+
+ </div>
+
+ </div>
+
+
+ <div class="food-card">
+
+ <img src="https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=900&q=80">
+
+ <div class="food-content">
+
+ <h3>Moi Moi</h3>
+
+ <p class="description">
+ Steamed Nigerian bean pudding prepared with spices.
+ </p>
+
+ <p class="price">₦2,500</p>
+
+ <a class="details-btn"
+ href="details.html?item=moi-moi&mode=menu">
+ View Details
+ </a>
+
+ </div>
+
+ </div>
+
+ </div>
+
+ </section>
+
+
+
+ <div class="restaurant-note">
+
+ <strong>Restaurant Notice</strong><br>
+
+ Prices displayed on this menu are sample prices for this website demo.
+ Actual prices, availability and ingredients may vary.
+
+ </div>
 
 </div>
 
 
 <footer>
 
-<p>© 2026 Comfort Grills & Bites. All rights reserved.</p>
+ <p>© 2026 Comfort Grills & Bites</p>
+
+ <p>Good Food. Great Taste.</p>
 
 </footer>
 
