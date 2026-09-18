@@ -1,10 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Comfort Grills & Bites</title>
@@ -12,885 +9,184 @@
 <style>
 
 * {
+margin: 0;
+padding: 0;
 box-sizing: border-box;
 }
 
 body {
-margin: 0;
 font-family: Arial, sans-serif;
 background: #f8f8f8;
 color: #222;
 }
 
-
-/* HEADER */
-
 header {
 background: #111;
 color: white;
-padding: 18px 25px;
-display: flex;
-justify-content: space-between;
-align-items: center;
-position: sticky;
-top: 0;
-z-index: 100;
+padding: 22px 20px;
+text-align: center;
 }
 
-.logo {
-font-size: 20px;
-font-weight: bold;
+header h1 {
+font-size: 26px;
 letter-spacing: 1px;
 }
 
-.cart-button {
-background: #25D366;
-color: white;
-padding: 10px 15px;
-border-radius: 25px;
-text-decoration: none;
-font-weight: bold;
-}
-
-
-/* HERO */
-
 .hero {
-min-height: 500px;
-background:
-linear-gradient(
-rgba(0,0,0,0.55),
-rgba(0,0,0,0.55)
-),
-url("https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=1600&q=80");
-
-background-size: cover;
-background-position: center;
-
+min-height: 75vh;
 display: flex;
 align-items: center;
 justify-content: center;
-
 text-align: center;
-color: white;
-
 padding: 40px 20px;
+background:
+linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+url("https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=1600&q=80")
+center/cover;
 }
 
 .hero-content {
 max-width: 700px;
+color: white;
 }
 
-.hero h1 {
+.hero h2 {
 font-size: 48px;
 margin-bottom: 15px;
 }
 
 .hero p {
-font-size: 20px;
+font-size: 19px;
 line-height: 1.6;
-margin-bottom: 30px;
+margin-bottom: 35px;
 }
 
-.hero-button {
-display: inline-block;
-background: #25D366;
-color: white;
-padding: 15px 28px;
-border-radius: 30px;
-text-decoration: none;
-font-weight: bold;
-font-size: 17px;
+.options {
+display: flex;
+gap: 20px;
+justify-content: center;
+flex-wrap: wrap;
 }
 
-
-/* MENU */
-
-.menu-section {
-max-width: 1200px;
-margin: auto;
-padding: 60px 20px;
-}
-
-.section-title {
-text-align: center;
-margin-bottom: 40px;
-}
-
-.section-title h2 {
-font-size: 34px;
-margin-bottom: 10px;
-}
-
-.section-title p {
-color: #777;
-}
-
-
-/* FOOD GRID */
-
-.menu-grid {
-display: grid;
-grid-template-columns:
-repeat(auto-fit, minmax(260px, 1fr));
-
-gap: 25px;
-}
-
-
-/* FOOD CARD */
-
-.food-card {
+.option {
 background: white;
-border-radius: 15px;
-overflow: hidden;
-
-box-shadow:
-0 5px 20px rgba(0,0,0,0.08);
-
-transition: transform 0.2s;
+color: #222;
+text-decoration: none;
+width: 280px;
+padding: 28px 20px;
+border-radius: 12px;
+transition: 0.3s;
 }
 
-.food-card:hover {
+.option:hover {
 transform: translateY(-5px);
 }
 
-.food-card img {
-width: 100%;
-height: 220px;
-object-fit: cover;
+.option h3 {
+margin-bottom: 10px;
+font-size: 22px;
 }
 
-.food-content {
-padding: 20px;
-}
-
-.food-content h3 {
-margin-top: 0;
-font-size: 21px;
-}
-
-.food-description {
-color: #777;
-line-height: 1.5;
-min-height: 45px;
-}
-
-.price {
-font-size: 20px;
-font-weight: bold;
-margin: 15px 0;
-}
-
-
-/* BUTTONS */
-
-.card-buttons {
-display: flex;
-gap: 10px;
-}
-
-.details-button,
-.add-button {
-
-flex: 1;
-
-padding: 12px;
-
-border-radius: 7px;
-
-text-align: center;
-
-font-weight: bold;
-
-cursor: pointer;
-
-text-decoration: none;
-
-border: none;
-
-font-size: 14px;
-}
-
-.details-button {
-background: #111;
-color: white;
-}
-
-.add-button {
-background: #25D366;
-color: white;
-}
-
-
-/* WHY US */
-
-.why-section {
-background: #111;
-color: white;
-padding: 60px 20px;
-}
-
-.why-content {
-max-width: 1100px;
-margin: auto;
-text-align: center;
-}
-
-.why-content h2 {
-font-size: 32px;
-}
-
-.why-grid {
-display: grid;
-grid-template-columns:
-repeat(auto-fit, minmax(220px, 1fr));
-
-gap: 25px;
-
-margin-top: 35px;
-}
-
-.why-box {
-background: #1e1e1e;
-padding: 25px;
-border-radius: 12px;
-}
-
-.why-box h3 {
-margin-top: 0;
-}
-
-.why-box p {
-color: #ccc;
-line-height: 1.6;
-}
-
-
-/* CTA */
-
-.cta {
-text-align: center;
-padding: 70px 20px;
-background: #f1f1f1;
-}
-
-.cta h2 {
-font-size: 32px;
-}
-
-.cta p {
+.option p {
 color: #666;
-margin-bottom: 25px;
+font-size: 15px;
+margin: 0;
 }
 
-.cta-button {
-display: inline-block;
-background: #25D366;
+.menu-button {
+border: 3px solid #222;
+}
+
+.order-button {
+background: #1f8f4d;
 color: white;
-padding: 15px 30px;
-border-radius: 30px;
-text-decoration: none;
-font-weight: bold;
 }
 
-
-/* FOOTER */
+.order-button p {
+color: #e8f5ed;
+}
 
 footer {
 background: #111;
 color: #aaa;
 text-align: center;
-padding: 25px 15px;
+padding: 20px;
+font-size: 14px;
 }
-
-footer strong {
-color: white;
-}
-
-
-/* MOBILE */
 
 @media (max-width: 600px) {
 
-header {
-padding: 15px;
-}
-
-.logo {
-font-size: 16px;
-}
-
-.cart-button {
-padding: 8px 12px;
-font-size: 13px;
-}
-
-.hero {
-min-height: 450px;
-}
-
-.hero h1 {
-font-size: 34px;
+.hero h2 {
+font-size: 36px;
 }
 
 .hero p {
-font-size: 17px;
+font-size: 16px;
 }
 
-.section-title h2 {
-font-size: 28px;
-}
-
-.food-card img {
-height: 210px;
+.option {
+width: 100%;
+max-width: 330px;
 }
 
 }
 
 </style>
-
 </head>
-
 
 <body>
 
-
-<!-- HEADER -->
-
 <header>
-
-<div class="logo">
-COMFORT GRILLS & BITES
-</div>
-
-<a
-href="cart.html"
-class="cart-button"
->
-🛒 View Cart
-</a>
-
+<h1>COMFORT GRILLS & BITES</h1>
 </header>
-
-
-
-<!-- HERO -->
 
 <section class="hero">
 
 <div class="hero-content">
 
-<h1>
-Good Food. Great Taste.
-</h1>
+<h2>Good Food. Great Taste.</h2>
 
 <p>
-Freshly prepared meals, delicious grills
-and refreshing drinks made for you.
+Welcome to Comfort Grills & Bites.
+Choose how you would like to explore our menu.
 </p>
 
-<a
-href="#menu"
-class="hero-button"
->
-Explore Our Menu
-</a>
+<div class="options">
 
-</div>
+<a href="menu.html" class="option menu-button">
 
-</section>
-
-
-
-<!-- MENU -->
-
-<section
-class="menu-section"
-id="menu"
->
-
-<div class="section-title">
-
-<h2>
-Our Menu
-</h2>
+<h3>View Menu & Prices</h3>
 
 <p>
-Choose your favourite meal and place your order.
+Already at the restaurant?
+Browse our meals, pictures and prices.
 </p>
 
-</div>
-
-
-
-<div class="menu-grid">
-
-
-<!-- GRILLED CHICKEN -->
-
-<div class="food-card">
-
-<img
-src="https://images.unsplash.com/photo-1598103442097-8b74394b95c6?auto=format&fit=crop&w=800&q=80"
-alt="Grilled Chicken"
->
-
-<div class="food-content">
-
-<h3>
-Grilled Chicken
-</h3>
-
-<p class="food-description">
-Juicy, well-seasoned grilled chicken
-prepared with our special blend of spices.
-</p>
-
-<div class="price">
-₦8,000
-</div>
-
-<div class="card-buttons">
-
-<a
-href="details.html?item=grilled-chicken"
-class="details-button"
->
-View Details
 </a>
 
-<button
-class="add-button"
-onclick="addToCart('Grilled Chicken', 8000)"
->
-Add to Cart
-</button>
 
-</div>
+<a href="order.html" class="option order-button">
 
-</div>
-
-</div>
-
-
-
-<!-- BEEF BURGER -->
-
-<div class="food-card">
-
-<img
-src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=800&q=80"
-alt="Beef Burger"
->
-
-<div class="food-content">
-
-<h3>
-Beef Burger
-</h3>
-
-<p class="food-description">
-A delicious beef burger served with
-fresh toppings and our special sauce.
-</p>
-
-<div class="price">
-₦6,500
-</div>
-
-<div class="card-buttons">
-
-<a
-href="details.html?item=beef-burger"
-class="details-button"
->
-View Details
-</a>
-
-<button
-class="add-button"
-onclick="addToCart('Beef Burger', 6500)"
->
-Add to Cart
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-
-
-<!-- CHICKEN & CHIPS -->
-
-<div class="food-card">
-
-<img
-src="https://images.unsplash.com/photo-1562967916-eb82221dfb92?auto=format&fit=crop&w=800&q=80"
-alt="Chicken and Chips"
->
-
-<div class="food-content">
-
-<h3>
-Chicken & Chips
-</h3>
-
-<p class="food-description">
-Crispy chicken served with golden
-fries and a delicious dipping sauce.
-</p>
-
-<div class="price">
-₦7,500
-</div>
-
-<div class="card-buttons">
-
-<a
-href="details.html?item=chicken-chips"
-class="details-button"
->
-View Details
-</a>
-
-<button
-class="add-button"
-onclick="addToCart('Chicken & Chips', 7500)"
->
-Add to Cart
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-
-
-<!-- JOLLOF RICE -->
-
-<div class="food-card">
-
-<img
-src="https://images.unsplash.com/photo-1603133872878-684f208fb84b?auto=format&fit=crop&w=800&q=80"
-alt="Jollof Rice and Chicken"
->
-
-<div class="food-content">
-
-<h3>
-Jollof Rice & Chicken
-</h3>
-
-<p class="food-description">
-Rich Nigerian-style jollof rice served
-with deliciously seasoned chicken.
-</p>
-
-<div class="price">
-₦6,000
-</div>
-
-<div class="card-buttons">
-
-<a
-href="details.html?item=jollof-rice"
-class="details-button"
->
-View Details
-</a>
-
-<button
-class="add-button"
-onclick="addToCart('Jollof Rice & Chicken', 6000)"
->
-Add to Cart
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-
-
-<!-- GRILLED SAUSAGE -->
-
-<div class="food-card">
-
-<img
-src="https://images.unsplash.com/photo-1612392062631-94dd858cba88?auto=format&fit=crop&w=800&q=80"
-alt="Grilled Sausage"
->
-
-<div class="food-content">
-
-<h3>
-Grilled Sausage
-</h3>
-
-<p class="food-description">
-Deliciously grilled sausage prepared
-fresh and served hot.
-</p>
-
-<div class="price">
-₦4,000
-</div>
-
-<div class="card-buttons">
-
-<a
-href="details.html?item=grilled-sausage"
-class="details-button"
->
-View Details
-</a>
-
-<button
-class="add-button"
-onclick="addToCart('Grilled Sausage', 4000)"
->
-Add to Cart
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-
-
-<!-- CHAPMAN -->
-
-<div class="food-card">
-
-<img
-src="https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&w=800&q=80"
-alt="Chapman"
->
-
-<div class="food-content">
-
-<h3>
-Chapman
-</h3>
-
-<p class="food-description">
-A refreshing Nigerian-style cocktail
-made with fruity flavours.
-</p>
-
-<div class="price">
-₦2,500
-</div>
-
-<div class="card-buttons">
-
-<a
-href="details.html?item=chapman"
-class="details-button"
->
-View Details
-</a>
-
-<button
-class="add-button"
-onclick="addToCart('Chapman', 2500)"
->
-Add to Cart
-</button>
-
-</div>
-
-</div>
-
-</div>
-
-
-</div>
-
-</section>
-
-
-
-<!-- WHY CHOOSE US -->
-
-<section class="why-section">
-
-<div class="why-content">
-
-<h2>
-Why Choose Comfort Grills & Bites?
-</h2>
-
-<div class="why-grid">
-
-<div class="why-box">
-
-<h3>
-Freshly Prepared
-</h3>
+<h3>Order From Home</h3>
 
 <p>
-Our meals are prepared fresh to give
-you a delicious dining experience.
+Not at the restaurant?
+Order for delivery or pickup.
 </p>
 
-</div>
-
-
-<div class="why-box">
-
-<h3>
-Great Taste
-</h3>
-
-<p>
-Carefully selected ingredients and
-flavours that keep you coming back.
-</p>
-
-</div>
-
-
-<div class="why-box">
-
-<h3>
-Easy Ordering
-</h3>
-
-<p>
-Select your meals, add them to your
-cart and place your order through WhatsApp.
-</p>
-
-</div>
-
-
-<div class="why-box">
-
-<h3>
-Customer Satisfaction
-</h3>
-
-<p>
-We care about giving every customer
-a pleasant food experience.
-</p>
-
-</div>
+</a>
 
 </div>
 
 </div>
 
 </section>
-
-
-
-<!-- CTA -->
-
-<section class="cta">
-
-<h2>
-Ready to Order?
-</h2>
-
-<p>
-Pick your favourite meal and let's get
-your order started.
-</p>
-
-<a
-href="#menu"
-class="cta-button"
->
-Order Now
-</a>
-
-</section>
-
-
-
-<!-- FOOTER -->
 
 <footer>
 
-<p>
-<strong>Comfort Grills & Bites</strong>
-</p>
-
-<p>
-Good Food. Great Taste.
-</p>
-
-<p>
-© 2026 Comfort Grills & Bites
-</p>
+<p>© 2026 Comfort Grills & Bites. All rights reserved.</p>
 
 </footer>
 
-
-
-<script>
-
-
-function addToCart(name, price) {
-
-let cart =
-JSON.parse(
-localStorage.getItem("comfortCart")
-) || [];
-
-
-let existingItem =
-cart.find(
-item => item.name === name
-);
-
-
-if (existingItem) {
-
-existingItem.quantity += 1;
-
-} else {
-
-cart.push({
-
-name: name,
-
-price: price,
-
-quantity: 1
-
-});
-
-}
-
-
-localStorage.setItem(
-"comfortCart",
-JSON.stringify(cart)
-);
-
-
-alert(
-name + " has been added to your cart."
-);
-
-}
-
-
-</script>
-
-
 </body>
-
 </html>
