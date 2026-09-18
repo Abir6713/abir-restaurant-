@@ -1,1 +1,816 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Order From Home | Abir Restaurant</title><style>* { box-sizing: border-box; margin: 0; padding: 0;}body { font-family: Arial, sans-serif; background: #f7f7f7; color: #222;}header { background: #111; color: white; padding: 18px 6%; display: flex; justify-content: space-between; align-items: center; gap: 20px;}.logo { font-size: 22px; font-weight: bold; letter-spacing: 1px;}nav { display: flex; gap: 18px; flex-wrap: wrap;}nav a { color: white; text-decoration: none; font-size: 14px;}.cart-link { font-weight: bold;}.hero { background: linear-gradient(rgba(0,0,0,.65), rgba(0,0,0,.65)), url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1600&q=80"); background-size: cover; background-position: center; color: white; text-align: center; padding: 70px 20px;}.hero h1 { font-size: 42px; margin-bottom: 10px;}.hero p { font-size: 17px;}.container { width: 90%; max-width: 1200px; margin: 40px auto;}.search-box { background: white; padding: 20px; border-radius: 12px; box-shadow: 0 5px 20px rgba(0,0,0,.07); margin-bottom: 20px;}.search-box input { width: 100%; padding: 15px; border: 1px solid #ddd; border-radius: 8px; font-size: 16px; outline: none;}.search-box input:focus { border-color: #111;}.categories { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 30px;}.category-btn { border: none; background: white; color: #222; padding: 11px 16px; border-radius: 20px; cursor: pointer; font-size: 14px; box-shadow: 0 3px 10px rgba(0,0,0,.07);}.category-btn.active { background: #111; color: white;}.category-title { font-size: 25px; margin: 35px 0 18px;}.food-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px;}.food-card { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 5px 20px rgba(0,0,0,.08);}.food-image { width: 100%; height: 220px; object-fit: cover; display: block;}.food-content { padding: 18px;}.food-content h3 { font-size: 19px; margin-bottom: 8px;}.food-description { color: #666; font-size: 14px; line-height: 1.5; min-height: 42px; margin-bottom: 12px;}.price { font-size: 18px; font-weight: bold; margin-bottom: 14px;}.food-actions { display: flex; gap: 8px;}.food-actions a,.food-actions button { flex: 1; text-align: center; padding: 11px 8px; border-radius: 7px; text-decoration: none; font-size: 14px; cursor: pointer;}.details-btn { background: #eee; color: #222; border: none;}.add-btn { background: #111; color: white; border: none;}.no-results { background: white; padding: 40px 20px; text-align: center; border-radius: 12px; color: #666;}.view-cart { display: block; width: 100%; max-width: 500px; margin: 45px auto 10px; padding: 17px; background: #111; color: white; text-align: center; text-decoration: none; border-radius: 8px; font-weight: bold;}footer { background: #111; color: white; text-align: center; padding: 25px; margin-top: 50px;}@media (max-width: 900px) { .food-grid { grid-template-columns: repeat(2, 1fr); }}@media (max-width: 600px) { header { flex-direction: column; text-align: center; } nav { justify-content: center; } .hero h1 { font-size: 32px; } .food-grid { grid-template-columns: 1fr; } .food-image { height: 230px; }}</style></head><body><header> <div class="logo">ABIR RESTAURANT</div><nav> <a href="index.html">Home</a> <a href="menu.html">Menu</a> <a href="order.html">Order From Home</a> <a href="cart.html" class="cart-link"> View Cart <span id="cartCount"></span> </a></nav></header><section class="hero"> <h1>Order From Home</h1> <p>Choose your favourite meals and place your order.</p></section><div class="container"><div class="search-box"> <input type="search" id="searchInput" placeholder="Search for a meal..." autocomplete="off" ></div><div class="categories"> <button class="category-btn active" data-category="All"> All </button> <button class="category-btn" data-category="Rice & Main Meals"> Rice & Main Meals </button> <button class="category-btn" data-category="Swallow & Soups"> Swallow & Soups </button> <button class="category-btn" data-category="Grills & BBQ"> Grills & BBQ </button> <button class="category-btn" data-category="Small Chops"> Small Chops </button> <button class="category-btn" data-category="Nigerian Drinks & Refreshments"> Drinks </button> <button class="category-btn" data-category="Cocktails"> Cocktails </button> <button class="category-btn" data-category="Extras & Sides"> Extras </button></div><div id="menuContainer"></div><a href="cart.html" class="view-cart"> View Cart & Checkout</a></div><footer> © 2026 Abir Restaurant. All rights reserved.</footer><script>const foods = [ { name: "Jollof Rice & Chicken", price: 6500, category: "Rice & Main Meals", key: "jollof-rice", image: "https://images.unsplash.com/photo-1604329760661-e71dc83f8f26?auto=format&fit=crop&w=900&q=80", description: "Rich Nigerian jollof rice served with tender chicken." }, { name: "Fried Rice & Chicken", price: 6500, category: "Rice & Main Meals", key: "fried-rice", image: "https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=900&q=80", description: "Flavourful fried rice served with chicken." }, { name: "Ofada Rice & Ayamase", price: 7500, category: "Rice & Main Meals", key: "ofada-rice", image: "https://images.unsplash.com/photo-1603133872878-684f208fb84b?auto=format&fit=crop&w=900&q=80", description: "Local Ofada rice served with spicy Ayamase sauce." }, { name: "Beans & Plantain", price: 5000, category: "Rice & Main Meals", key: "beans-plantain", image: "https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=900&q=80", description: "Well-seasoned beans served with sweet fried plantain." }, { name: "Yam Porridge", price: 5500, category: "Rice & Main Meals", key: "yam-porridge", image: "https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&w=900&q=80", description: "Soft yam cooked in a rich and savoury sauce." }, { name: "Amala & Ewedu", price: 6000, category: "Swallow & Soups", key: "amala-ewedu", image: "https://images.unsplash.com/photo-1601050690117-94f5f6fa8bd7?auto=format&fit=crop&w=900&q=80", description: "Smooth Amala served with Ewedu soup." }, { name: "Pounded Yam & Egusi", price: 7000, category: "Swallow & Soups", key: "pounded-yam-egusi", image: "https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=900&q=80", description: "Soft pounded yam served with rich Egusi soup." }, { name: "Eba & Egusi", price: 6500, category: "Swallow & Soups", key: "eba-egusi", image: "https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=900&q=80", description: "Eba served with delicious Egusi soup." }, { name: "Semo & Vegetable Soup", price: 6500, category: "Swallow & Soups", key: "semo-vegetable", image: "https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&w=900&q=80", description: "Smooth Semovita served with vegetable soup." }, { name: "Grilled Chicken", price: 6000, category: "Grills & BBQ", key: "grilled-chicken", image: "https://images.unsplash.com/photo-1532550907401-a500c9a57435?auto=format&fit=crop&w=900&q=80", description: "Tender chicken grilled and seasoned for a smoky flavour." }, { name: "Beef Suya", price: 5500, category: "Grills & BBQ", key: "beef-suya", image: "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=900&q=80", description: "Spicy grilled beef prepared in Nigerian suya style." }, { name: "Grilled Fish", price: 8500, category: "Grills & BBQ", key: "grilled-fish", image: "https://images.unsplash.com/photo-1600891964092-4316c288032e?auto=format&fit=crop&w=900&q=80", description: "Seasoned fish grilled to perfection." }, { name: "Asun", price: 7500, category: "Grills & BBQ", key: "asun", image: "https://images.unsplash.com/photo-1558030006-450675393462?auto=format&fit=crop&w=900&q=80", description: "Spicy grilled goat meat prepared with peppers and onions." }, { name: "Beef Burger", price: 5500, category: "Grills & BBQ", key: "beef-burger", image: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=900&q=80", description: "Juicy beef burger served with fresh toppings." }, { name: "Chicken & Chips", price: 6000, category: "Grills & BBQ", key: "chicken-chips", image: "https://images.unsplash.com/photo-1562967916-eb82221dfb36?auto=format&fit=crop&w=900&q=80", description: "Crispy chicken served with golden fries." }, { name: "Puff Puff", price: 2000, category: "Small Chops", key: "puff-puff", image: "https://images.unsplash.com/photo-1626804475297-41608ea09aeb?auto=format&fit=crop&w=900&q=80", description: "Soft and lightly sweet Nigerian puff puff." }, { name: "Samosa", price: 2500, category: "Small Chops", key: "samosa", image: "https://images.unsplash.com/photo-1626804475297-41608ea09aeb?auto=format&fit=crop&w=900&q=80", description: "Crispy pastry filled with a savoury mixture." }, { name: "Spring Rolls", price: 2500, category: "Small Chops", key: "spring-rolls", image: "https://images.unsplash.com/photo-1612874742237-6526221588e3?auto=format&fit=crop&w=900&q=80", description: "Crispy spring rolls with a savoury filling." }, { name: "Gizdodo", price: 4500, category: "Small Chops", key: "gizdodo", image: "https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&w=900&q=80", description: "Spicy combination of gizzard and fried plantain." }, { name: "Chapman", price: 3500, category: "Nigerian Drinks & Refreshments", key: "chapman", image: "https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=900&q=80", description: "Refreshing Nigerian-style Chapman cocktail." }, { name: "Zobo", price: 2000, category: "Nigerian Drinks & Refreshments", key: "zobo", image: "https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&w=900&q=80", description: "Chilled and refreshing hibiscus drink." }, { name: "Fresh Pineapple Juice", price: 3000, category: "Nigerian Drinks & Refreshments", key: "pineapple-juice", image: "https://images.unsplash.com/photo-1600271886742-f049cd451bba?auto=format&fit=crop&w=900&q=80", description: "Freshly prepared pineapple juice." }, { name: "Watermelon Juice", price: 3000, category: "Nigerian Drinks & Refreshments", key: "watermelon-juice", image: "https://images.unsplash.com/photo-1623065422902-30a2d299bbe4?auto=format&fit=crop&w=900&q=80", description: "Fresh and refreshing watermelon juice." }, { name: "Mojito", price: 6000, category: "Cocktails", key: "mojito", image: "https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=900&q=80", description: "Refreshing mojito-style cocktail." }, { name: "Strawberry Mojito", price: 6500, category: "Cocktails", key: "strawberry-mojito", image: "https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&w=900&q=80", description: "Fruity strawberry twist on a refreshing mojito." }, { name: "Pina Colada", price: 7000, category: "Cocktails", key: "pina-colada", image: "https://images.unsplash.com/photo-1572116469696-31de0f17cc34?auto=format&fit=crop&w=900&q=80", description: "Creamy tropical pineapple and coconut cocktail." }, { name: "Passion Fruit Cocktail", price: 6500, category: "Cocktails", key: "passion-fruit-cocktail", image: "https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&w=900&q=80", description: "Refreshing passion fruit cocktail." }, { name: "Fried Plantain", price: 2000, category: "Extras & Sides", key: "fried-plantain", image: "https://images.unsplash.com/photo-1623238913973-21e45cced554?auto=format&fit=crop&w=900&q=80", description: "Sweet golden fried plantain." }, { name: "French Fries", price: 2500, category: "Extras & Sides", key: "french-fries", image: "https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=900&q=80", description: "Crispy golden French fries." }, { name: "Coleslaw", price: 1500, category: "Extras & Sides", key: "coleslaw", image: "https://images.unsplash.com/photo-1590301157890-4810ed352733?auto=format&fit=crop&w=900&q=80", description: "Fresh and creamy coleslaw." }, { name: "Moi Moi", price: 2500, category: "Extras & Sides", key: "moi-moi", image: "https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=900&q=80", description: "Steamed Nigerian bean pudding." }];let selectedCategory = "All";let searchTerm = "";function getCart() { let savedCart = localStorage.getItem("comfortCart"); if (!savedCart) { return []; } try { return JSON.parse(savedCart); } catch (error) { return []; }}function saveCart(cart) { localStorage.setItem( "comfortCart", JSON.stringify(cart) );}function addToCart(key) { let food = foods.find(function(item) { return item.key === key; }); if (!food) { return; } let cart = getCart(); let existing = cart.find(function(item) { return item.key === key; }); if (existing) { existing.quantity += 1; } else { cart.push({ key: food.key, name: food.name, price: food.price, quantity: 1, image: food.image }); } saveCart(cart); updateCartCounter(); alert(food.name + " added to your cart.");}function updateCartCounter() { let cart = getCart(); let totalItems = 0; cart.forEach(function(item) { totalItems += Number(item.quantity) || 0; }); let counter = document.getElementById("cartCount"); if (totalItems > 0) { counter.textContent = " (" + totalItems + ")"; } else { counter.textContent = ""; }}function renderMenu() { let container = document.getElementById("menuContainer"); let filteredFoods = foods.filter(function(food) { let matchesCategory = selectedCategory === "All" || food.category === selectedCategory; let matchesSearch = food.name .toLowerCase() .includes(searchTerm.toLowerCase()); return matchesCategory && matchesSearch; }); if (filteredFoods.length === 0) { container.innerHTML = '<div class="no-results">' + '<h3>No meals found</h3>' + '<p>Try another search or category.</p>' + '</div>'; return; } let categories = []; filteredFoods.forEach(function(food) { if (!categories.includes(food.category)) { categories.push(food.category); } }); let html = ""; categories.forEach(function(category) { html += '<h2 class="category-title">' + category + '</h2>'; html += '<div class="food-grid">'; filteredFoods .filter(function(food) { return food.category === category; }) .forEach(function(food) { html += ` <div class="food-card"> <img class="food-image" src="${food.image}" alt="${food.name}" > <div class="food-content"> <h3> ${food.name} </h3> <p class="food-description"> ${food.description} </p> <div class="price"> ₦${food.price.toLocaleString()} </div> <div class="food-actions"> <a class="details-btn" href="details.html?item=${food.key}&mode=order"> Details </a> <button class="add-btn" onclick="addToCart('${food.key}')"> Add to Cart </button> </div> </div> </div> `; }); html += '</div>'; }); container.innerHTML = html;}document.getElementById("searchInput").addEventListener("input", function() { searchTerm = this.value.trim(); renderMenu();});document.querySelectorAll(".category-btn").forEach(function(button) { button.addEventListener("click", function() { document .querySelectorAll(".category-btn") .forEach(function(btn) { btn.classList.remove("active"); }); this.classList.add("active"); selectedCategory = this.dataset.category; renderMenu(); });});renderMenu();updateCartCounter();</script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Order From Home | Abir Restaurant</title>
+
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        background: #f8f8f8;
+        color: #222;
+    }
+
+    header {
+        background: #111;
+        color: white;
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .logo {
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+    nav {
+        display: flex;
+        gap: 18px;
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        color: white;
+        text-decoration: none;
+        font-size: 15px;
+    }
+
+    nav a:hover {
+        color: #d4af37;
+    }
+
+    .hero {
+        background:
+            linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
+            url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1600&q=80");
+        background-size: cover;
+        background-position: center;
+        padding: 70px 20px;
+        text-align: center;
+        color: white;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+        margin-bottom: 10px;
+    }
+
+    .hero p {
+        font-size: 18px;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 40px auto;
+        padding: 0 20px;
+    }
+
+    .search-box {
+        margin-bottom: 25px;
+    }
+
+    .search-box input {
+        width: 100%;
+        padding: 15px 18px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        font-size: 16px;
+        outline: none;
+    }
+
+    .search-box input:focus {
+        border-color: #111;
+    }
+
+    .categories {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin-bottom: 30px;
+    }
+
+    .category-btn {
+        padding: 10px 16px;
+        border: 1px solid #222;
+        background: white;
+        color: #222;
+        border-radius: 20px;
+        cursor: pointer;
+        font-size: 14px;
+    }
+
+    .category-btn.active,
+    .category-btn:hover {
+        background: #111;
+        color: white;
+    }
+
+    .section-title {
+        font-size: 28px;
+        margin-bottom: 20px;
+    }
+
+    .food-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+    }
+
+    .food-card {
+        background: white;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    .food-card img {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+        display: block;
+    }
+
+    .food-content {
+        padding: 18px;
+    }
+
+    .food-content h3 {
+        margin-bottom: 8px;
+        font-size: 20px;
+    }
+
+    .category-name {
+        color: #777;
+        font-size: 13px;
+        margin-bottom: 10px;
+    }
+
+    .description {
+        color: #555;
+        line-height: 1.5;
+        margin-bottom: 12px;
+        font-size: 14px;
+    }
+
+    .price {
+        font-size: 19px;
+        font-weight: bold;
+        margin-bottom: 15px;
+    }
+
+    .food-actions {
+        display: flex;
+        gap: 10px;
+    }
+
+    .food-actions a,
+    .food-actions button {
+        flex: 1;
+        padding: 11px;
+        border-radius: 6px;
+        font-size: 14px;
+        text-align: center;
+        cursor: pointer;
+        text-decoration: none;
+    }
+
+    .details-btn {
+        background: white;
+        color: #111;
+        border: 1px solid #111;
+    }
+
+    .add-btn {
+        background: #111;
+        color: white;
+        border: 1px solid #111;
+    }
+
+    .add-btn:hover {
+        background: #333;
+    }
+
+    .cart-section {
+        text-align: center;
+        margin: 40px 0;
+    }
+
+    .cart-button {
+        display: inline-block;
+        background: #111;
+        color: white;
+        padding: 15px 25px;
+        border-radius: 7px;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    .empty-message {
+        text-align: center;
+        padding: 40px;
+        color: #666;
+        display: none;
+    }
+
+    footer {
+        background: #111;
+        color: white;
+        text-align: center;
+        padding: 25px 20px;
+        margin-top: 50px;
+    }
+
+    @media (max-width: 900px) {
+        .food-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media (max-width: 600px) {
+        header {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        nav {
+            width: 100%;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .hero h1 {
+            font-size: 30px;
+        }
+
+        .food-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .food-card img {
+            height: 230px;
+        }
+    }
+</style>
+</head>
+<body>
+<header>
+    <div class="logo">ABIR RESTAURANT</div>
+<nav>
+    <a href="index.html">Home</a>
+    <a href="menu.html">Menu</a>
+    <a href="order.html">Order From Home</a>
+    <a href="cart.html">View Cart <span id="cartCount"></span></a>
+</nav>
+</header>
+<section class="hero">
+    <h1>Order From Home</h1>
+    <p>Choose your favourite meals and order for delivery or pickup.</p>
+</section>
+<main class="container">
+<div class="search-box">
+    <input
+        type="text"
+        id="searchInput"
+        placeholder="Search for a meal..."
+    >
+</div>
+
+<div class="categories">
+
+    <button class="category-btn active" data-category="All">
+        All
+    </button>
+
+    <button class="category-btn" data-category="Rice & Main Meals">
+        Rice & Main Meals
+    </button>
+
+    <button class="category-btn" data-category="Swallow & Soups">
+        Swallow & Soups
+    </button>
+
+    <button class="category-btn" data-category="Grills & BBQ">
+        Grills & BBQ
+    </button>
+
+    <button class="category-btn" data-category="Small Chops">
+        Small Chops
+    </button>
+
+    <button class="category-btn" data-category="Nigerian Drinks & Refreshments">
+        Drinks
+    </button>
+
+    <button class="category-btn" data-category="Cocktails">
+        Cocktails
+    </button>
+
+    <button class="category-btn" data-category="Extras & Sides">
+        Extras
+    </button>
+
+</div>
+
+<h2 class="section-title">Our Menu</h2>
+
+<div id="menuContainer" class="food-grid"></div>
+
+<div id="emptyMessage" class="empty-message">
+    No meals found. Try another search or category.
+</div>
+
+<div class="cart-section">
+    <a href="cart.html" class="cart-button">
+        View Cart & Checkout
+    </a>
+</div>
+</main>
+<footer>
+    <p>© 2026 Abir Restaurant. All rights reserved.</p>
+</footer>
+<script>
+
+    const foods = [
+
+        {
+            name: "Jollof Rice & Chicken",
+            price: 6500,
+            category: "Rice & Main Meals",
+            key: "jollof-rice",
+            image: "https://images.unsplash.com/photo-1604329760661-e71dc83f8f26?auto=format&fit=crop&w=900&q=80",
+            description: "A delicious serving of Nigerian-style jollof rice with chicken."
+        },
+
+        {
+            name: "Fried Rice & Chicken",
+            price: 6500,
+            category: "Rice & Main Meals",
+            key: "fried-rice",
+            image: "https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=900&q=80",
+            description: "Tasty fried rice served with a juicy portion of chicken."
+        },
+
+        {
+            name: "Ofada Rice & Ayamase",
+            price: 7500,
+            category: "Rice & Main Meals",
+            key: "ofada-rice",
+            image: "https://images.unsplash.com/photo-1603133872878-684f208fb84b?auto=format&fit=crop&w=900&q=80",
+            description: "Ofada rice served with rich and spicy ayamase sauce."
+        },
+
+        {
+            name: "Beans & Plantain",
+            price: 5000,
+            category: "Rice & Main Meals",
+            key: "beans-plantain",
+            image: "https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=900&q=80",
+            description: "A hearty combination of beans and sweet fried plantain."
+        },
+
+        {
+            name: "Yam Porridge",
+            price: 5500,
+            category: "Rice & Main Meals",
+            key: "yam-porridge",
+            image: "https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&w=900&q=80",
+            description: "Soft yam cooked in a rich and flavourful sauce."
+        },
+
+        {
+            name: "Amala & Ewedu",
+            price: 6000,
+            category: "Swallow & Soups",
+            key: "amala-ewedu",
+            image: "https://images.unsplash.com/photo-1601050690117-94f5f6fa8bd7?auto=format&fit=crop&w=900&q=80",
+            description: "Soft amala served with ewedu soup."
+        },
+
+        {
+            name: "Pounded Yam & Egusi",
+            price: 7000,
+            category: "Swallow & Soups",
+            key: "pounded-yam-egusi",
+            image: "https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=900&q=80",
+            description: "Smooth pounded yam served with rich egusi soup."
+        },
+
+        {
+            name: "Eba & Egusi",
+            price: 6500,
+            category: "Swallow & Soups",
+            key: "eba-egusi",
+            image: "https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=900&q=80",
+            description: "Fresh eba served with delicious egusi soup."
+        },
+
+        {
+            name: "Semo & Vegetable Soup",
+            price: 6500,
+            category: "Swallow & Soups",
+            key: "semo-vegetable",
+            image: "https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&w=900&q=80",
+            description: "Smooth semolina served with vegetable soup."
+        },
+
+        {
+            name: "Grilled Chicken",
+            price: 6000,
+            category: "Grills & BBQ",
+            key: "grilled-chicken",
+            image: "https://images.unsplash.com/photo-1532550907401-a500c9a57435?auto=format&fit=crop&w=900&q=80",
+            description: "Well-seasoned chicken grilled to perfection."
+        },
+
+        {
+            name: "Beef Suya",
+            price: 5500,
+            category: "Grills & BBQ",
+            key: "beef-suya",
+            image: "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=900&q=80",
+            description: "Spicy grilled beef prepared with suya seasoning."
+        },
+
+        {
+            name: "Grilled Fish",
+            price: 8500,
+            category: "Grills & BBQ",
+            key: "grilled-fish",
+            image: "https://images.unsplash.com/photo-1600891964092-4316c288032e?auto=format&fit=crop&w=900&q=80",
+            description: "Seasoned fish grilled and served fresh."
+        },
+
+        {
+            name: "Asun",
+            price: 7500,
+            category: "Grills & BBQ",
+            key: "asun",
+            image: "https://images.unsplash.com/photo-1558030006-450675393462?auto=format&fit=crop&w=900&q=80",
+            description: "Spicy grilled goat meat prepared Nigerian style."
+        },
+
+        {
+            name: "Beef Burger",
+            price: 5500,
+            category: "Grills & BBQ",
+            key: "beef-burger",
+            image: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=900&q=80",
+            description: "Juicy beef burger served with fresh toppings."
+        },
+
+        {
+            name: "Chicken & Chips",
+            price: 6000,
+            category: "Grills & BBQ",
+            key: "chicken-chips",
+            image: "https://images.unsplash.com/photo-1562967916-eb82221dfb36?auto=format&fit=crop&w=900&q=80",
+            description: "Crispy chicken served with golden fries."
+        },
+
+        {
+            name: "Puff Puff",
+            price: 2000,
+            category: "Small Chops",
+            key: "puff-puff",
+            image: "https://images.unsplash.com/photo-1626804475297-41608ea09aeb?auto=format&fit=crop&w=900&q=80",
+            description: "Soft and freshly prepared Nigerian puff puff."
+        },
+
+        {
+            name: "Samosa",
+            price: 2500,
+            category: "Small Chops",
+            key: "samosa",
+            image: "https://images.unsplash.com/photo-1626804475297-41608ea09aeb?auto=format&fit=crop&w=900&q=80",
+            description: "Crispy samosa filled with a tasty savoury mixture."
+        },
+
+        {
+            name: "Spring Rolls",
+            price: 2500,
+            category: "Small Chops",
+            key: "spring-rolls",
+            image: "https://images.unsplash.com/photo-1612874742237-6526221588e3?auto=format&fit=crop&w=900&q=80",
+            description: "Crispy spring rolls prepared fresh."
+        },
+
+        {
+            name: "Gizdodo",
+            price: 4500,
+            category: "Small Chops",
+            key: "gizdodo",
+            image: "https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&w=900&q=80",
+            description: "Spicy gizzard and plantain combination."
+        },
+
+        {
+            name: "Chapman",
+            price: 3500,
+            category: "Nigerian Drinks & Refreshments",
+            key: "chapman",
+            image: "https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=900&q=80",
+            description: "Refreshing Nigerian-style Chapman drink."
+        },
+
+        {
+            name: "Zobo",
+            price: 2000,
+            category: "Nigerian Drinks & Refreshments",
+            key: "zobo",
+            image: "https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&w=900&q=80",
+            description: "Refreshing chilled zobo drink."
+        },
+
+        {
+            name: "Fresh Pineapple Juice",
+            price: 3000,
+            category: "Nigerian Drinks & Refreshments",
+            key: "pineapple-juice",
+            image: "https://images.unsplash.com/photo-1600271886742-f049cd451bba?auto=format&fit=crop&w=900&q=80",
+            description: "Fresh pineapple juice served chilled."
+        },
+
+        {
+            name: "Watermelon Juice",
+            price: 3000,
+            category: "Nigerian Drinks & Refreshments",
+            key: "watermelon-juice",
+            image: "https://images.unsplash.com/photo-1623065422902-30a2d299bbe4?auto=format&fit=crop&w=900&q=80",
+            description: "Fresh watermelon juice served chilled."
+        },
+
+        {
+            name: "Mojito",
+            price: 6000,
+            category: "Cocktails",
+            key: "mojito",
+            image: "https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=900&q=80",
+            description: "A refreshing mint and lime cocktail."
+        },
+
+        {
+            name: "Strawberry Mojito",
+            price: 6500,
+            category: "Cocktails",
+            key: "strawberry-mojito",
+            image: "https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&w=900&q=80",
+            description: "Refreshing mojito with a sweet strawberry flavour."
+        },
+
+        {
+            name: "Pina Colada",
+            price: 7000,
+            category: "Cocktails",
+            key: "pina-colada",
+            image: "https://images.unsplash.com/photo-1572116469696-31de0f17cc34?auto=format&fit=crop&w=900&q=80",
+            description: "Creamy tropical cocktail with pineapple and coconut."
+        },
+
+        {
+            name: "Passion Fruit Cocktail",
+            price: 6500,
+            category: "Cocktails",
+            key: "passion-fruit-cocktail",
+            image: "https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&w=900&q=80",
+            description: "Refreshing cocktail made with passion fruit."
+        },
+
+        {
+            name: "Fried Plantain",
+            price: 2000,
+            category: "Extras & Sides",
+            key: "fried-plantain",
+            image: "https://images.unsplash.com/photo-1623238913973-21e45cced554?auto=format&fit=crop&w=900&q=80",
+            description: "Sweet and crispy fried plantain."
+        },
+
+        {
+            name: "French Fries",
+            price: 2500,
+            category: "Extras & Sides",
+            key: "french-fries",
+            image: "https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=900&q=80",
+            description: "Golden crispy French fries."
+        },
+
+        {
+            name: "Coleslaw",
+            price: 1500,
+            category: "Extras & Sides",
+            key: "coleslaw",
+            image: "https://images.unsplash.com/photo-1590301157890-4810ed352733?auto=format&fit=crop&w=900&q=80",
+            description: "Fresh and creamy coleslaw."
+        },
+
+        {
+            name: "Moi Moi",
+            price: 2500,
+            category: "Extras & Sides",
+            key: "moi-moi",
+            image: "https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=900&q=80",
+            description: "Soft steamed Nigerian bean pudding."
+        }
+
+    ];
+
+    function getCart() {
+        const savedCart = localStorage.getItem("comfortCart");
+
+        if (!savedCart) {
+            return [];
+        }
+
+        try {
+            return JSON.parse(savedCart);
+        } catch (error) {
+            return [];
+        }
+    }
+
+    function saveCart(cart) {
+        localStorage.setItem("comfortCart", JSON.stringify(cart));
+    }
+
+    function addToCart(key) {
+        const food = foods.find(function(item) {
+            return item.key === key;
+        });
+
+        if (!food) {
+            return;
+        }
+
+        const cart = getCart();
+
+        const existingItem = cart.find(function(item) {
+            return item.key === key;
+        });
+
+        if (existingItem) {
+            existingItem.quantity += 1;
+        } else {
+            cart.push({
+                key: food.key,
+                name: food.name,
+                price: food.price,
+                quantity: 1
+            });
+        }
+
+        saveCart(cart);
+        updateCartCounter();
+
+        alert(food.name + " added to cart.");
+    }
+
+    function updateCartCounter() {
+        const cart = getCart();
+
+        let totalItems = 0;
+
+        cart.forEach(function(item) {
+            totalItems += Number(item.quantity) || 0;
+        });
+
+        const counter = document.getElementById("cartCount");
+
+        if (totalItems > 0) {
+            counter.textContent = " (" + totalItems + ")";
+        } else {
+            counter.textContent = "";
+        }
+    }
+
+    function renderMenu() {
+        const searchText = document
+            .getElementById("searchInput")
+            .value
+            .toLowerCase()
+            .trim();
+
+        const activeButton = document.querySelector(
+            ".category-btn.active"
+        );
+
+        const selectedCategory = activeButton
+            ? activeButton.dataset.category
+            : "All";
+
+        const menuContainer = document.getElementById("menuContainer");
+        const emptyMessage = document.getElementById("emptyMessage");
+
+        const filteredFoods = foods.filter(function(food) {
+
+            const matchesSearch =
+                food.name.toLowerCase().includes(searchText);
+
+            const matchesCategory =
+                selectedCategory === "All" ||
+                food.category === selectedCategory;
+
+            return matchesSearch && matchesCategory;
+        });
+
+        menuContainer.innerHTML = "";
+
+        if (filteredFoods.length === 0) {
+            emptyMessage.style.display = "block";
+            return;
+        }
+
+        emptyMessage.style.display = "none";
+
+        filteredFoods.forEach(function(food) {
+
+            const card = document.createElement("div");
+
+            card.className = "food-card";
+
+            card.innerHTML = `
+                <img
+                    src="${food.image}"
+                    alt="${food.name}"
+                >
+
+                <div class="food-content">
+
+                    <h3>${food.name}</h3>
+
+                    <div class="category-name">
+                        ${food.category}
+                    </div>
+
+                    <p class="description">
+                        ${food.description}
+                    </p>
+
+                    <div class="price">
+                        ₦${food.price.toLocaleString()}
+                    </div>
+
+                    <div class="food-actions">
+
+                        <a
+                            href="details.html?item=${food.key}&mode=order"
+                            class="details-btn"
+                        >
+                            Details
+                        </a>
+
+                        <button
+                            class="add-btn"
+                            onclick="addToCart('${food.key}')"
+                        >
+                            Add to Cart
+                        </button>
+
+                    </div>
+
+                </div>
+            `;
+
+            menuContainer.appendChild(card);
+        });
+    }
+
+    document
+        .getElementById("searchInput")
+        .addEventListener("input", function() {
+            renderMenu();
+        });
+
+    document
+        .querySelectorAll(".category-btn")
+        .forEach(function(button) {
+
+            button.addEventListener("click", function() {
+
+                document
+                    .querySelectorAll(".category-btn")
+                    .forEach(function(btn) {
+                        btn.classList.remove("active");
+                    });
+
+                this.classList.add("active");
+
+                renderMenu();
+            });
+        });
+
+    renderMenu();
+    updateCartCounter();
+
+</script>
+</body>
+</html>
