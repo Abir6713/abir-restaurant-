@@ -103,20 +103,32 @@ font-size: 15px;
 margin-bottom: 18px;
 }
 
-button {
-width: 100%;
+.actions {
+display: flex;
+gap: 10px;
+}
+
+.actions a,
+.actions button {
+flex: 1;
 border: none;
-background: #1f8f4d;
-color: white;
-padding: 13px;
+text-align: center;
+text-decoration: none;
+padding: 12px 8px;
 border-radius: 6px;
-font-size: 15px;
+font-size: 14px;
 font-weight: bold;
 cursor: pointer;
 }
 
-button:hover {
-background: #176c3a;
+.details-button {
+background: #111;
+color: white;
+}
+
+.cart-add {
+background: #1f8f4d;
+color: white;
 }
 
 .back {
@@ -202,6 +214,8 @@ We will receive your order through WhatsApp.
 <section class="menu">
 
 
+<!-- Grilled Chicken -->
+
 <div class="food">
 
 <img src="https://images.unsplash.com/photo-1598514982901-ae627e5d4a8d?auto=format&fit=crop&w=900&q=80">
@@ -217,7 +231,17 @@ Juicy grilled chicken prepared with our special seasoning
 and grilled to perfection.
 </p>
 
-<button onclick="addToCart('Grilled Chicken', 8000)">
+<div class="actions">
+
+<a
+href="details.html?item=grilled-chicken"
+class="details-button">
+View Details
+</a>
+
+<button
+class="cart-add"
+onclick="addToCart('Grilled Chicken', 8000)">
 Add to Cart
 </button>
 
@@ -225,6 +249,10 @@ Add to Cart
 
 </div>
 
+</div>
+
+
+<!-- Beef Burger -->
 
 <div class="food">
 
@@ -241,7 +269,17 @@ A delicious beef burger served with fresh vegetables
 and our special sauce.
 </p>
 
-<button onclick="addToCart('Beef Burger', 6500)">
+<div class="actions">
+
+<a
+href="details.html?item=beef-burger"
+class="details-button">
+View Details
+</a>
+
+<button
+class="cart-add"
+onclick="addToCart('Beef Burger', 6500)">
 Add to Cart
 </button>
 
@@ -249,6 +287,10 @@ Add to Cart
 
 </div>
 
+</div>
+
+
+<!-- Chicken & Chips -->
 
 <div class="food">
 
@@ -264,7 +306,17 @@ Add to Cart
 Crispy chicken served with golden chips for a satisfying meal.
 </p>
 
-<button onclick="addToCart('Chicken & Chips', 7500)">
+<div class="actions">
+
+<a
+href="details.html?item=chicken-chips"
+class="details-button">
+View Details
+</a>
+
+<button
+class="cart-add"
+onclick="addToCart('Chicken & Chips', 7500)">
 Add to Cart
 </button>
 
@@ -272,6 +324,10 @@ Add to Cart
 
 </div>
 
+</div>
+
+
+<!-- Jollof Rice & Chicken -->
 
 <div class="food">
 
@@ -288,7 +344,17 @@ Flavourful Nigerian jollof rice served with perfectly
 seasoned chicken.
 </p>
 
-<button onclick="addToCart('Jollof Rice & Chicken', 6000)">
+<div class="actions">
+
+<a
+href="details.html?item=jollof-rice"
+class="details-button">
+View Details
+</a>
+
+<button
+class="cart-add"
+onclick="addToCart('Jollof Rice & Chicken', 6000)">
 Add to Cart
 </button>
 
@@ -296,6 +362,10 @@ Add to Cart
 
 </div>
 
+</div>
+
+
+<!-- Grilled Sausage -->
 
 <div class="food">
 
@@ -311,7 +381,17 @@ Add to Cart
 Well-seasoned grilled sausage prepared fresh and served hot.
 </p>
 
-<button onclick="addToCart('Grilled Sausage', 4000)">
+<div class="actions">
+
+<a
+href="details.html?item=grilled-sausage"
+class="details-button">
+View Details
+</a>
+
+<button
+class="cart-add"
+onclick="addToCart('Grilled Sausage', 4000)">
 Add to Cart
 </button>
 
@@ -319,6 +399,10 @@ Add to Cart
 
 </div>
 
+</div>
+
+
+<!-- Chapman -->
 
 <div class="food">
 
@@ -335,9 +419,21 @@ A refreshing Nigerian-style cocktail made with a blend
 of fruity flavours.
 </p>
 
-<button onclick="addToCart('Chapman', 2500)">
+<div class="actions">
+
+<a
+href="details.html?item=chapman"
+class="details-button">
+View Details
+</a>
+
+<button
+class="cart-add"
+onclick="addToCart('Chapman', 2500)">
 Add to Cart
 </button>
+
+</div>
 
 </div>
 
