@@ -341,475 +341,486 @@
 </footer>
 <script>
 
-    const foods = [
+const foods = [
 
-        {
-            name: "Jollof Rice & Chicken",
-            price: 6500,
-            category: "Rice & Main Meals",
-            key: "jollof-rice",
-            image: "https://images.unsplash.com/photo-1604329760661-e71dc83f8f26?auto=format&fit=crop&w=900&q=80",
-            description: "A delicious serving of Nigerian-style jollof rice with chicken."
-        },
+    {
+        name: "Jollof Rice & Chicken",
+        price: 6500,
+        category: "Rice & Main Meals",
+        key: "jollof-rice",
+        image: "https://images.unsplash.com/photo-1664992960082-0ea299a9c53e?auto=format&fit=crop&w=900&q=80",
+        description: "A delicious serving of Nigerian-style jollof rice with chicken."
+    },
 
-        {
-            name: "Fried Rice & Chicken",
-            price: 6500,
-            category: "Rice & Main Meals",
-            key: "fried-rice",
-            image: "https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=900&q=80",
-            description: "Tasty fried rice served with a juicy portion of chicken."
-        },
+    {
+        name: "Fried Rice & Chicken",
+        price: 6500,
+        category: "Rice & Main Meals",
+        key: "fried-rice",
+        image: "https://images.unsplash.com/photo-1772729440931-e8efd3adc748?auto=format&fit=crop&w=900&q=80",
+        description: "Tasty fried rice served with a juicy portion of chicken."
+    },
 
-        {
-            name: "Ofada Rice & Ayamase",
-            price: 7500,
-            category: "Rice & Main Meals",
-            key: "ofada-rice",
-            image: "https://images.unsplash.com/photo-1603133872878-684f208fb84b?auto=format&fit=crop&w=900&q=80",
-            description: "Ofada rice served with rich and spicy ayamase sauce."
-        },
+    {
+        name: "Ofada Rice & Ayamase",
+        price: 7500,
+        category: "Rice & Main Meals",
+        key: "ofada-rice",
+        image: "https://niyis.co.uk/cdn/shop/articles/Who_wants_this_____This_is_So_Yum_Yum_Yummy_aa309bd1-34c5-4f42-9530-88afaa01ac93.jpg?v=1742859037&width=736",
+        description: "Ofada rice served with rich and spicy ayamase sauce."
+    },
 
-        {
-            name: "Beans & Plantain",
-            price: 5000,
-            category: "Rice & Main Meals",
-            key: "beans-plantain",
-            image: "https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=900&q=80",
-            description: "A hearty combination of beans and sweet fried plantain."
-        },
+    {
+        name: "Beans & Plantain",
+        price: 5000,
+        category: "Rice & Main Meals",
+        key: "beans-plantain",
+        image: "https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=900&q=80",
+        description: "A hearty combination of beans and sweet fried plantain."
+    },
 
-        {
-            name: "Yam Porridge",
-            price: 5500,
-            category: "Rice & Main Meals",
-            key: "yam-porridge",
-            image: "https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&w=900&q=80",
-            description: "Soft yam cooked in a rich and flavourful sauce."
-        },
+    {
+        name: "Yam Porridge",
+        price: 5500,
+        category: "Rice & Main Meals",
+        key: "yam-porridge",
+        image: "https://food.fnr.sndimg.com/content/dam/images/food/fullset/2022/10/24/FNK_ASARO_H_f.jpg.rend.hgtvcom.826.620.suffix/1666710961837.webp",
+        description: "Soft yam cooked in a rich and flavourful sauce."
+    },
 
-        {
-            name: "Amala & Ewedu",
-            price: 6000,
-            category: "Swallow & Soups",
-            key: "amala-ewedu",
-            image: "https://images.unsplash.com/photo-1601050690117-94f5f6fa8bd7?auto=format&fit=crop&w=900&q=80",
-            description: "Soft amala served with ewedu soup."
-        },
+    {
+        name: "Amala & Ewedu",
+        price: 6000,
+        category: "Swallow & Soups",
+        key: "amala-ewedu",
+        image: "https://img-global.cpcdn.com/steps/fb2479d17b0dd07b/400x400cq80/photo.jpg",
+        description: "Soft amala served with ewedu soup and stew."
+    },
 
-        {
-            name: "Pounded Yam & Egusi",
-            price: 7000,
-            category: "Swallow & Soups",
-            key: "pounded-yam-egusi",
-            image: "https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=900&q=80",
-            description: "Smooth pounded yam served with rich egusi soup."
-        },
+    {
+        name: "Pounded Yam & Egusi",
+        price: 7000,
+        category: "Swallow & Soups",
+        key: "pounded-yam-egusi",
+        image: "https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=900&q=80",
+        description: "Smooth pounded yam served with rich egusi soup."
+    },
 
-        {
-            name: "Eba & Egusi",
-            price: 6500,
-            category: "Swallow & Soups",
-            key: "eba-egusi",
-            image: "https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=900&q=80",
-            description: "Fresh eba served with delicious egusi soup."
-        },
+    {
+        name: "Eba & Egusi",
+        price: 6500,
+        category: "Swallow & Soups",
+        key: "eba-egusi",
+        image: "https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=900&q=80",
+        description: "Fresh eba served with delicious egusi soup."
+    },
 
-        {
-            name: "Semo & Vegetable Soup",
-            price: 6500,
-            category: "Swallow & Soups",
-            key: "semo-vegetable",
-            image: "https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&w=900&q=80",
-            description: "Smooth semolina served with vegetable soup."
-        },
+    {
+        name: "Semo & Vegetable Soup",
+        price: 6500,
+        category: "Swallow & Soups",
+        key: "semo-vegetable",
+        image: "https://commons.wikimedia.org/wiki/Special:FilePath/Semo.jpg?width=900",
+        description: "Smooth semo served with Nigerian vegetable soup."
+    },
 
-        {
-            name: "Grilled Chicken",
-            price: 6000,
-            category: "Grills & BBQ",
-            key: "grilled-chicken",
-            image: "https://images.unsplash.com/photo-1532550907401-a500c9a57435?auto=format&fit=crop&w=900&q=80",
-            description: "Well-seasoned chicken grilled to perfection."
-        },
+    {
+        name: "Grilled Chicken",
+        price: 6000,
+        category: "Grills & BBQ",
+        key: "grilled-chicken",
+        image: "https://images.unsplash.com/photo-1532550907401-a500c9a57435?auto=format&fit=crop&w=900&q=80",
+        description: "Well-seasoned chicken grilled to perfection."
+    },
 
-        {
-            name: "Beef Suya",
-            price: 5500,
-            category: "Grills & BBQ",
-            key: "beef-suya",
-            image: "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=900&q=80",
-            description: "Spicy grilled beef prepared with suya seasoning."
-        },
+    {
+        name: "Beef Suya",
+        price: 5500,
+        category: "Grills & BBQ",
+        key: "beef-suya",
+        image: "https://www.chilipeppermadness.com/wp-content/uploads/2025/09/Suya-Recipe1.jpg",
+        description: "Spicy grilled beef prepared with Nigerian suya seasoning."
+    },
 
-        {
-            name: "Grilled Fish",
-            price: 8500,
-            category: "Grills & BBQ",
-            key: "grilled-fish",
-            image: "https://images.unsplash.com/photo-1600891964092-4316c288032e?auto=format&fit=crop&w=900&q=80",
-            description: "Seasoned fish grilled and served fresh."
-        },
+    {
+        name: "Grilled Fish",
+        price: 8500,
+        category: "Grills & BBQ",
+        key: "grilled-fish",
+        image: "https://images.unsplash.com/photo-1600891964092-4316c288032e?auto=format&fit=crop&w=900&q=80",
+        description: "Seasoned fish grilled and served fresh."
+    },
 
-        {
-            name: "Asun",
-            price: 7500,
-            category: "Grills & BBQ",
-            key: "asun",
-            image: "https://images.unsplash.com/photo-1558030006-450675393462?auto=format&fit=crop&w=900&q=80",
-            description: "Spicy grilled goat meat prepared Nigerian style."
-        },
+    {
+        name: "Asun",
+        price: 7500,
+        category: "Grills & BBQ",
+        key: "asun",
+        image: "https://i.pinimg.com/originals/eb/10/c3/eb10c364f0b9eb03d72b0a1938bac0ad.jpg",
+        description: "Spicy grilled goat meat prepared Nigerian style."
+    },
 
-        {
-            name: "Beef Burger",
-            price: 5500,
-            category: "Grills & BBQ",
-            key: "beef-burger",
-            image: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=900&q=80",
-            description: "Juicy beef burger served with fresh toppings."
-        },
+    {
+        name: "Beef Burger",
+        price: 5500,
+        category: "Grills & BBQ",
+        key: "beef-burger",
+        image: "https://soulfulkitchenco.com/storage/bJPrqEaygKCPTYMPxKdk5obFbVNh4ECygaVHLNuJ.png",
+        description: "Juicy beef burger prepared with fresh toppings."
+    },
 
-        {
-            name: "Chicken & Chips",
-            price: 6000,
-            category: "Grills & BBQ",
-            key: "chicken-chips",
-            image: "https://images.unsplash.com/photo-1562967916-eb82221dfb36?auto=format&fit=crop&w=900&q=80",
-            description: "Crispy chicken served with golden fries."
-        },
+    {
+        name: "Chicken & Chips",
+        price: 6000,
+        category: "Grills & BBQ",
+        key: "chicken-chips",
+        image: "https://images.unsplash.com/photo-1562967916-eb82221dfb36?auto=format&fit=crop&w=900&q=80",
+        description: "Crispy chicken served with golden fries."
+    },
 
-        {
-            name: "Puff Puff",
-            price: 2000,
-            category: "Small Chops",
-            key: "puff-puff",
-            image: "https://images.unsplash.com/photo-1626804475297-41608ea09aeb?auto=format&fit=crop&w=900&q=80",
-            description: "Soft and freshly prepared Nigerian puff puff."
-        },
+    {
+        name: "Puff Puff",
+        price: 2000,
+        category: "Small Chops",
+        key: "puff-puff",
+        image: "https://1.bp.blogspot.com/-GMkWDvnXxUA/W2tpK0U8WJI/AAAAAAAAZtw/Fv0JGTLPerQTZw7xVfcppgZtbhudWOKEwCLcBGAs/s1600/nigerian-puff-puff-min.jpg",
+        description: "Soft and freshly prepared Nigerian puff puff."
+    },
 
-        {
-            name: "Samosa",
-            price: 2500,
-            category: "Small Chops",
-            key: "samosa",
-            image: "https://images.unsplash.com/photo-1626804475297-41608ea09aeb?auto=format&fit=crop&w=900&q=80",
-            description: "Crispy samosa filled with a tasty savoury mixture."
-        },
+    {
+        name: "Samosa",
+        price: 2500,
+        category: "Small Chops",
+        key: "samosa",
+        image: "https://www.nigerianfoodtv.com/wp-content/uploads/2013/10/Nigerian-Samosa.jpg",
+        description: "Crispy samosa filled with a tasty savoury mixture."
+    },
 
-        {
-            name: "Spring Rolls",
-            price: 2500,
-            category: "Small Chops",
-            key: "spring-rolls",
-            image: "https://images.unsplash.com/photo-1612874742237-6526221588e3?auto=format&fit=crop&w=900&q=80",
-            description: "Crispy spring rolls prepared fresh."
-        },
+    {
+        name: "Spring Rolls",
+        price: 2500,
+        category: "Small Chops",
+        key: "spring-rolls",
+        image: "https://static.wixstatic.com/media/2e0d98_860c56cc3569421e90a0a0a2a4a3bdce~mv2.jpg/v1/fit/w_500%2Ch_500%2Cq_90/file.jpg",
+        description: "Crispy Nigerian-style spring rolls prepared fresh."
+    },
 
-        {
-            name: "Gizdodo",
-            price: 4500,
-            category: "Small Chops",
-            key: "gizdodo",
-            image: "https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&w=900&q=80",
-            description: "Spicy gizzard and plantain combination."
-        },
+    {
+        name: "Gizdodo",
+        price: 4500,
+        category: "Small Chops",
+        key: "gizdodo",
+        image: "https://naijalifemagazine.com/blog/wp-content/uploads/2017/11/5.jpg",
+        description: "Spicy Nigerian combination of gizzard and plantain."
+    },
 
-        {
-            name: "Chapman",
-            price: 3500,
-            category: "Nigerian Drinks & Refreshments",
-            key: "chapman",
-            image: "https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=900&q=80",
-            description: "Refreshing Nigerian-style Chapman drink."
-        },
+    {
+        name: "Chapman",
+        price: 3500,
+        category: "Nigerian Drinks & Refreshments",
+        key: "chapman",
+        image: "https://i.pinimg.com/736x/81/a4/cc/81a4cc8d14614b2e699ee3896cc59c23.jpg",
+        description: "Refreshing Nigerian-style Chapman drink."
+    },
 
-        {
-            name: "Zobo",
-            price: 2000,
-            category: "Nigerian Drinks & Refreshments",
-            key: "zobo",
-            image: "https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&w=900&q=80",
-            description: "Refreshing chilled zobo drink."
-        },
+    {
+        name: "Zobo",
+        price: 2000,
+        category: "Nigerian Drinks & Refreshments",
+        key: "zobo",
+        image: "https://images.unsplash.com/photo-1606652721399-da6275bf1839?auto=format&fit=crop&w=900&q=80",
+        description: "Refreshing chilled Nigerian zobo drink."
+    },
 
-        {
-            name: "Fresh Pineapple Juice",
-            price: 3000,
-            category: "Nigerian Drinks & Refreshments",
-            key: "pineapple-juice",
-            image: "https://images.unsplash.com/photo-1600271886742-f049cd451bba?auto=format&fit=crop&w=900&q=80",
-            description: "Fresh pineapple juice served chilled."
-        },
+    {
+        name: "Fresh Pineapple Juice",
+        price: 3000,
+        category: "Nigerian Drinks & Refreshments",
+        key: "pineapple-juice",
+        image: "https://amthuchailuaq3.com/upload/product/405x405x1/88214092060.jpg",
+        description: "Fresh pineapple juice served chilled."
+    },
 
-        {
-            name: "Watermelon Juice",
-            price: 3000,
-            category: "Nigerian Drinks & Refreshments",
-            key: "watermelon-juice",
-            image: "https://images.unsplash.com/photo-1623065422902-30a2d299bbe4?auto=format&fit=crop&w=900&q=80",
-            description: "Fresh watermelon juice served chilled."
-        },
+    {
+        name: "Watermelon Juice",
+        price: 3000,
+        category: "Nigerian Drinks & Refreshments",
+        key: "watermelon-juice",
+        image: "https://images.unsplash.com/photo-1623065422902-30a2d299bbe4?auto=format&fit=crop&w=900&q=80",
+        description: "Fresh watermelon juice served chilled."
+    },
 
-        {
-            name: "Mojito",
-            price: 6000,
-            category: "Cocktails",
-            key: "mojito",
-            image: "https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=900&q=80",
-            description: "A refreshing mint and lime cocktail."
-        },
+    {
+        name: "Mojito",
+        price: 6000,
+        category: "Cocktails",
+        key: "mojito",
+        image: "https://images.unsplash.com/photo-1662550578220-a96292709506?auto=format&fit=crop&w=900&q=80",
+        description: "A refreshing mint and lime cocktail."
+    },
 
-        {
-            name: "Strawberry Mojito",
-            price: 6500,
-            category: "Cocktails",
-            key: "strawberry-mojito",
-            image: "https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&w=900&q=80",
-            description: "Refreshing mojito with a sweet strawberry flavour."
-        },
+    {
+        name: "Strawberry Mojito",
+        price: 6500,
+        category: "Cocktails",
+        key: "strawberry-mojito",
+        image: "https://images.unsplash.com/photo-1662550578220-a96292709506?auto=format&fit=crop&w=900&q=80",
+        description: "Refreshing mojito with a sweet strawberry flavour."
+    },
 
-        {
-            name: "Pina Colada",
-            price: 7000,
-            category: "Cocktails",
-            key: "pina-colada",
-            image: "https://images.unsplash.com/photo-1572116469696-31de0f17cc34?auto=format&fit=crop&w=900&q=80",
-            description: "Creamy tropical cocktail with pineapple and coconut."
-        },
+    {
+        name: "Pina Colada",
+        price: 7000,
+        category: "Cocktails",
+        key: "pina-colada",
+        image: "https://images.unsplash.com/photo-1572116469696-31de0f17cc34?auto=format&fit=crop&w=900&q=80",
+        description: "Creamy tropical cocktail with pineapple and coconut."
+    },
 
-        {
-            name: "Passion Fruit Cocktail",
-            price: 6500,
-            category: "Cocktails",
-            key: "passion-fruit-cocktail",
-            image: "https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&w=900&q=80",
-            description: "Refreshing cocktail made with passion fruit."
-        },
+    {
+        name: "Passion Fruit Cocktail",
+        price: 6500,
+        category: "Cocktails",
+        key: "passion-fruit-cocktail",
+        image: "https://i.pinimg.com/originals/eb/4e/d0/eb4ed0c18ba143283bb9228f24375da5.jpg",
+        description: "Refreshing tropical cocktail made with passion fruit."
+    },
 
-        {
-            name: "Fried Plantain",
-            price: 2000,
-            category: "Extras & Sides",
-            key: "fried-plantain",
-            image: "https://images.unsplash.com/photo-1623238913973-21e45cced554?auto=format&fit=crop&w=900&q=80",
-            description: "Sweet and crispy fried plantain."
-        },
+    {
+        name: "Fried Plantain",
+        price: 2000,
+        category: "Extras & Sides",
+        key: "fried-plantain",
+        image: "https://www.nairaland.com/attachments/4560844_img20161202180216_jpeg13d63c7196a619233ac0a6ef7174ee55",
+        description: "Sweet and crispy Nigerian fried plantain."
+    },
 
-        {
-            name: "French Fries",
-            price: 2500,
-            category: "Extras & Sides",
-            key: "french-fries",
-            image: "https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=900&q=80",
-            description: "Golden crispy French fries."
-        },
+    {
+        name: "French Fries",
+        price: 2500,
+        category: "Extras & Sides",
+        key: "french-fries",
+        image: "https://tb-static.uber.com/prod/image-proc/processed_images/149e42a70a5073d31aacd0128b1ece38/c67fc65e9b4e16a553eb7574fba090f1.jpeg",
+        description: "Golden crispy French fries."
+    },
 
-        {
-            name: "Coleslaw",
-            price: 1500,
-            category: "Extras & Sides",
-            key: "coleslaw",
-            image: "https://images.unsplash.com/photo-1590301157890-4810ed352733?auto=format&fit=crop&w=900&q=80",
-            description: "Fresh and creamy coleslaw."
-        },
+    {
+        name: "Coleslaw",
+        price: 1500,
+        category: "Extras & Sides",
+        key: "coleslaw",
+        image: "https://images.unsplash.com/photo-1590301157890-4810ed352733?auto=format&fit=crop&w=900&q=80",
+        description: "Fresh and creamy coleslaw."
+    },
 
-        {
-            name: "Moi Moi",
-            price: 2500,
-            category: "Extras & Sides",
-            key: "moi-moi",
-            image: "https://images.unsplash.com/photo-1596797038530-2c107229654b?auto=format&fit=crop&w=900&q=80",
-            description: "Soft steamed Nigerian bean pudding."
-        }
-
-    ];
-
-    function getCart() {
-        const savedCart = localStorage.getItem("comfortCart");
-
-        if (!savedCart) {
-            return [];
-        }
-
-        try {
-            return JSON.parse(savedCart);
-        } catch (error) {
-            return [];
-        }
+    {
+        name: "Moi Moi",
+        price: 2500,
+        category: "Extras & Sides",
+        key: "moi-moi",
+        image: "https://cdn.shopify.com/s/files/1/0012/5337/6060/articles/moi_moi_1024x.jpg?v=1611605450",
+        description: "Soft steamed Nigerian bean pudding."
     }
 
-    function saveCart(cart) {
-        localStorage.setItem("comfortCart", JSON.stringify(cart));
+];
+
+function getCart() {
+    const savedCart = localStorage.getItem("comfortCart");
+
+    if (!savedCart) {
+        return [];
     }
 
-    function addToCart(key) {
-        const food = foods.find(function(item) {
-            return item.key === key;
-        });
+    try {
+        return JSON.parse(savedCart);
+    } catch (error) {
+        return [];
+    }
+}
 
-        if (!food) {
-            return;
-        }
+function saveCart(cart) {
+    localStorage.setItem("comfortCart", JSON.stringify(cart));
+}
 
-        const cart = getCart();
+function addToCart(key) {
 
-        const existingItem = cart.find(function(item) {
-            return item.key === key;
-        });
+    const food = foods.find(function(item) {
+        return item.key === key;
+    });
 
-        if (existingItem) {
-            existingItem.quantity += 1;
-        } else {
-            cart.push({
-                key: food.key,
-                name: food.name,
-                price: food.price,
-                quantity: 1
-            });
-        }
-
-        saveCart(cart);
-        updateCartCounter();
-
-        alert(food.name + " added to cart.");
+    if (!food) {
+        return;
     }
 
-    function updateCartCounter() {
-        const cart = getCart();
+    const cart = getCart();
 
-        let totalItems = 0;
+    const existingItem = cart.find(function(item) {
+        return item.key === key;
+    });
 
-        cart.forEach(function(item) {
-            totalItems += Number(item.quantity) || 0;
+    if (existingItem) {
+        existingItem.quantity += 1;
+    } else {
+        cart.push({
+            key: food.key,
+            name: food.name,
+            price: food.price,
+            quantity: 1
         });
-
-        const counter = document.getElementById("cartCount");
-
-        if (totalItems > 0) {
-            counter.textContent = " (" + totalItems + ")";
-        } else {
-            counter.textContent = "";
-        }
     }
 
-    function renderMenu() {
-        const searchText = document
-            .getElementById("searchInput")
-            .value
-            .toLowerCase()
-            .trim();
+    saveCart(cart);
 
-        const activeButton = document.querySelector(
-            ".category-btn.active"
-        );
+    updateCartCounter();
 
-        const selectedCategory = activeButton
-            ? activeButton.dataset.category
-            : "All";
+    alert(food.name + " added to cart.");
+}
 
-        const menuContainer = document.getElementById("menuContainer");
-        const emptyMessage = document.getElementById("emptyMessage");
+function updateCartCounter() {
 
-        const filteredFoods = foods.filter(function(food) {
+    const cart = getCart();
 
-            const matchesSearch =
-                food.name.toLowerCase().includes(searchText);
+    let totalItems = 0;
 
-            const matchesCategory =
-                selectedCategory === "All" ||
-                food.category === selectedCategory;
+    cart.forEach(function(item) {
+        totalItems += Number(item.quantity) || 0;
+    });
 
-            return matchesSearch && matchesCategory;
-        });
+    const counter = document.getElementById("cartCount");
 
-        menuContainer.innerHTML = "";
+    if (totalItems > 0) {
+        counter.textContent = " (" + totalItems + ")";
+    } else {
+        counter.textContent = "";
+    }
+}
 
-        if (filteredFoods.length === 0) {
-            emptyMessage.style.display = "block";
-            return;
-        }
+function renderMenu() {
 
-        emptyMessage.style.display = "none";
+    const searchText = document
+        .getElementById("searchInput")
+        .value
+        .toLowerCase()
+        .trim();
 
-        filteredFoods.forEach(function(food) {
+    const activeButton = document.querySelector(
+        ".category-btn.active"
+    );
 
-            const card = document.createElement("div");
+    const selectedCategory = activeButton
+        ? activeButton.dataset.category
+        : "All";
 
-            card.className = "food-card";
+    const menuContainer =
+        document.getElementById("menuContainer");
 
-            card.innerHTML = `
-                <img
-                    src="${food.image}"
-                    alt="${food.name}"
-                >
+    const emptyMessage =
+        document.getElementById("emptyMessage");
 
-                <div class="food-content">
+    const filteredFoods = foods.filter(function(food) {
 
-                    <h3>${food.name}</h3>
+        const matchesSearch =
+            food.name.toLowerCase().includes(searchText);
 
-                    <div class="category-name">
-                        ${food.category}
-                    </div>
+        const matchesCategory =
+            selectedCategory === "All" ||
+            food.category === selectedCategory;
 
-                    <p class="description">
-                        ${food.description}
-                    </p>
+        return matchesSearch && matchesCategory;
+    });
 
-                    <div class="price">
-                        ₦${food.price.toLocaleString()}
-                    </div>
+    menuContainer.innerHTML = "";
 
-                    <div class="food-actions">
+    if (filteredFoods.length === 0) {
 
-                        <a
-                            href="details.html?item=${food.key}&mode=order"
-                            class="details-btn"
-                        >
-                            Details
-                        </a>
+        emptyMessage.style.display = "block";
 
-                        <button
-                            class="add-btn"
-                            onclick="addToCart('${food.key}')"
-                        >
-                            Add to Cart
-                        </button>
+        return;
+    }
 
-                    </div>
+    emptyMessage.style.display = "none";
+
+    filteredFoods.forEach(function(food) {
+
+        const card = document.createElement("div");
+
+        card.className = "food-card";
+
+        card.innerHTML = `
+
+            <img
+                src="${food.image}"
+                alt="${food.name}"
+            >
+
+            <div class="food-content">
+
+                <h3>${food.name}</h3>
+
+                <div class="category-name">
+                    ${food.category}
+                </div>
+
+                <p class="description">
+                    ${food.description}
+                </p>
+
+                <div class="price">
+                    ₦${food.price.toLocaleString()}
+                </div>
+
+                <div class="food-actions">
+
+                    <a
+                        href="details.html?item=${food.key}&mode=order"
+                        class="details-btn"
+                    >
+                        Details
+                    </a>
+
+                    <button
+                        class="add-btn"
+                        onclick="addToCart('${food.key}')"
+                    >
+                        Add to Cart
+                    </button>
 
                 </div>
-            `;
 
-            menuContainer.appendChild(card);
-        });
-    }
+            </div>
+        `;
 
-    document
-        .getElementById("searchInput")
-        .addEventListener("input", function() {
+        menuContainer.appendChild(card);
+    });
+}
+
+document
+    .getElementById("searchInput")
+    .addEventListener("input", function() {
+        renderMenu();
+    });
+
+document
+    .querySelectorAll(".category-btn")
+    .forEach(function(button) {
+
+        button.addEventListener("click", function() {
+
+            document
+                .querySelectorAll(".category-btn")
+                .forEach(function(btn) {
+                    btn.classList.remove("active");
+                });
+
+            this.classList.add("active");
+
             renderMenu();
         });
+    });
 
-    document
-        .querySelectorAll(".category-btn")
-        .forEach(function(button) {
+renderMenu();
 
-            button.addEventListener("click", function() {
-
-                document
-                    .querySelectorAll(".category-btn")
-                    .forEach(function(btn) {
-                        btn.classList.remove("active");
-                    });
-
-                this.classList.add("active");
-
-                renderMenu();
-            });
-        });
-
-    renderMenu();
-    updateCartCounter();
+updateCartCounter();
 
 </script>
 </body>
