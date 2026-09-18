@@ -1,386 +1,301 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Food Details - Comfort Grills & Bites</title>
+<title>Food Details | Comfort Grills & Bites</title>
 
 <style>
 
 * {
+margin: 0;
+padding: 0;
 box-sizing: border-box;
 }
 
 body {
-margin: 0;
 font-family: Arial, sans-serif;
 background: #f8f8f8;
 color: #222;
 }
 
-
-/* HEADER */
-
 header {
 background: #111;
 color: white;
-padding: 18px 25px;
-
+padding: 18px 20px;
 display: flex;
 justify-content: space-between;
 align-items: center;
-
-position: sticky;
-top: 0;
-z-index: 100;
 }
 
-.logo {
-font-size: 20px;
-font-weight: bold;
-letter-spacing: 1px;
+header h1 {
+font-size: 23px;
 }
 
 .cart-button {
-background: #25D366;
+background: #1f8f4d;
 color: white;
-
-padding: 10px 16px;
-
-border-radius: 25px;
-
 text-decoration: none;
-
+padding: 11px 17px;
+border-radius: 6px;
 font-weight: bold;
 }
 
-
-/* MAIN */
-
-.container {
+.back {
 max-width: 1100px;
-margin: auto;
-padding: 40px 20px;
+margin: 25px auto 0;
+padding: 0 20px;
 }
 
-
-/* BACK */
-
-.back-link {
-display: inline-block;
-
-margin-bottom: 25px;
-
-color: #111;
-
+.back a {
+color: #222;
 text-decoration: none;
-
 font-weight: bold;
 }
-
-
-/* PRODUCT */
 
 .product {
-background: white;
-
-border-radius: 18px;
-
-overflow: hidden;
-
-box-shadow:
-0 5px 25px rgba(0,0,0,0.08);
+max-width: 1100px;
+margin: 25px auto 60px;
+padding: 0 20px;
 
 display: grid;
-
 grid-template-columns: 1fr 1fr;
+gap: 45px;
+align-items: center;
 }
 
-
-/* IMAGE */
-
-.product-image {
+.product-image img {
 width: 100%;
-height: 100%;
-
-min-height: 500px;
-
+height: 500px;
 object-fit: cover;
+border-radius: 14px;
 }
 
-
-/* INFORMATION */
-
-.product-info {
-padding: 45px;
-}
-
-.product-info h1 {
+.product-info h2 {
 font-size: 38px;
-
-margin-top: 0;
-
-margin-bottom: 15px;
+margin-bottom: 12px;
 }
 
 .price {
+color: #1f8f4d;
 font-size: 28px;
-
 font-weight: bold;
-
-color: #111;
-
-margin-bottom: 25px;
+margin-bottom: 20px;
 }
 
 .description {
-color: #666;
-
-font-size: 17px;
-
+color: #555;
 line-height: 1.7;
-
-margin-bottom: 30px;
+font-size: 16px;
+margin-bottom: 25px;
 }
-
-
-/* FEATURES */
 
 .features {
 margin-bottom: 30px;
 }
 
 .features h3 {
-margin-bottom: 15px;
+margin-bottom: 12px;
 }
 
 .features ul {
 padding-left: 20px;
-}
-
-.features li {
-margin-bottom: 10px;
-
 color: #555;
+line-height: 1.8;
 }
 
-
-/* BUTTONS */
-
-.buttons {
-display: flex;
-
-flex-direction: column;
-
-gap: 12px;
+.order-actions {
+display: none;
+gap: 10px;
+flex-wrap: wrap;
 }
 
-.add-button,
-.order-button,
-.cart-button-large {
-
-width: 100%;
-
-padding: 15px;
-
+.order-actions button,
+.order-actions a {
 border: none;
-
-border-radius: 8px;
-
-font-size: 17px;
-
-font-weight: bold;
-
-cursor: pointer;
-
-text-align: center;
-
 text-decoration: none;
+padding: 14px 18px;
+border-radius: 6px;
+font-size: 15px;
+font-weight: bold;
+cursor: pointer;
+text-align: center;
 }
 
 .add-button {
-background: #25D366;
-
+background: #1f8f4d;
 color: white;
 }
 
 .order-button {
 background: #111;
-
 color: white;
 }
 
-.cart-button-large {
-background: #eee;
-
-color: #111;
+.cart-link {
+background: #e8e8e8;
+color: #222;
 }
-
-
-/* MESSAGE */
 
 .message {
-margin-top: 20px;
-
-padding: 12px;
-
-background: #e9f9ef;
-
-color: #16833e;
-
-border-radius: 7px;
-
-text-align: center;
-
 display: none;
+margin-top: 15px;
+color: #1f8f4d;
+font-weight: bold;
 }
 
-
-/* FOOTER */
+.restaurant-note {
+display: none;
+background: white;
+padding: 18px;
+border-radius: 8px;
+margin-top: 20px;
+color: #555;
+line-height: 1.6;
+}
 
 footer {
 background: #111;
-
 color: #aaa;
-
 text-align: center;
-
-padding: 25px 15px;
-
-margin-top: 50px;
+padding: 20px;
+font-size: 14px;
 }
-
-footer strong {
-color: white;
-}
-
-
-/* MOBILE */
 
 @media (max-width: 750px) {
 
-header {
-padding: 15px;
-}
-
-.logo {
-font-size: 16px;
+header h1 {
+font-size: 18px;
 }
 
 .cart-button {
-padding: 8px 12px;
-font-size: 13px;
+padding: 9px 12px;
+font-size: 14px;
 }
 
 .product {
 grid-template-columns: 1fr;
+gap: 25px;
 }
 
-.product-image {
-min-height: 320px;
-height: 320px;
+.product-image img {
+height: 330px;
 }
 
-.product-info {
-padding: 30px 22px;
-}
-
-.product-info h1 {
+.product-info h2 {
 font-size: 30px;
 }
 
-.price {
-font-size: 25px;
+.order-actions {
+flex-direction: column;
+}
+
+.order-actions button,
+.order-actions a {
+width: 100%;
 }
 
 }
 
 </style>
-
 </head>
-
 
 <body>
 
-
-<!-- HEADER -->
-
 <header>
 
-<div class="logo">
-COMFORT GRILLS & BITES
-</div>
+<h1>COMFORT GRILLS & BITES</h1>
 
-<a
-href="cart.html"
-class="cart-button"
->
-🛒 View Cart
+<a href="cart.html" class="cart-button" id="headerCart">
+View Cart
 </a>
 
 </header>
 
 
+<div class="back" id="backArea">
 
-<!-- CONTENT -->
-
-<div class="container">
-
-
-<a
-href="index.html"
-class="back-link"
->
-← Back to Menu
+<a href="index.html" id="backLink">
+← Back
 </a>
 
+</div>
 
 
-<div
-class="product"
-id="product"
->
+<section class="product">
 
-<!-- PRODUCT WILL LOAD HERE -->
+<div class="product-image">
+
+<img id="foodImage" src="" alt="">
 
 </div>
 
 
+<div class="product-info">
+
+<h2 id="foodName"></h2>
+
+<div class="price" id="foodPrice"></div>
+
+<p class="description" id="foodDescription"></p>
+
+
+<div class="features">
+
+<h3>About this meal</h3>
+
+<ul id="foodFeatures"></ul>
+
 </div>
 
 
+<div class="order-actions" id="orderActions">
 
-<!-- FOOTER -->
+<button
+class="add-button"
+id="addButton">
+Add to Cart
+</button>
+
+<a
+href="cart.html"
+class="cart-link">
+View Cart
+</a>
+
+</div>
+
+
+<div class="message" id="message">
+
+Added to your cart!
+
+</div>
+
+
+<div class="restaurant-note" id="restaurantNote">
+
+You are viewing this meal from the restaurant menu.
+Prices shown are for the current menu.
+
+</div>
+
+</div>
+
+</section>
+
 
 <footer>
 
-<p>
-<strong>Comfort Grills & Bites</strong>
-</p>
-
-<p>
-Good Food. Great Taste.
-</p>
-
-<p>
-© 2026 Comfort Grills & Bites
-</p>
+<p>© 2026 Comfort Grills & Bites. All rights reserved.</p>
 
 </footer>
 
 
-
 <script>
 
-
-/* FOOD DATABASE */
-
 const foods = {
-
 
 "grilled-chicken": {
 
@@ -388,22 +303,15 @@ name: "Grilled Chicken",
 
 price: 8000,
 
-image:
-"https://images.unsplash.com/photo-1598103442097-8b74394b95c6?auto=format&fit=crop&w=1000&q=80",
+image: "https://images.unsplash.com/photo-1598514982901-ae627e5d4a8d?auto=format&fit=crop&w=1200&q=80",
 
 description:
-"Juicy, well-seasoned grilled chicken prepared with our special blend of spices and grilled to perfection.",
+"Juicy grilled chicken prepared with our special seasoning and grilled to perfection.",
 
 features: [
-
 "Freshly prepared",
-
-"Well-seasoned",
-
-"Grilled to perfection",
-
-"Perfect for a satisfying meal"
-
+"Special house seasoning",
+"Grilled to perfection"
 ]
 
 },
@@ -415,22 +323,15 @@ name: "Beef Burger",
 
 price: 6500,
 
-image:
-"https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=1000&q=80",
+image: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=1200&q=80",
 
 description:
-"A delicious beef burger served with fresh toppings and our special sauce for a rich and satisfying bite.",
+"A delicious beef burger served with fresh vegetables and our special sauce.",
 
 features: [
-
 "Juicy beef patty",
-
-"Fresh toppings",
-
-"Special sauce",
-
-"Freshly prepared"
-
+"Fresh vegetables",
+"Special house sauce"
 ]
 
 },
@@ -442,22 +343,15 @@ name: "Chicken & Chips",
 
 price: 7500,
 
-image:
-"https://images.unsplash.com/photo-1562967916-eb82221dfb92?auto=format&fit=crop&w=1000&q=80",
+image: "https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=1200&q=80",
 
 description:
-"Crispy chicken served with golden fries and a delicious dipping sauce. A simple and satisfying favourite.",
+"Crispy chicken served with golden chips for a satisfying meal.",
 
 features: [
-
 "Crispy chicken",
-
-"Golden fries",
-
-"Delicious dipping sauce",
-
+"Golden chips",
 "Freshly prepared"
-
 ]
 
 },
@@ -469,22 +363,15 @@ name: "Jollof Rice & Chicken",
 
 price: 6000,
 
-image:
-"https://images.unsplash.com/photo-1603133872878-684f208fb84b?auto=format&fit=crop&w=1000&q=80",
+image: "https://images.unsplash.com/photo-1603133872878-684f208fb84b?auto=format&fit=crop&w=1200&q=80",
 
 description:
-"Rich Nigerian-style jollof rice served with deliciously seasoned chicken for a classic and satisfying meal.",
+"Flavourful Nigerian jollof rice served with perfectly seasoned chicken.",
 
 features: [
-
 "Nigerian-style jollof rice",
-
 "Seasoned chicken",
-
-"Rich flavour",
-
 "Freshly prepared"
-
 ]
 
 },
@@ -496,22 +383,15 @@ name: "Grilled Sausage",
 
 price: 4000,
 
-image:
-"https://images.unsplash.com/photo-1612392062631-94dd858cba88?auto=format&fit=crop&w=1000&q=80",
+image: "https://images.unsplash.com/photo-1527477396000-e27163b481c2?auto=format&fit=crop&w=1200&q=80",
 
 description:
-"Deliciously grilled sausage prepared fresh and served hot. Perfect as a snack or side.",
+"Well-seasoned grilled sausage prepared fresh and served hot.",
 
 features: [
-
 "Fresh sausage",
-
-"Grilled fresh",
-
-"Served hot",
-
-"Great as a snack or side"
-
+"Well seasoned",
+"Grilled and served hot"
 ]
 
 },
@@ -523,22 +403,15 @@ name: "Chapman",
 
 price: 2500,
 
-image:
-"https://images.unsplash.com/photo-1544145945-f90425340c7e?auto=format&fit=crop&w=1000&q=80",
+image: "https://images.unsplash.com/photo-1601050690117-94f5f6fa8bd7?auto=format&fit=crop&w=1200&q=80",
 
 description:
-"A refreshing Nigerian-style cocktail made with fruity flavours and served chilled.",
+"A refreshing Nigerian-style cocktail made with a blend of fruity flavours.",
 
 features: [
-
-"Refreshing",
-
+"Refreshing drink",
 "Fruity flavour",
-
-"Served chilled",
-
-"Perfect with meals"
-
+"Served chilled"
 ]
 
 }
@@ -546,162 +419,133 @@ features: [
 };
 
 
-
-/* GET FOOD FROM URL */
-
 const params =
-new URLSearchParams(
-window.location.search
-);
+new URLSearchParams(window.location.search);
+
 
 const item =
 params.get("item");
 
 
-/* PRODUCT CONTAINER */
-
-const product =
-document.getElementById("product");
-
-
-/* CHECK ITEM */
-
-if (!item || !foods[item]) {
-
-product.innerHTML = `
-
-<div class="product-info">
-
-<h1>
-Food Not Found
-</h1>
-
-<p>
-Sorry, the food item you are
-looking for could not be found.
-</p>
-
-<a
-href="index.html"
-class="order-button"
->
-Back to Menu
-</a>
-
-</div>
-
-`;
-
-} else {
+const mode =
+params.get("mode");
 
 
 const food =
 foods[item];
 
 
-product.innerHTML = `
+if (food) {
 
-<img
-class="product-image"
-src="${food.image}"
-alt="${food.name}"
->
+document.getElementById("foodName").textContent =
+food.name;
 
+document.getElementById("foodPrice").textContent =
+"₦" + food.price.toLocaleString();
 
-<div class="product-info">
+document.getElementById("foodDescription").textContent =
+food.description;
 
-<h1>
-${food.name}
-</h1>
+document.getElementById("foodImage").src =
+food.image;
 
-
-<div class="price">
-₦${food.price.toLocaleString()}
-</div>
+document.getElementById("foodImage").alt =
+food.name;
 
 
-<p class="description">
-${food.description}
-</p>
+const featureList =
+document.getElementById("foodFeatures");
 
 
-<div class="features">
+food.features.forEach(function(feature) {
 
-<h3>
-What you get
-</h3>
+const li =
+document.createElement("li");
 
-<ul>
+li.textContent =
+feature;
 
-${food.features.map(
-feature =>
-`<li>${feature}</li>`
-).join("")}
+featureList.appendChild(li);
 
-</ul>
-
-</div>
+});
 
 
-<div class="buttons">
+document.title =
+food.name + " | Comfort Grills & Bites";
 
 
-<button
-class="add-button"
-onclick="addToCart()"
->
-Add to Cart
-</button>
+const addButton =
+document.getElementById("addButton");
 
 
-<a
-href="cart.html"
-class="order-button"
->
-Order Now
-</a>
-
-
-<a
-href="cart.html"
-class="cart-button-large"
->
-View Cart
-</a>
-
-
-</div>
-
-
-<div
-class="message"
-id="message"
->
-Added to your cart!
-</div>
-
-
-</div>
-
-`;
-
-
-/* ADD TO CART */
-
-window.addToCart =
+addButton.onclick =
 function() {
 
+addToCart(
+food.name,
+food.price
+);
 
-let cart =
-JSON.parse(
+};
+
+
+if (mode === "menu") {
+
+document.getElementById("orderActions").style.display =
+"none";
+
+document.getElementById("headerCart").style.display =
+"none";
+
+document.getElementById("restaurantNote").style.display =
+"block";
+
+document.getElementById("backLink").href =
+"menu.html";
+
+document.getElementById("backLink").textContent =
+"← Back to Menu";
+
+} else {
+
+document.getElementById("orderActions").style.display =
+"flex";
+
+document.getElementById("headerCart").style.display =
+"block";
+
+document.getElementById("restaurantNote").style.display =
+"none";
+
+document.getElementById("backLink").href =
+"order.html";
+
+document.getElementById("backLink").textContent =
+"← Back to Order";
+
+}
+
+}
+
+
+function getCart() {
+
+return JSON.parse(
 localStorage.getItem("comfortCart")
 ) || [];
+
+}
+
+
+function addToCart(name, price) {
+
+let cart =
+getCart();
 
 
 let existingItem =
 cart.find(
-cartItem =>
-cartItem.name === food.name
+item => item.name === name
 );
 
 
@@ -713,10 +557,8 @@ existingItem.quantity += 1;
 
 cart.push({
 
-name: food.name,
-
-price: food.price,
-
+name: name,
+price: price,
 quantity: 1
 
 });
@@ -730,30 +572,12 @@ JSON.stringify(cart)
 );
 
 
-document
-.getElementById("message")
-.style.display = "block";
-
-
-setTimeout(
-function() {
-
-document
-.getElementById("message")
-.style.display = "none";
-
-},
-2500
-);
-
-};
+document.getElementById("message").style.display =
+"block";
 
 }
 
-
 </script>
 
-
 </body>
-
 </html>
