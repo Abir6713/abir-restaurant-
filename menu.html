@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Menu & Prices | Comfort Grills & Bites</title>
+
+<style>
+
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body {
+font-family: Arial, sans-serif;
+background: #f8f8f8;
+color: #222;
+}
+
+header {
+background: #111;
+color: white;
+padding: 20px;
+text-align: center;
+}
+
+header h1 {
+font-size: 24px;
+}
+
+.top {
+text-align: center;
+padding: 35px 20px 20px;
+}
+
+.top h2 {
+font-size: 32px;
+margin-bottom: 10px;
+}
+
+.top p {
+color: #666;
+line-height: 1.6;
+}
+
+.menu {
+max-width: 1100px;
+margin: 20px auto 50px;
+padding: 0 20px;
+
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 25px;
+}
+
+.food {
+background: white;
+border-radius: 12px;
+overflow: hidden;
+box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+}
+
+.food img {
+width: 100%;
+height: 220px;
+object-fit: cover;
+}
+
+.food-content {
+padding: 20px;
+}
+
+.food h3 {
+font-size: 21px;
+margin-bottom: 8px;
+}
+
+.price {
+color: #1f8f4d;
+font-size: 20px;
+font-weight: bold;
+margin-bottom: 10px;
+}
+
+.description {
+color: #666;
+line-height: 1.5;
+font-size: 15px;
+}
+
+.back {
+text-align: center;
+margin-bottom: 40px;
+}
+
+.back a {
+display: inline-block;
+background: #111;
+color: white;
+text-decoration: none;
+padding: 13px 22px;
+border-radius: 6px;
+}
+
+footer {
+background: #111;
+color: #aaa;
+text-align: center;
+padding: 20px;
+font-size: 14px;
+}
+
+@media (max-width: 800px) {
+
+.menu {
+grid-template-columns: repeat(2, 1fr);
+}
+
+}
+
+@media (max-width: 550px) {
+
+.menu {
+grid-template-columns: 1fr;
+}
+
+.top h2 {
+font-size: 28px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>COMFORT GRILLS & BITES</h1>
+</header>
+
+
+<section class="top">
+
+<h2>Our Menu</h2>
+
+<p>
+Browse our meals, descriptions and prices.
+<br>
+No ordering is required on this page.
+</p>
+
+</section>
+
+
+<section class="menu">
+
+
+<div class="food">
+
+<img src="https://images.unsplash.com/photo-1598514982901-ae627e5d4a8d?auto=format&fit=crop&w=900&q=80">
+
+<div class="food-content">
+
+<h3>Grilled Chicken</h3>
+
+<div class="price">₦8,000</div>
+
+<p class="description">
+Juicy grilled chicken prepared with our special seasoning
+and grilled to perfection.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="food">
+
+<img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=900&q=80">
+
+<div class="food-content">
+
+<h3>Beef Burger</h3>
+
+<div class="price">₦6,500</div>
+
+<p class="description">
+A delicious beef burger served with fresh vegetables
+and our special sauce.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="food">
+
+<img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=900&q=80">
+
+<div class="food-content">
+
+<h3>Chicken & Chips</h3>
+
+<div class="price">₦7,500</div>
+
+<p class="description">
+Crispy chicken served with golden chips for a satisfying meal.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="food">
+
+<img src="https://images.unsplash.com/photo-1603133872878-684f208fb84b?auto=format&fit=crop&w=900&q=80">
+
+<div class="food-content">
+
+<h3>Jollof Rice & Chicken</h3>
+
+<div class="price">₦6,000</div>
+
+<p class="description">
+Flavourful Nigerian jollof rice served with perfectly
+seasoned chicken.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="food">
+
+<img src="https://images.unsplash.com/photo-1527477396000-e27163b481c2?auto=format&fit=crop&w=900&q=80">
+
+<div class="food-content">
+
+<h3>Grilled Sausage</h3>
+
+<div class="price">₦4,000</div>
+
+<p class="description">
+Well-seasoned grilled sausage prepared fresh and served hot.
+</p>
+
+</div>
+
+</div>
+
+
+<div class="food">
+
+<img src="https://images.unsplash.com/photo-1601050690117-94f5f6fa8bd7?auto=format&fit=crop&w=900&q=80">
+
+<div class="food-content">
+
+<h3>Chapman</h3>
+
+<div class="price">₦2,500</div>
+
+<p class="description">
+A refreshing Nigerian-style cocktail made with a blend
+of fruity flavours.
+</p>
+
+</div>
+
+</div>
+
+
+</section>
+
+
+<div class="back">
+
+<a href="index.html">← Back to Home</a>
+
+</div>
+
+
+<footer>
+
+<p>© 2026 Comfort Grills & Bites. All rights reserved.</p>
+
+</footer>
+
+</body>
+</html>
